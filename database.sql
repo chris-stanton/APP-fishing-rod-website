@@ -1,0 +1,7 @@
+
+
+CREATE TABLE table_one (
+	id SERIAL PRIMARY KEY,
+	name VARCHAR(80) NOT NULL,
+	description VARCHAR(150) NOT NULL
+);
