@@ -9,6 +9,7 @@
     "body-parser": "^1.17.1",
     "bootstrap": "^3.3.7",
     "express": "^4.15.2",
+    "dotenv-node": "0.0.2",
     "pg": "^6.1.4"
   },
   "devDependencies": {},
