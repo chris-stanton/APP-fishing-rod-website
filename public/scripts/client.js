@@ -19,6 +19,11 @@ myApp.config(['$routeProvider', function($routeProvider) {
             controller: 'OrderController',
             controllerAs: 'oc'
         })
+        .when ('/address', {
+            templateUrl: '/views/address.html',
+            controller: 'AddressController',
+            controllerAs: 'ac'
+        })
         .when ('/contact', {
             templateUrl: '/views/contact.html',
             controller: 'ContactController',
