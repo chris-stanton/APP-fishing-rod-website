@@ -9,6 +9,11 @@ myApp.config(['$routeProvider', function($routeProvider) {
           controller: 'HomeController',
           controllerAs: 'hc'
         })
+        .when ('/showroom', {
+            templateUrl: '/views/showroom.html',
+            controller: 'ShowroomController',
+            controllerAs: 'sc'
+        })
         .when ('/order', {
             templateUrl: '/views/order.html',
             controller: 'OrderController',
