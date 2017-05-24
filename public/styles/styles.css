@@ -5,6 +5,8 @@
 
 .viewHeadings {
   text-align: center;
+  margin: 50px 0px 0px 0px;
+  font-size: 40px;
 }
 
 
@@ -21,7 +23,7 @@
 
 #headerContainer {
   text-align: center;
-  background-color: grey;
+  background-color: #d9d9d9;
   padding-top: 20px;
   height: 150px;
 }
@@ -93,15 +95,11 @@
 }
 
 #addAddressContainer {
-  /*text-align: left;*/
   margin: 100px 0px 100px 0px;
-  border: 2px solid black;
-  border-radius: 10px;
-  padding: 15px;
 }
 
 .inputLabels {
-
+  margin-top: 28px;
 }
 
 .addressInputs {
@@ -109,6 +107,13 @@
   height: 40px;
   font-size: 20px;
 }
+
+#addressButton {
+  text-align: right;
+  margin-top: 20px;
+}
+
+
 
 
 

@@ -5,7 +5,7 @@
 
 // adds new user to DB from address view
     function addNewUser(newUserAddress) {
-      
+
     }
 
 
@@ -14,7 +14,7 @@
 
 
 
-//public API
+// public API
     return {
 // adds new user to DB from address view
       addNewUser : addNewUser
