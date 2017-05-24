@@ -1,8 +1,11 @@
-myApp.controller('HomeController', function() {
-  console.log('homeController running');
+myApp.controller('HomeController', ['FactoryFactory',function(FactoryFactory) {
+
+  console.log('HomeController running');
+
   var self = this;
-  self.message = 'angular sourced';
+
+  self.message = 'angular sourced "Home"';
 
 
 
-}); // end controller code block
+}]); // end controller code block
