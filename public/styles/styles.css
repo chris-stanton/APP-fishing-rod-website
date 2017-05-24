@@ -3,6 +3,12 @@
 //        HEADER        //
 ////////////////////////*/
 
+#headerContainer {
+  text-align: center;
+  background-color: grey;
+  padding-top: 20px;
+  height: 150px;
+}
 
 
 
@@ -18,6 +24,9 @@
 #navBarContainer {
   display: inline-block;
   text-align: center;
+  background-color: black;
+  height: 40px;
+  padding-top: 20px 0px 20px 0px;
 }
 
 
@@ -31,6 +40,10 @@
 //         HOME         //
 ////////////////////////*/
 
+#homeContainer {
+  text-align: center;
+}
+
 
 
 
@@ -42,7 +55,9 @@
 //        SHOWROOM      //
 ////////////////////////*/
 
-
+#showroomContainer {
+  text-align: center;
+}
 
 
 
@@ -54,6 +69,11 @@
 //         ORDER        //
 ////////////////////////*/
 
+#orderContainer {
+  text-align: center;
+}
+
+
 
 
 
@@ -64,3 +84,21 @@
 /*////////////////////////
 //        CONTACT       //
 ////////////////////////*/
+
+#contactContainer {
+  text-align: center;
+}
+
+
+
+
+
+
+/*////////////////////////
+//        FOOTER        //
+////////////////////////*/
+
+#footerContainer {
+  text-align: center;
+  background-color: #c3c3c3;
+}
