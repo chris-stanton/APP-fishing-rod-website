@@ -5,7 +5,7 @@
 
 // adds new user to DB from address view
     function addNewUser(newUserAddress) {
-
+// post request goes here
     }
 
 

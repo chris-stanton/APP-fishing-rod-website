@@ -1,4 +1,73 @@
 
   <div class="rows" id="orderContainer">
     <h2 class="col-md-12 viewHeadings"> Order View </h2>
+<!-- rod order input container -->
+    <div class="col-md-12">
+      <div>
+        <label> Blank </label>
+          <select ng-model="oc.newOrder.blank">
+            <option value="Mini Bite"> Mini Bite </option>
+            <option value="Seven Douce"> Seven Douce </option>
+            <option value="El Dente"> El Dente </option>
+            <option value="Long Board"> Long Board </option>
+            <option value="Pannie Dropper"> Pannie Dropper </option>
+            <option value="Pantom"> Pantom </option>
+            <option value="Perch Pounder"> Perch Pounder </option>
+            <option value="Walleye Stinger"> Walleye Stinger </option>
+            <option value="Custom"> Custom </option>
+          </select>
+      </div>
+<div ng-show="oc.newOrder.blank === 'Custom'">
+      <div>
+        <label> Blank Length </label>
+          <select ng-model="oc.newOrder.blankLength">
+            <option value='21"'> 21" </option>
+            <option value='24"'> 24" </option>
+            <option value='28"'> 28" </option>
+          </select>
+      </div>
+      <div>
+        <label> Handle Material </label>
+          <select ng-model="oc.newOrder.handleMeterial">
+            <option value="Cork"> Cork </option>
+            <option value="EVA"> EVA </option>
+            <option value="3D Printed"> 3D Printed </option>
+          </select>
+      </div>
+      <div>
+        <label> Handle Length </label>
+          <select ng-model="oc.newOrder.handleLength">
+            <option value='3"'> 3" </option>
+            <option value='4"'> 4" </option>
+            <option value='5"'> 5" </option>
+          </select>
+      </div>
+      <div>
+        <label> Guides </label>
+          <select ng-model="oc.newOrder.guides">
+            <option value="Standard Black"> Standard Black </option>
+            <option value="Standard Chrome"> Standard Chrome </option>
+            <option value="Rec Recoil Black"> Rec Recoil Black </option>
+            <option value="Rec Recoil Standard"> Rec Recoil Standard </option>
+          </select>
+      </div>
+      <div>
+        <label> Thread Color / One </label>
+          <select ng-model="oc.newOrder.threadColorOne">
+            <option value="Red"> Red </option>
+            <option value="Blue"> Blue </option>
+          </select>
+      </div>
+      <div>
+        <label> Thread Color / Two </label>
+          <select ng-model="oc.newOrder.threadColorTwo">
+            <option value="Red"> Red </option>
+            <option value="Blue"> Blue </option>
+          </select>
+      </div>
+</div>
+      <div>
+        <button type="button" ng-click="oc.submitNewOrder(oc.newOrder)"> Submit Order </button>
+      </div>
+    </div>
   </div>
