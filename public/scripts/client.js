@@ -5,19 +5,29 @@ myApp.config(['$routeProvider', function($routeProvider) {
   //routes
     $routeProvider
         .when ('/home', {
-          templateUrl: '/views/home-view.html',
+          templateUrl: '/views/home.html',
           controller: 'HomeController',
-          controllerAs: 'home'
+          controllerAs: 'hc'
         })
-        .when ('/view-1', {
-            templateUrl: '/views/view_1.html',
-            controller: 'OneController',
-            controllerAs: 'one'
+        .when ('/showroom', {
+            templateUrl: '/views/showroom.html',
+            controller: 'ShowroomController',
+            controllerAs: 'sc'
         })
-        .when ('/view-2', {
-            templateUrl: '/views/view_2.html',
-            controller: 'TwoController',
-            controllerAs: 'two'
+        .when ('/order', {
+            templateUrl: '/views/order.html',
+            controller: 'OrderController',
+            controllerAs: 'oc'
+        })
+        .when ('/address', {
+            templateUrl: '/views/address.html',
+            controller: 'AddressController',
+            controllerAs: 'ac'
+        })
+        .when ('/contact', {
+            templateUrl: '/views/contact.html',
+            controller: 'ContactController',
+            controllerAs: 'cc'
         })
         .otherwise ( {
             redirectTo: '/home'

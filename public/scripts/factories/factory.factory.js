@@ -1,5 +1,12 @@
-myApp.factory('FactoryFactory',['$http',function($http) {
-console.log('FactoryFactory running');
+
+  myApp.factory('FactoryFactory',['$http',function($http) {
+    console.log('FactoryFactory running');
+
+
+// adds new user to DB from address view
+    function addNewUser(newUserAddress) {
+// post request goes here
+    }
 
 
 
@@ -7,12 +14,10 @@ console.log('FactoryFactory running');
 
 
 
+// public API
+    return {
+// adds new user to DB from address view
+      addNewUser : addNewUser
+    }
 
-
-
-//public API
-  return {
-
-  }
-
-}]);
+  }]);//end of myApp.factory

@@ -1,0 +1,57 @@
+
+<div class="rows" id="addressContainer">
+  <h2 class="col-md-12 viewHeadings"> Become A Registered Customer </h2>
+    <div class="col-md-12" id="addAddressContainer">
+      <div class="col-md-1">
+<!-- empty div for spacing -->
+      </div>
+      <table class="col-md-10">
+        <tr>
+          <td>
+            <label class="inputLabels"> First Name </label>
+              <input class="addressInputs" type="text" ng-model="ac.newUserAddress.firstName" style="text-transform: capitalize">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label class="inputLabels"> Last Name </label>
+              <input class="addressInputs" type="text" ng-model="ac.newUserAddress.lastName" style="text-transform: capitalize">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label class="inputLabels"> Street Address </label>
+              <input class="addressInputs" type="text" ng-model="ac.newUserAddress.streetAddress" style="text-transform: capitalize">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label class="inputLabels"> City </label>
+              <input class="addressInputs" type="text" ng-model="ac.newUserAddress.city" style="text-transform: capitalize">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label class="inputLabels"> State </label>
+              <input class="addressInputs" type="text" ng-model="ac.newUserAddress.state" style="text-transform: uppercase">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label class="inputLabels"> Zip Code </label>
+              <input class="addressInputs" type="text" ng-model="ac.newUserAddress.zipCode">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div id="addressButton">
+              <button type="button" ng-click="ac.addNewUser(ac.newUserAddress)"> Register </button>
+            </div>
+          </td>
+        </tr>
+      </table>
+      <div class="col-md-1">
+<!-- empty div for spacing -->
+      </div>
+    </div>
+</div>

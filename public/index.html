@@ -2,23 +2,32 @@
 <html ng-app="myApp">
   <head>
     <meta charset="utf-8">
-    <title> Angular Project Template </title>
+    <title> CS Custom Rods </title>
       <script type="text/javascript" src="/assets/vendors/angular.min.js"></script>
       <script type="text/javascript" src="/assets/vendors/angular-route.min.js"></script>
       <script type="text/javascript" src="/scripts/client.js"></script>
 
       <script type="text/javascript" src="/scripts/controllers/home.controller.js"></script>
-      <script type="text/javascript" src="/scripts/controllers/one.controller.js"></script>
-      <script type="text/javascript" src="/scripts/controllers/two.controller.js"></script>
+      <script type="text/javascript" src="/scripts/controllers/order.controller.js"></script>
+      <script type="text/javascript" src="/scripts/controllers/address.controller.js"></script>
+      <script type="text/javascript" src="/scripts/controllers/contact.controller.js"></script>
+      <script type="text/javascript" src="/scripts/controllers/showroom.controller.js"></script>
 
       <script type="text/javascript" src="/scripts/factories/factory.factory.js"></script>
 
         <link rel="stylesheet" href="/assets/vendors/bootstrap.min.css"/>
         <link rel="stylesheet" href="/styles/styles.css"/>
+
+        <link rel="stylesheet" href="/assets/vendors/animate.css"/>
+
+        <script type="text/javascript" src="/assets/vendors/notyf.min.js"></script>
+          <link rel="stylesheet" href="/assets/vendors/notyf.min.css"/>
+
   </head>
-  <body >
-    <header class="jumbotron text-center" ng-include="'/views/templates/header.html'"></header>
-    <nav ng-include="'views/templates/nav.html'"></nav>
-    <main ng-view></main>
+  <body>
+    <header ng-include="'/views/templates/header.html'"></header>
+      <nav ng-include="'views/templates/nav.html'"></nav>
+        <main ng-view></main>
+          <footer ng-include="'/views/templates/footer.html'"></footer>
   </body>
 </html>
