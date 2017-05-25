@@ -1,4 +1,6 @@
 
+DotEnv = require('dotenv-node');
+new DotEnv();
 var express = require('express');
 var app = express();
 var path = require('path');

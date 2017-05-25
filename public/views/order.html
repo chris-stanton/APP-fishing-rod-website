@@ -12,10 +12,10 @@
           </select>
       </div>
 
-<!-- hides all selections when intial is null -->
+<!-- hides all sub-selections when initial selection is null -->
       <div ng-hide="oc.newOrder.blankModel === Null">
 
-<!-- shows for standard dimention orders -->
+<!-- shows for standard rod orders -->
         <div ng-show="oc.newOrder.blankModel !== 'Custom'">
           <div ng-show="oc.newOrder.blankModel === 'Walleye Stinger' || oc.newOrder.blankModel === 'Perch Pounder' || oc.newOrder.blankModel === 'Gill Seeker'">
             <label> Blank Length </label>
@@ -35,25 +35,11 @@
               </select>
           </div>
           <div>
-            <label> Thread Color / One </label>
-              <select ng-model="oc.newOrder.threadColorOne">
-                <option value="Red"> Red </option>
-                <option value="Blue"> Blue </option>
-              </select>
-          </div>
-          <div>
-            <label> Thread Color / Two </label>
-              <select ng-model="oc.newOrder.threadColorTwo">
-                <option value="Red"> Red </option>
-                <option value="Blue"> Blue </option>
-              </select>
-          </div>
-          <div>
             <button type="button" ng-click="oc.submitNewOrder(oc.newOrder)"> Submit Order </button>
           </div>
         </div>
 
-<!-- shows for custom dimention orders -->
+<!-- shows for custom rod orders -->
         <div ng-show="oc.newOrder.blankModel === 'Custom'">
           <div>
             <label> Blank Length </label>
