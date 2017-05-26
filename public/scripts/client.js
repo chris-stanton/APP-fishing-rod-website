@@ -1,4 +1,4 @@
-var myApp = angular.module('myApp', ['ngRoute']);
+var myApp = angular.module('myApp', ['ngRoute', 'firebase']);
 
 myApp.config(['$routeProvider', function($routeProvider) {
 
@@ -28,6 +28,11 @@ myApp.config(['$routeProvider', function($routeProvider) {
             templateUrl: '/views/contact.html',
             controller: 'ContactController',
             controllerAs: 'cc'
+        })
+        .when ('/custom_order', {
+            templateUrl: '/views/custom_order.html',
+            controller: 'Custom_orderController',
+            controllerAs: 'coc'
         })
         .otherwise ( {
             redirectTo: '/home'

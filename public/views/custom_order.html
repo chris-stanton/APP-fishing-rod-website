@@ -1,0 +1,81 @@
+
+<!-- footer content container -->
+  <div class="rows" id="customOrderContainer">
+    <h2 class="col-md-12 viewHeadings"> Custom Order </h2>
+<!-- rod order input container -->
+    <div class="col-md-12 customInputs">
+          <div>
+            <label> Blank Model </label>
+              <select ng-model="coc.order.blankModel">
+                <option value='Noodle'> Noodle </option>
+                <option value='Gill Seeker'> Gill Seeker </option>
+                <option value='Perch Pounder'> Perch Pounder </option>
+                <option value='Walleye Stinger'> Walleye Stinger </option>
+                <option value='Pantum'> Pantum </option>
+                <option value='Pannie Dropper'> Pannie Dropper </option>
+              </select>
+          </div>
+          <div>
+            <label> Blank Length </label>
+              <select ng-model="coc.order.blankLength">
+                <option value='21"'> 21" </option>
+                <option value='22"'> 24" </option>
+                <option value='23"'> 28" </option>
+                <option value='24"'> 21" </option>
+                <option value='25"'> 21" </option>
+                <option value='26"'> 21" </option>
+                <option value='27"'> 21" </option>
+                <option value='28"'> 21" </option>
+                <option value='29"'> 21" </option>
+                <option value='30"'> 21" </option>
+                <option value='31"'> 21" </option>
+                <option value='32"'> 21" </option>
+                <option value='33"'> 21" </option>
+                <option value='34"'> 21" </option>
+              </select>
+          </div>
+          <div>
+            <label> Handle Material </label>
+              <select ng-model="coc.order.handleMaterial">
+                <option value="Cork"> Cork </option>
+                <option value="EVA"> EVA </option>
+                <option value="3D Printed"> 3D Printed </option>
+              </select>
+          </div>
+          <div>
+            <label> Handle Length </label>
+              <select ng-model="coc.order.handleLength">
+                <option value='3"'> 3" </option>
+                <option value='5"'> 5" </option>
+              </select>
+          </div>
+          <div>
+            <label> Guides </label>
+              <select ng-model="coc.order.guides">
+                <option value="Standard Black"> Standard Black </option>
+                <option value="Standard Chrome"> Standard Chrome </option>
+                <option value="Rec Recoil Black"> Rec Recoil Black </option>
+                <option value="Rec Recoil Standard"> Rec Recoil Standard </option>
+              </select>
+          </div>
+          <div>
+            <label> Thread Color / Main </label>
+              <select ng-model="coc.order.threadColorMain">
+                <option value="Red"> Red </option>
+                <option value="Blue"> Blue </option>
+              </select>
+          </div>
+          <div>
+            <label> Thread Color / Trim </label>
+              <select ng-model="coc.order.threadColorTrim">
+                <option value="Red"> Red </option>
+                <option value="Blue"> Blue </option>
+              </select>
+          </div>
+          <div>
+            <button type="button" ng-click="coc.submitNewOrder(coc.order)"> Submit Order </button>
+          </div>
+<!-- rod order input container -->
+    </div>
+<!-- footer content container -->
+  </div>
