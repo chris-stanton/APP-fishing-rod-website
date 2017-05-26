@@ -6,6 +6,7 @@
   var app = express();
   var path = require('path');
   var bodyParser = require('body-parser');
+  var decoder = require('./server/modules/decoder');
   var nodemailer = require('nodemailer');
 
 // sourcing routes
@@ -22,6 +23,12 @@
   })
 
 // routes
+
+
+// Decodes the token in the request header and attaches the decoded token to req.decodedToken on the request.
+// Routes below the decoder.token must have token in request
+app.use(decoder.token);
+
 
 
 

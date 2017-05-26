@@ -3,14 +3,18 @@
 
     <div class="col-md-3">
 <!-- user auth credentials go here -->
+      <a href="#!address"> Sign Up </a>
     </div>
 
-    <h2 class="col-md-6">  Header </h2>
+    <h2 class="col-md-6 headerHeader">  Header </h2>
 
     <div class="col-md-3" id="authButtons">
-      <button type="button"> Login </button></br>
-        <button type="button"> Logout </button></br>
-          <a href="#!address"> Sign Up </a>
+      <button ng-click="hdc.login()" ng-show="hdc.userIsLoggedIn == false" type="button"> Login </button></br>
+      <div ng-show="hdc.userIsLoggedIn == true">
+        <img src="{{hdc.photo}}" class="authPhoto">
+          <div> {{hdc.email}} </div>
+            <button ng-click="hdc.logout()" type="button"> Logout </button></br>
+      </div>
     </div>
 
   </div>
