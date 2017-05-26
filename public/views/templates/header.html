@@ -1,19 +1,26 @@
 
   <div class="rows" id="headerContainer">
 
-    <div class="col-md-3">
-<!-- user auth credentials go here -->
+    <div class="col-md-3 outterDivs">
       <a href="#!address"> Sign Up </a>
     </div>
 
+
     <h2 class="col-md-6 headerHeader">  Header </h2>
 
-    <div class="col-md-3" id="authButtons">
-      <button ng-click="hdc.login()" ng-show="hdc.userIsLoggedIn == false" type="button"> Login </button></br>
+
+    <div class="col-md-3 outterDivs" id="authButtons">
+<!-- container shows when user is NOT logged in -->
+      <div ng-show="hdc.userIsLoggedIn == false">
+        <button ng-click="hdc.login()" type="button"> Login </button>
+          <div>
+            <a href="https://accounts.google.com/SignUp?hl=en"> Create <img src="/assets/images/icons/google.jpg" id="googleIcon"> Account </a>
+          </div>
+      </div>
+<!-- container shows when user IS logged in -->
       <div ng-show="hdc.userIsLoggedIn == true">
         <img src="{{hdc.photo}}" class="authPhoto">
-          <div> {{hdc.email}} </div>
-            <button ng-click="hdc.logout()" type="button"> Logout </button></br>
+          <button ng-click="hdc.logout()" type="button"> Logout </button>
       </div>
     </div>
 

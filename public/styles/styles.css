@@ -27,13 +27,17 @@
   height: 150px;
 }
 
-.headerHeader{
-  padding-top: 20px;
+.headerHeader {
+  padding-top: 25px;
 }
 
 #authButtons {
   text-align: right;
   display: inline-block;
+}
+
+.outterDivs {
+  margin-top: 60px;
 }
 
 .authPhoto {
@@ -42,6 +46,10 @@
   border-radius: 20px;
 }
 
+#googleIcon {
+  width: 30px;
+  height: 10px;
+}
 
 
 

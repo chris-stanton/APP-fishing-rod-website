@@ -9,6 +9,7 @@ myApp.controller('HeaderController', ['FactoryFactory', '$firebaseAuth', '$http'
 
   self.message = 'angular sourced "Header"';
 
+
 // auth login
   self.login = function() {
     auth.$signInWithPopup("google").then(function(firebaseUser) {
@@ -30,12 +31,11 @@ myApp.controller('HeaderController', ['FactoryFactory', '$firebaseAuth', '$http'
         self.displayName = firebaseUser.displayName;
         self.photo = firebaseUser.photoURL;
         self.email = firebaseUser.email;
-          console.log(firebaseUser.uid);
-
-    } else {
+          console.log("Firebase UID: ", firebaseUser.uid);
+      } else {
         self.userIsLoggedIn = false;
           console.log('You are not logged in or authorized');
-    }
+      }
   });// end of auth.$onAuthStateChanged()
 
 
@@ -46,4 +46,4 @@ myApp.controller('HeaderController', ['FactoryFactory', '$firebaseAuth', '$http'
     });
   }// end of logout()
 
-}]); // end controller code block
+}]);// end controller code block
