@@ -14,7 +14,6 @@
         });
 
 
-
 // adds new user to DB from address view
     function addNewUser(newUserAddress) {
       firebase.auth().currentUser.getIdToken().then(function(idToken) {
