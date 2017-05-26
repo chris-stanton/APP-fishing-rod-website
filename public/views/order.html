@@ -12,7 +12,7 @@
       <div class="col-md-10">
         <div class="col-md-3" ng-repeat="rods in oc.allIceRodModels.list">
           <div ng-click="oc.specificIceRod(rods)" id="iceRodCards">
-            <div><img src="{{rods.image}}" class="iceRodImages"> </div>
+            <div><img ng-src="{{rods.image}}" class="iceRodImages"> </div>
             <div><strong> Rod Model: </strong> {{rods.model}} </div>
             <div ng-show="rods.model !== 'Custom Build'">
               <div><strong> Rod Length: </strong> {{rods.blanklength}}" </div>
