@@ -10,7 +10,8 @@
   var nodemailer = require('nodemailer');
 
 // sourcing routes
-  var order = require('./server/routes/order.js')
+  var order = require('./server/routes/order.js');
+  var auth = require('./server/routes/auth.js');
 
 // Serve back static files
   app.use(express.static(path.join(__dirname, './public')));
@@ -27,8 +28,9 @@
 
 // Decodes the token in the request header and attaches the decoded token to req.decodedToken on the request.
 // Routes below the decoder.token must have token in request
-app.use(decoder.token);
+  app.use(decoder.token);
 
+  app.use('/auth', auth);
 
 
 

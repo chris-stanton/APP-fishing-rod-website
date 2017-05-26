@@ -53,3 +53,16 @@ CREATE TABLE iceRodOrders (
 	threadColorTrim VARCHAR(100),
 	active boolean DEFAULT true
 );
+
+
+
+CREATE TABLE customers (
+  id SERIAL PRIMARY KEY,
+	firstName VARCHAR(100),
+	lastName VARCHAR(100),
+	streetAddress VARCHAR(100),
+  city VARCHAR(100),
+  state VARCHAR(100),
+	zipCode VARCHAR(100),
+  firebaseUserId VARCHAR(800)
+);
