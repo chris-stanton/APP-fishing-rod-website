@@ -1,8 +1,10 @@
-myApp.controller('OrderController',['FactoryFactory', function(FactoryFactory) {
+myApp.controller('OrderController',['FactoryFactory', '$firebaseAuth', function(FactoryFactory, $firebaseAuth) {
 
   console.log('OrderController running');
 
   var self = this;
+  var auth = $firebaseAuth();
+  var firebaseUser = auth.$getAuth();
 
   self.message = 'angular sourced "Order"';
 // hard codes values (needs get request to DB)
@@ -47,3 +49,5 @@ myApp.controller('OrderController',['FactoryFactory', function(FactoryFactory) {
 
 
 }]);//end of myApp.controller
+
+// firebaseUser.displayName;
