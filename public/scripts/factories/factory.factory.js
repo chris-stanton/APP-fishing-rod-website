@@ -28,7 +28,7 @@
         }).then(function(response){
           notyf.confirm('You are now a registered user!')
         }).catch(function(error) {
-          alert("Sorry, we couldn't process your address.", "Try Again!", "error");
+          swal("Sorry, we couldn't process your address.", "Try Again!", "error");
           console.log('error authenticating', error);
         });
       });//end of firebase.auth()
@@ -61,7 +61,7 @@
       addNewUser : addNewUser,
 // request from controller for all ice rod models
       getAllIceRodModels : getAllIceRodModels,
-// all ice rod models for DB to order view
+// sends all ice rod models from DB to order view
       allIceRodModels : allIceRodModels
 
     }
