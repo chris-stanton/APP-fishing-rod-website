@@ -24,6 +24,7 @@ CREATE TABLE iceRods (
 	blankLength VARCHAR(100),
 	handleMaterial VARCHAR(100),
   handleLength VARCHAR(100),
+  price VARCHAR(100),
 	image VARCHAR(200)
 );
 

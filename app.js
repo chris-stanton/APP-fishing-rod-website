@@ -10,7 +10,7 @@
   var nodemailer = require('nodemailer');
 
 // sourcing routes
-  var router = require('./server/routes/routes.js')
+  var order = require('./server/routes/order.js')
 
 // Serve back static files
   app.use(express.static(path.join(__dirname, './public')));
@@ -23,7 +23,7 @@
   })
 
 // routes
-
+  app.use('/order', order);
 
 // Decodes the token in the request header and attaches the decoded token to req.decodedToken on the request.
 // Routes below the decoder.token must have token in request
