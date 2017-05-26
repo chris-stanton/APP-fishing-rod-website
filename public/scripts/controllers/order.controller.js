@@ -1,4 +1,4 @@
-myApp.controller('OrderController',['FactoryFactory', '$firebaseAuth', function(FactoryFactory, $firebaseAuth) {
+myApp.controller('OrderController',['FactoryFactory', '$firebaseAuth', '$location', function(FactoryFactory, $firebaseAuth, $location) {
 
   console.log('OrderController running');
 
@@ -14,14 +14,18 @@ myApp.controller('OrderController',['FactoryFactory', '$firebaseAuth', function(
 
   self.message = 'angular sourced "Order"';
 // all ice rod models avalible
-  self.iceRodModels = FactoryFactory.alliceRodModels;
+  self.allIceRodModels = FactoryFactory.allIceRodModels;
 
 
 
 // customer rod order submission to DB
   self.specificIceRod = function(rods) {
-    console.log(rods);
-  }
+    if (rods.model === "Custom Build"){
+      $location.path('/custom_order');
+    } else {
+      $location.path('/address');// needs to redirect to cart/pay view
+    }
+  }// end specificIceRod()
 
 
 }]);//end of myApp.controller

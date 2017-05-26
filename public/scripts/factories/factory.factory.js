@@ -4,7 +4,7 @@
 
 
 // object containers
-    var alliceRodModels = { list: [] };
+    var allIceRodModels = { list: [] };
 
 
 // sources notify
@@ -26,7 +26,7 @@
           method: 'GET',
           url: '/order/allIceRods'
         }).then(function(response) {
-          alliceRodModels.list = response.data;
+          allIceRodModels.list = response.data;
         });
     };// end getAllIceRodModels()
 
@@ -48,7 +48,7 @@
 // request from controller for all ice rod models
       getAllIceRodModels : getAllIceRodModels,
 // all ice rod models for DB to order view
-      alliceRodModels : alliceRodModels
+      allIceRodModels : allIceRodModels
 
     }
 

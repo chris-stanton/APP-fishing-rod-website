@@ -10,11 +10,16 @@
       </div>
 <!-- middle contect -->
       <div class="col-md-10">
-        <div class="col-md-3" ng-repeat="rods in oc.iceRodModels.list">
-          <div ng-click="oc.specificIceRod(rods)">
-            <div><img src="assets/images/iceRods/miniBite.jpg" class="iceRodImages"> </div>
-            <div> {{rods.model}} </div>
-            <div> {{rods.price}} </div>
+        <div class="col-md-3" ng-repeat="rods in oc.allIceRodModels.list">
+          <div ng-click="oc.specificIceRod(rods)" id="iceRodCards">
+            <div><img src="{{rods.image}}" class="iceRodImages"> </div>
+            <div><strong> Rod Model: </strong> {{rods.model}} </div>
+            <div ng-show="rods.model !== 'Custom Build'">
+              <div><strong> Rod Length: </strong> {{rods.blanklength}}" </div>
+              <div><strong> Handle Length: </strong> {{rods.handlelength}}" </div>
+            </div>
+            <div ng-show="rods.model !== 'Custom Build'"><strong> USD: </strong> ${{rods.price}} </div>
+            <div ng-show="rods.model === 'Custom Build'"><strong> Starting At: </strong> USD ${{rods.price}} </div>
           </div>
         </div>
       </div>

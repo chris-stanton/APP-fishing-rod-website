@@ -29,6 +29,11 @@ myApp.config(['$routeProvider', function($routeProvider) {
             controller: 'ContactController',
             controllerAs: 'cc'
         })
+        .when ('/custom_order', {
+            templateUrl: '/views/custom_order.html',
+            controller: 'Custom_orderController',
+            controllerAs: 'coc'
+        })
         .otherwise ( {
             redirectTo: '/home'
         });

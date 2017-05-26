@@ -6,7 +6,7 @@
 /*all controller H2 headings*/
 .viewHeadings {
   text-align: center;
-  margin: 50px 0px 0px 0px;
+  margin: 50px 0px 50px 0px;
   font-size: 40px;
 }
 
@@ -144,9 +144,24 @@
 
 }
 
+#iceRodCards {
+  margin-bottom: 50px;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+  height: 300px;
+  width: 210px;
+  box-shadow: 3px 3px 3px grey;
+}
+
+#iceRodCards:hover {
+  box-shadow: 3px 3px 3px #24ee08;
+}
+
 .iceRodImages {
-  height: 80px;
-  width: 120px;
+  height: 150px;
+  width: 180px;
+  margin: 0px 0px 20px 0px;
 }
 
 
@@ -161,6 +176,22 @@
 
 #contactContainer {
 
+}
+
+
+
+
+
+/*////////////////////////
+//     CUSTOM ORDER     //
+////////////////////////*/
+
+#customOrderContainer {
+
+}
+
+.customInputs {
+  margin-bottom: 50px;
 }
 
 
