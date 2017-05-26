@@ -1,23 +1,39 @@
 
-var express = require('express');
-var app = express();
-var path = require('path');
-var bodyParser = require('body-parser');
-var router = require('./server/routes/routes.js')
+// sourcing dependancies
+  DotEnv = require('dotenv-node');
+  new DotEnv();
+  var express = require('express');
+  var app = express();
+  var path = require('path');
+  var bodyParser = require('body-parser');
+  var decoder = require('./server/modules/decoder');
+  var nodemailer = require('nodemailer');
 
-app.use('/inboundURLbase',router)
+// sourcing routes
+  var router = require('./server/routes/routes.js')
 
-//Serve back static files
-app.use(express.static(path.join(__dirname, './public')));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
+// Serve back static files
+  app.use(express.static(path.join(__dirname, './public')));
+  app.use(bodyParser.json());
+  app.use(bodyParser.urlencoded({extended: true}));
 
-//Handle index file separately
-app.get('/', function(req, res) {
-  res.sendFile(path.join(__dirname, '.public/index.html'));
-})
+// Handles index file separately
+  app.get('/', function(req, res) {
+    res.sendFile(path.join(__dirname, '.public/index.html'));
+  })
 
-app.set('port', process.env.PORT || 5000);
-app.listen(app.get('port'), function() {
+// routes
+
+
+// Decodes the token in the request header and attaches the decoded token to req.decodedToken on the request.
+// Routes below the decoder.token must have token in request
+app.use(decoder.token);
+
+
+
+
+// port listening
+  app.set('port', process.env.PORT || 5000);
+  app.listen(app.get('port'), function() {
     console.log('Listening on port: ', app.get('port'));
-});
+  });

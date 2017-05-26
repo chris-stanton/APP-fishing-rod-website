@@ -24,8 +24,11 @@
 #headerContainer {
   text-align: center;
   background-color: #d9d9d9;
-  padding-top: 20px;
   height: 150px;
+}
+
+.headerHeader {
+  padding-top: 25px;
 }
 
 #authButtons {
@@ -33,7 +36,20 @@
   display: inline-block;
 }
 
+.outterDivs {
+  margin-top: 60px;
+}
 
+.authPhoto {
+  height: 40px;
+  width: 40px;
+  border-radius: 20px;
+}
+
+#googleIcon {
+  width: 30px;
+  height: 10px;
+}
 
 
 
