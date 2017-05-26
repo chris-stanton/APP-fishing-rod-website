@@ -24,6 +24,7 @@ CREATE TABLE iceRods (
 	blankLength VARCHAR(100),
 	handleMaterial VARCHAR(100),
   handleLength VARCHAR(100),
+  price VARCHAR(100),
 	image VARCHAR(200)
 );
 
@@ -51,4 +52,17 @@ CREATE TABLE iceRodOrders (
 	threadColorMain VARCHAR(100),
 	threadColorTrim VARCHAR(100),
 	active boolean DEFAULT true
+);
+
+
+
+CREATE TABLE customers (
+  id SERIAL PRIMARY KEY,
+	firstName VARCHAR(100),
+	lastName VARCHAR(100),
+	streetAddress VARCHAR(100),
+  city VARCHAR(100),
+  state VARCHAR(100),
+	zipCode VARCHAR(100),
+  firebaseUserId VARCHAR(800)
 );

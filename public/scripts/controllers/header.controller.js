@@ -7,17 +7,25 @@ myApp.controller('HeaderController', ['FactoryFactory', '$firebaseAuth', '$http'
   var auth = $firebaseAuth();
   var firebaseUser = auth.$getAuth();
 
+  var notyf = new Notyf({
+        delay:2000,
+        alertIcon: 'fa fa-exclamation-circle',
+        confirmIcon: 'fa fa-check-circle'
+      });
+
+
   self.message = 'angular sourced "Header"';
 
 
 // auth login
   self.login = function() {
     auth.$signInWithPopup("google").then(function(firebaseUser) {
-      console.log("Firebase Authenticated " + firebaseUser.user.displayName + " and is now logged in");
+      notyf.confirm(firebaseUser.user.displayName + ' is logged in and authenticated');
+        console.log("Firebase Authenticated " + firebaseUser.user.displayName + " and is now logged in");
     }).catch(function(error) {
       console.log("Authentication failed: ", error);
     });
-  }// end of login()
+  };// end of login()
 
 
 // This code runs whenever the user changes authentication states
@@ -31,10 +39,11 @@ myApp.controller('HeaderController', ['FactoryFactory', '$firebaseAuth', '$http'
         self.displayName = firebaseUser.displayName;
         self.photo = firebaseUser.photoURL;
         self.email = firebaseUser.email;
-          console.log("Firebase UID: ", firebaseUser.uid);
+          // notyf.confirm(firebaseUser.displayName + ' is logged in and authenticated');
       } else {
         self.userIsLoggedIn = false;
-          console.log('You are not logged in or authorized');
+          // notyf.alert('You are not logged in or authorized');
+            console.log('You are not logged in or authorized');
       }
   });// end of auth.$onAuthStateChanged()
 
@@ -42,7 +51,8 @@ myApp.controller('HeaderController', ['FactoryFactory', '$firebaseAuth', '$http'
 // auth logout
   self.logout = function() {
     auth.$signOut().then(function(){
-      console.log('User has logged out');
+      notyf.alert('You are not logged in or authorized');
+        console.log('User has logged out');
     });
   }// end of logout()
 
