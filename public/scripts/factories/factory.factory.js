@@ -5,6 +5,7 @@
 
 // object containers
     var allIceRodModels = { list: [] };
+    var allThreads = { list: [] };
 
 // sources notify
     var notyf = new Notyf({
@@ -62,6 +63,15 @@
       });//end of firebase.auth()
     };// end addNewUser()
 
+// gets thread colors form DB for custom_order view
+    function getThread() {
+        $http({
+          method: 'GET',
+          url: '/order/getThread'
+        }).then(function(response) {
+          allThreads.list = response.data;
+        });
+    };// end getAllIceRodModels()
 
 
 
@@ -79,7 +89,11 @@
 // sends all ice rod models from DB to order view
       allIceRodModels : allIceRodModels,
 // adds rod order to DB form custom_order view
-      submitNewOrder : submitNewOrder
+      submitNewOrder : submitNewOrder,
+// gets thread colors form DB for custom_order view
+      getThread : getThread,
+// all threads form DB for custom_order view
+      allThreads : allThreads
 
     }
 

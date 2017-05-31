@@ -12,6 +12,13 @@ myApp.controller('Custom_orderController',['FactoryFactory', '$firebaseAuth', '$
   self.message = 'angular sourced "custom_order"';
 
 
+// gets all threads on init
+  FactoryFactory.getThread();
+// return of all threads for DB
+  self.allThreads = FactoryFactory.allThreads;
+
+
+
   self.submitNewOrder = function(order) {
     var firebaseUser = auth.$getAuth();
     var newOrder = {
