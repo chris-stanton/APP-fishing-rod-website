@@ -43,8 +43,24 @@
         });
     };// end getAllIceRodModels()
 
-
-
+// adds new rod order to DB from custom_order view
+    function submitNewOrder(newOrder) {
+      firebase.auth().currentUser.getIdToken().then(function(idToken) {
+        $http({
+          method: 'POST',
+          url: '/auth/newOrder',
+          data: newOrder,
+          headers: {
+            id_token: idToken
+          }
+        }).then(function(response){
+          notyf.confirm('Your order has been Submitted.  Please allow 3-4 weeks for arrival.')
+        }).catch(function(error) {
+          swal("Sorry, we couldn't process your address.", "Try Again!", "error");
+          console.log('error authenticating', error);
+        });
+      });//end of firebase.auth()
+    };// end addNewUser()
 
 
 
@@ -61,7 +77,9 @@
 // request from controller for all ice rod models
       getAllIceRodModels : getAllIceRodModels,
 // sends all ice rod models from DB to order view
-      allIceRodModels : allIceRodModels
+      allIceRodModels : allIceRodModels,
+// adds rod order to DB form custom_order view
+      submitNewOrder : submitNewOrder
 
     }
 

@@ -26,7 +26,7 @@ myApp.controller('Custom_orderController',['FactoryFactory', '$firebaseAuth', '$
     }
     self.order = {};
     console.log("new Order: ", newOrder);
-
+    FactoryFactory.submitNewOrder(newOrder);
   };// end submitNewOrder()
 
 

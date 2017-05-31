@@ -25,22 +25,22 @@
   });//end of router.post
 
 // adds ice rod orders to DB
-  // router.post('/addIceRodOrder', function (req, res) {
-  //   var newUserAddress = req.body;
-  //   pool.connect()
-  //     .then(function (client) {
-  //       client.query('INSERT INTO iceRodOrders (firebaseuserid, blankmodel, blankLength, handlematerial, handlelength, guides, threadcolormain, threadcolortrim) VALUES ($1, $2, $3, $4, $5, $6, $7, $8)',
-  //         [newUserAddress.firebaseUserId, newUserAddress.blankModel, newUserAddress.blankLength, newUserAddress.handleMaterial, newUserAddress.handleLength, newUserAddress.guides, newUserAddress.threadColorMain, newUserAddress.threadColorTrim])
-  //         .then(function (result) {
-  //           client.release();
-  //           res.sendStatus(201);
-  //         })
-  //         .catch(function (err) {
-  //           console.log('error on INSERT', err);
-  //           res.sendStatus(500);
-  //         });
-  //     });//end of .then
-  // });//end of router.post
+  router.post('/newOrder', function (req, res) {
+    var newOrder = req.body;
+    pool.connect()
+      .then(function (client) {
+        client.query('INSERT INTO iceRodOrders (firebaseuserid, blankmodel, blankLength, handlematerial, handlelength, guides, threadcolormain, threadcolortrim) VALUES ($1, $2, $3, $4, $5, $6, $7, $8)',
+          [newOrder.firebaseUserId, newOrder.blankModel, newOrder.blankLength, newOrder.handleMaterial, newOrder.handleLength, newOrder.guides, newOrder.threadColorMain, newOrder.threadColorTrim])
+          .then(function (result) {
+            client.release();
+            res.sendStatus(201);
+          })
+          .catch(function (err) {
+            console.log('error on INSERT', err);
+            res.sendStatus(500);
+          });
+      });//end of .then
+  });//end of router.post
 
 
 
