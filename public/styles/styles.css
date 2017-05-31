@@ -181,15 +181,22 @@
 ////////////////////////*/
 
 #customOrderContainer {
-
+  text-align: center;
 }
 
 .customInputs {
   margin-bottom: 50px;
 }
 
+#imageTableContainer {
+  outline: none;
+}
 
-
+.threadImage {
+  height: 30px;
+  outline-style: none;
+  border-radius: 1px;
+}
 
 
 
