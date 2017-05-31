@@ -161,6 +161,7 @@
 
 #iceRodCards:hover {
   box-shadow: 3px 3px 3px #24ee08;
+  cursor: pointer;
 }
 
 .iceRodImages {
@@ -170,17 +171,6 @@
 
 
 
-
-
-
-
-/*////////////////////////
-//        CONTACT       //
-////////////////////////*/
-
-#contactContainer {
-
-}
 
 
 
@@ -197,6 +187,24 @@
 .customInputs {
   margin-bottom: 50px;
 }
+
+
+
+
+
+
+
+
+
+/*////////////////////////
+//        CONTACT       //
+////////////////////////*/
+
+#contactContainer {
+
+}
+
+
 
 
 
