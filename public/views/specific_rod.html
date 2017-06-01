@@ -3,6 +3,9 @@
 
     <div class="col-md-12" ng-repeat="specificIceRod in src.specificIceRod.list">
       <h2 class="col-md-12 viewHeadings"> {{specificIceRod.model}} </h2>
+      <div class="col-md-12">
+        <button type="button" class="col-md-1 backArrow" ng-click="src.orderView()"> <= </button>
+      </div>
 
         <div class="col-md-12">
 <!-- container outer left-->
@@ -36,6 +39,7 @@
             </div>
             <div>
               <button type="button" id="buyButton" ng-click="src.buySpecificIceRod(specificIceRod)"> Buy </button>
+              <button type="button" id="customOrderButton" ng-click="src.customOrderView()"> Custom Build </button>
             </div>
           </div>
 <!-- container outer right -->

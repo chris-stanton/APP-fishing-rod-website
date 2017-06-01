@@ -18,6 +18,14 @@ myApp.controller('Specific_rodController',['FactoryFactory', '$firebaseAuth', '$
   FactoryFactory.getSpecificIceRod(rods);
 // return for DB with specificIceRod
   self.specificIceRod = FactoryFactory.specificIceRod;
+// redirect to order view
+  self.orderView = function() {
+    $location.path('/order');
+  };
+// redirect to custom rod order view
+  self.customOrderView = function() {
+    $location.path('/custom_order');
+  };
 
 // buy button click for view
   self.buySpecificIceRod = function(specificIceRod) {
