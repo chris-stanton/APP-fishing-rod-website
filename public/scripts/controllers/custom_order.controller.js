@@ -22,7 +22,7 @@ myApp.controller('Custom_orderController',['FactoryFactory', '$firebaseAuth', '$
   self.submitNewOrder = function(order) {
     var firebaseUser = auth.$getAuth();
     if (firebaseUser === null){
-      swal("You must be logged in to submit order.", "Try Again!", "error");
+      swal("You must be logged in to submit order", "Try Again!", "error");
     } else {
       var newOrder = {
         blankModel : order.blankModel,
