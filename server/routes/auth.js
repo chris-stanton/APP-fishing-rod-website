@@ -23,7 +23,7 @@
     pool.connect()
       .then(function (client) {
         client.query('INSERT INTO customers (firstname, lastname, streetaddress, city, state, zipcode, firebaseuserid) VALUES ($1, $2, $3, $4, $5, $6, $7)',
-          [newUserAddress.firstName, newUserAddress.lastName, newUserAddress.streetAddress, newUserAddress.city, newUserAddress.state, newUserAddress.zipCode, newUserAddress.firebaseUserId])
+          [newUserAddress.firstName, newUserAddress.lastName, newUserAddress.streetAddress, newUserAddress.city, newUserAddress.state, newUserAddress.zipCode, req.decodedToken.uid])
           .then(function (result) {
             client.release();
             res.sendStatus(201);
@@ -41,7 +41,7 @@
     pool.connect()
       .then(function (client) {
         client.query('INSERT INTO iceRodOrders (firebaseuserid, blankmodel, blankLength, handlematerial, handlelength, guides, threadcolormain, threadcolortrim) VALUES ($1, $2, $3, $4, $5, $6, $7, $8)',
-          [newOrder.firebaseUserId, newOrder.blankModel, newOrder.blankLength, newOrder.handleMaterial, newOrder.handleLength, newOrder.guides, newOrder.threadColorMain, newOrder.threadColorTrim])
+          [req.decodedToken.uid, newOrder.blankModel, newOrder.blankLength, newOrder.handleMaterial, newOrder.handleLength, newOrder.guides, newOrder.threadColorMain, newOrder.threadColorTrim])
           .then(function (result) {
             client.release();
             res.sendStatus(201);
@@ -51,14 +51,15 @@
               to: process.env.ACCOUNT_RECIEVER_EMAIL,
               subject: 'Email Rod Building Website',
               text: newOrder.firebaseUserId,
-              html: '<h5>' + 'firebaseUserId: ' + newOrder.firebaseUserId + '</h5>' +
+              html: '<h5>' + 'firebaseUserId: ' + req.decodedToken.uid + '</h5>' +
+                    '<h5>' + 'Customer Email: ' + req.decodedToken.email + '</h5>' +
                     '<h5>' + 'Blank Model: ' + newOrder.blankModel + '</h5>' +
-                    '<h5>' + 'Blank Length: ' + newOrder.blankLength + '</h5>' +
+                    '<h5>' + 'Blank Length: ' + newOrder.blankLength + '"' + '</h5>' +
                     '<h5>' + 'Handle Material: ' + newOrder.handleMaterial + '<h5>' +
-                    '<h5>' + 'Handle Length: ' + newOrder.handleLength + '<h5>' +
+                    '<h5>' + 'Handle Length: ' + newOrder.handleLength + '"' + '<h5>' +
                     '<h5>' + 'Guides: ' + newOrder.guides + '<h5>' +
-                    '<h5>' + 'Thread Color Main: ' + newOrder.threadColorMian + '<h5>' +
-                    '<h5>' + 'Thread Color Trim: ' + newOrder.threadColorTrim + '<5h>' 
+                    '<h5>' + 'Thread Color Main: ' + newOrder.threadColorMain + '<h5>' +
+                    '<h5>' + 'Thread Color Trim: ' + newOrder.threadColorTrim + '<h5>'
             };// end var mailOptions
 // sents email to reciever
             transporter.sendMail(mailOptions, function(error, info){

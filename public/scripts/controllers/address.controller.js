@@ -17,8 +17,7 @@ myApp.controller('AddressController',['FactoryFactory', '$firebaseAuth', functio
       streetAddress : newUser.streetAddress,
       city :  newUser.city,
       state :  newUser.state,
-      zipCode :  newUser.zipCode,
-      firebaseUserId : firebaseUser.uid
+      zipCode :  newUser.zipCode
     }
       FactoryFactory.addNewUser(newUserAddress);
 // empties inputs after button click

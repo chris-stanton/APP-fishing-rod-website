@@ -18,7 +18,7 @@ myApp.controller('Custom_orderController',['FactoryFactory', '$firebaseAuth', '$
   self.allThreads = FactoryFactory.allThreads;
 
 
-
+// buton click listener for submitting new order
   self.submitNewOrder = function(order) {
     var firebaseUser = auth.$getAuth();
       if (firebaseUser === null){
@@ -31,12 +31,13 @@ myApp.controller('Custom_orderController',['FactoryFactory', '$firebaseAuth', '$
           handleLength : order.handleLength,
           guides : order.guides,
           threadColorMain : order.threadColorMain,
-          threadColorTrim : order.threadColorTrim,
-          firebaseUserId : firebaseUser.uid
+          threadColorTrim : order.threadColorTrim
         }
       };// end if/else
         console.log("new Order Submitted: ", newOrder);
+// POSTs new rod order to DB
         FactoryFactory.submitNewOrder(newOrder);
+// enmpties entrys after submission
         self.order = {};
   };// end submitNewOrder()
 
