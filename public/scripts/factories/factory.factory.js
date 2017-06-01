@@ -1,18 +1,20 @@
 
-  myApp.factory('FactoryFactory',['$http', '$firebaseAuth', function($http, $firebaseAuth) {
+  myApp.factory('FactoryFactory',['$http', '$firebaseAuth', '$routeParams', function($http, $firebaseAuth, $routeParams) {
     console.log('FactoryFactory running');
 
 
 // object containers
     var allIceRodModels = { list: [] };
     var allThreads = { list: [] };
+    var specificIceRod = { list: [] };
 
 // sources notify
     var notyf = new Notyf({
-          delay:2000,
+          delay: 2000,
           alertIcon: 'fa fa-exclamation-circle',
           confirmIcon: 'fa fa-check-circle'
         });
+
 
 
 // adds new user to DB from address view
@@ -23,8 +25,8 @@
           url: '/auth/newUserAddress',
           data: newUserAddress,
           headers: {
-            id_token: idToken
-          }
+                    id_token : idToken
+                   }
         }).then(function(response){
           notyf.confirm('You are now a registered user!')
         }).catch(function(error) {
@@ -52,8 +54,8 @@
           url: '/auth/newOrder',
           data: newOrder,
           headers: {
-            id_token: idToken
-          }
+                    id_token : idToken
+                   }
         }).then(function(response){
           notyf.confirm('Your order has been Submitted.  Please allow 3-4 weeks for arrival.')
         }).catch(function(error) {
@@ -72,6 +74,24 @@
           allThreads.list = response.data;
         });
     };// end getAllIceRodModels()
+
+// gets specfic ice rod for specific_rod view
+    function getSpecificIceRod(rods) {
+        $http({
+          method: 'GET',
+          url: '/order/getSpecificIceRod/' + rods.id,
+          headers: {
+                    rods : rods
+                   }
+        }).then(function(response) {
+          specificIceRod.list = response.data;
+        });
+    };// end getSpecificIceRod()
+
+
+
+
+
 
 
 
@@ -93,7 +113,11 @@
 // gets thread colors form DB for custom_order view
       getThread : getThread,
 // all threads form DB for custom_order view
-      allThreads : allThreads
+      allThreads : allThreads,
+// gets specfic ice rod from specific_rod view
+      getSpecificIceRod : getSpecificIceRod,
+// return of specific rod for specific_rod view
+      specificIceRod : specificIceRod
 
     }
 

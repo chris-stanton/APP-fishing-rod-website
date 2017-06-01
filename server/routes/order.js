@@ -36,6 +36,24 @@
     });//end of .then
   });//end of router.get
 
+// gets specific rod for specific_rod view
+  router.get('/getSpecificIceRod/:id', function (req, res) {
+    var rods = req.params;
+    pool.connect()
+    .then(function (client) {
+      client.query("SELECT * FROM iceRods WHERE id=$1", [rods.id])
+        .then(function (result) {
+         client.release();
+          res.send(result.rows);
+        })
+        .catch(function (err) {
+         console.log('error on SELECT', err);
+          res.sendStatus(500);
+        });
+    });//end of .then
+  });//end of router.get
+
+
 
 
 
