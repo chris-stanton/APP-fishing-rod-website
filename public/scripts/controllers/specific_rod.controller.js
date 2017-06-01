@@ -3,7 +3,7 @@ myApp.controller('Specific_rodController',['FactoryFactory', '$firebaseAuth', '$
 
   console.log('Specific_rodController running');
 
-  // global varibles
+// global varibles
   var self = this;
   var auth = $firebaseAuth();
   var firebaseUser = auth.$getAuth();
