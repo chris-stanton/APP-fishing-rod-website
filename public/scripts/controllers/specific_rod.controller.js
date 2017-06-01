@@ -21,8 +21,13 @@ myApp.controller('Specific_rodController',['FactoryFactory', '$firebaseAuth', '$
 
 // buy button click for view
   self.buySpecificIceRod = function(specificIceRod) {
-    console.log("buy button clicked: ", specificIceRod);
-  }
+    var firebaseUser = auth.$getAuth();
+      if (firebaseUser === null) {
+        swal("You must be logged in to place order", "Try Again!", "error");
+      } else {
+        console.log("buy button clicked: ", specificIceRod);
+      }
+  };// end buySpecificIceRod()
 
 
 }]);//end of myApp.controller
