@@ -25,8 +25,8 @@
           url: '/auth/newUserAddress',
           data: newUserAddress,
           headers: {
-            id_token: idToken
-          }
+                    id_token : idToken
+                   }
         }).then(function(response){
           notyf.confirm('You are now a registered user!')
         }).catch(function(error) {
@@ -54,8 +54,8 @@
           url: '/auth/newOrder',
           data: newOrder,
           headers: {
-            id_token: idToken
-          }
+                    id_token : idToken
+                   }
         }).then(function(response){
           notyf.confirm('Your order has been Submitted.  Please allow 3-4 weeks for arrival.')
         }).catch(function(error) {
@@ -81,7 +81,7 @@
           method: 'GET',
           url: '/order/getSpecificIceRod/' + rods.id,
           headers: {
-                    rods : rods,
+                    rods : rods
                    }
         }).then(function(response) {
           specificIceRod.list = response.data;
