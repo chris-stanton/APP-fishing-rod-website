@@ -1,8 +1,18 @@
 
+  DotEnv = require('dotenv-node');
+  new DotEnv();
   var router = require('express').Router();
   var pg = require('pg');
+  var nodemailer = require('nodemailer');
   var pool = require('../modules/database-config');
-
+// create reusable transporter object using the default SMTP transport
+  var transporter = nodemailer.createTransport({
+    service: 'yahoo',
+    auth: {
+        user: process.env.ACCOUNT_NAME,
+        pass: process.env.ACCOUNT_PASSWORD
+    }
+  });
 
 
 
@@ -34,6 +44,23 @@
           .then(function (result) {
             client.release();
             res.sendStatus(201);
+            var mailOptions = {
+      from: 'Personal Website ' + process.env.ACCOUNT_NAME,
+      to: process.env.ACCOUNT_RECIEVER_EMAIL,
+      subject: 'Email Rod Building Website',
+      text: newOrder.firebaseUserId,
+      html: '<b>' + 'firebaseUserId: ' + newOrder.firebaseUserId + '<br/>' +
+            'Subject: ' + newOrder.blankModel + '<br/>' +
+            'Message: ' + newOrder.blankLength + '</b>'
+  };
+
+  transporter.sendMail(mailOptions, function(error, info){
+      if (error) {
+          return console.log(error);
+      }
+      console.log('Message %s sent: %s', info.messageId, info.response);
+  });//end of transporter
+
           })
           .catch(function (err) {
             console.log('error on INSERT', err);
