@@ -17,6 +17,7 @@
 
 
 
+
 // adds user's address to DB
   router.post('/newUserAddress', function (req, res) {
     var newUserAddress = req.body;
@@ -27,6 +28,28 @@
           .then(function (result) {
             client.release();
             res.sendStatus(201);
+            var mailOptions = {
+              from: 'Personal Website ' + process.env.ACCOUNT_NAME,
+              to: process.env.ACCOUNT_RECIEVER_EMAIL,
+              subject: 'New Customer From Website',
+              text: req.decodedToken.name,
+              html: '<h5>' + 'firebaseUserId: ' + req.decodedToken.uid + '</h5>' +
+                    '<h5>' + 'Google Display Name: ' + req.decodedToken.name + '</h5>' +
+                    '<h5>' + 'Customer Email: ' + req.decodedToken.email + '</h5>' +
+                    '<h5>' + 'First Name: ' + newUserAddress.firstName + '</h5>' +
+                    '<h5>' + 'Last Name: ' + newUserAddress.lastName  + '</h5>' +
+                    '<h5>' + 'Street Address: ' + newUserAddress.streetAddress + '<h5>' +
+                    '<h5>' + 'City: ' + newUserAddress.city + '<h5>' +
+                    '<h5>' + 'State: ' + newUserAddress.state + '<h5>' +
+                    '<h5>' + 'Zip Code: ' + newUserAddress.zipCode + '<h5>'
+            };// end var mailOptions
+// sents email to reciever
+            transporter.sendMail(mailOptions, function(error, info){
+              if (error) {
+                return console.log(error);
+              }
+              console.log('Message %s sent: %s', info.messageId, info.response);
+            });//end of transporter
           })
           .catch(function (err) {
             console.log('error on INSERT', err);
@@ -50,8 +73,8 @@
             var mailOptions = {
               from: 'Personal Website ' + process.env.ACCOUNT_NAME,
               to: process.env.ACCOUNT_RECIEVER_EMAIL,
-              subject: 'Email Rod Building Website',
-              text: newOrder.firebaseUserId,
+              subject: 'Ice Rod Order From Website',
+              text: req.decodedToken.name,
               html: '<h5>' + 'firebaseUserId: ' + req.decodedToken.uid + '</h5>' +
                     '<h5>' + 'Google Display Name: ' + req.decodedToken.name + '</h5>' +
                     '<h5>' + 'Customer Email: ' + req.decodedToken.email + '</h5>' +
