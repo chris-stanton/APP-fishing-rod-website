@@ -1,13 +1,11 @@
 
-// sourcing dependancies
-  DotEnv = require('dotenv-node');
-  new DotEnv();
+
   var express = require('express');
   var app = express();
   var path = require('path');
   var bodyParser = require('body-parser');
   var decoder = require('./server/modules/decoder');
-  var nodemailer = require('nodemailer');
+
 
 // sourcing routes
   var order = require('./server/routes/order.js');
