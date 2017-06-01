@@ -145,6 +145,7 @@
 
 
 
+
 /*////////////////////////
 //        ORDER        //
 ////////////////////////*/
@@ -255,6 +256,29 @@
 
 }
 
+#contactInfoContainer {
+  text-align: center;
+  margin: 50px 0px 50px 0px;
+}
+
+.contactOuterLinks {
+  margin: 100px 0px 0px 0px;
+}
+
+#sendEmailContainer {
+  margin: 0px 0px 100px 0px;
+}
+
+#emailButton {
+  width: 90px;
+  border-radius: 10px;
+  outline: none;
+}
+
+#emailButton:hover {
+  box-shadow: 3px 3px 3px #24ee08;
+  cursor: pointer;
+}
 
 
 
