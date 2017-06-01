@@ -22,18 +22,18 @@
           <h3 class="contactHeaders"> Email Us </h3>
             <div>
               <label for=""> Your Email: </label>
-                <input ng-model="newMessage.customerEmail" type="text">
+                <input ng-model="cc.newMessage.customerEmail" type="text">
             </div>
             <div>
               <label for=""> Subject: </label>
-                <input ng-model="newMessage.subject" type="text">
+                <input ng-model="cc.newMessage.subject" type="text">
             </div>
             <div>
               <label for=""> Message: </label>
-                <textarea ng-model="newMessage.message" name="name" rows="8" cols="80"></textarea>
+                <textarea ng-model="cc.newMessage.message" name="name" rows="8" cols="80"></textarea>
             </div>
             <div id="emailButtonDiv">
-              <button type="button" id="emailButton" ng-click="cc.sendNewMessage(newMessage)"> Send Email </button>
+              <button type="button" id="emailButton" ng-click="cc.sendNewMessage(cc.newMessage)"> Send Email </button>
             </div>
         </div>
         <div class="col-md-3">
