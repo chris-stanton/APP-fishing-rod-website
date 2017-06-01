@@ -40,6 +40,10 @@
   margin-top: 55px;
 }
 
+#authLoggedIn {
+  display: block;
+}
+
 .authPhoto {
   height: 40px;
   width: 40px;
@@ -161,12 +165,42 @@
 
 #iceRodCards:hover {
   box-shadow: 3px 3px 3px #24ee08;
+  cursor: pointer;
 }
 
 .iceRodImages {
   height: 150px;
   width: 180px;
 }
+
+
+
+
+
+
+
+
+/*////////////////////////
+//     CUSTOM ORDER     //
+////////////////////////*/
+
+#customOrderContainer {
+  text-align: center;
+}
+
+.customInputs {
+  margin-bottom: 50px;
+}
+
+#imageTableContainer {
+  text-align: center;
+}
+
+.threadImage {
+  height: 30px;
+  border-radius: 1px;
+}
+
 
 
 
@@ -183,20 +217,6 @@
 }
 
 
-
-
-
-/*////////////////////////
-//     CUSTOM ORDER     //
-////////////////////////*/
-
-#customOrderContainer {
-
-}
-
-.customInputs {
-  margin-bottom: 50px;
-}
 
 
 
