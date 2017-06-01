@@ -40,6 +40,10 @@
   margin-top: 55px;
 }
 
+#authLoggedIn {
+  display: block;
+}
+
 .authPhoto {
   height: 40px;
   width: 40px;
@@ -189,7 +193,7 @@
 }
 
 #imageTableContainer {
-  outline: none;
+  text-align: center;
 }
 
 .threadImage {
@@ -197,6 +201,8 @@
   outline-style: none;
   border-radius: 1px;
 }
+
+
 
 
 

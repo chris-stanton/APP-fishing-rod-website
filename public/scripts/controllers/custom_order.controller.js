@@ -21,19 +21,23 @@ myApp.controller('Custom_orderController',['FactoryFactory', '$firebaseAuth', '$
 
   self.submitNewOrder = function(order) {
     var firebaseUser = auth.$getAuth();
-    var newOrder = {
-      blankModel : order.blankModel,
-      blankLength : order.blankLength,
-      handleMaterial : order.handleMaterial,
-      handleLength : order.handleLength,
-      guides : order.guides,
-      threadColorMain : order.threadColorMain,
-      threadColorTrim : order.threadColorTrim,
-      firebaseUserId : firebaseUser.uid
-    }
-    self.order = {};
+    if (firebaseUser === null){
+      swal("You must be logged in to submit order.", "Try Again!", "error");
+    } else {
+      var newOrder = {
+        blankModel : order.blankModel,
+        blankLength : order.blankLength,
+        handleMaterial : order.handleMaterial,
+        handleLength : order.handleLength,
+        guides : order.guides,
+        threadColorMain : order.threadColorMain,
+        threadColorTrim : order.threadColorTrim,
+        firebaseUserId : firebaseUser.uid
+      }
+    };
     console.log("new Order: ", newOrder);
     FactoryFactory.submitNewOrder(newOrder);
+    self.order = {};
   };// end submitNewOrder()
 
 
