@@ -17,6 +17,7 @@
 
 
 
+
 // adds user's address to DB
   router.post('/newUserAddress', function (req, res) {
     var newUserAddress = req.body;

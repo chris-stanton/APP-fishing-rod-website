@@ -19,5 +19,10 @@ myApp.controller('Specific_rodController',['FactoryFactory', '$firebaseAuth', '$
 // return for DB with specificIceRod
   self.specificIceRod = FactoryFactory.specificIceRod;
 
+// buy button click for view
+  self.buySpecificIceRod = function(specificIceRod) {
+    console.log("buy button clicked: ", specificIceRod);
+  }
+
 
 }]);//end of myApp.controller
