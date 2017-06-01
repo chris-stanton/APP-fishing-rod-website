@@ -50,8 +50,8 @@
             var mailOptions = {
               from: 'Personal Website ' + process.env.ACCOUNT_NAME,
               to: process.env.ACCOUNT_RECIEVER_EMAIL,
-              subject: 'Email Rod Building Website',
-              text: newOrder.firebaseUserId,
+              subject: 'Ice Rod Order From Website',
+              text: req.decodedToken.name,
               html: '<h5>' + 'firebaseUserId: ' + req.decodedToken.uid + '</h5>' +
                     '<h5>' + 'Google Display Name: ' + req.decodedToken.name + '</h5>' +
                     '<h5>' + 'Customer Email: ' + req.decodedToken.email + '</h5>' +
