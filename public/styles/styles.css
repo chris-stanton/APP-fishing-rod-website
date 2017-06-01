@@ -181,6 +181,29 @@
 
 
 /*////////////////////////
+//     SPECIFIC ROD     //
+////////////////////////*/
+
+#specificRodContainer {
+  margin-bottom: 200px;
+}
+
+#specificIceRodDataContainer {
+
+}
+
+#specificRodImage {
+  height: 200px;
+  width: 300px;
+}
+
+
+
+
+
+
+
+/*////////////////////////
 //     CUSTOM ORDER     //
 ////////////////////////*/
 

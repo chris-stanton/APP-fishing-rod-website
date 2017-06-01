@@ -1,25 +1,36 @@
 
-  <div class="">
+  <div class="rows">
     <h2 class="col-md-12 viewHeadings"> Specific Rod </h2>
-      <div class="">
-        {{src.id}}
-      </div>
-      <div class="">
-        {{src.specificIceRod}}
-      </div>
-      <div class="">
-        {{src.blanklength}}
-      </div>
-      <div class="">
-        {{src.handlematerial}}
-      </div>
-      <div class="">
-        {{src.handlelength}}
-      </div>
-      <div class="">
-        <img ng-src="{{src.image}}">
-      </div>
-      <div class="">
-        {{src.price}}
-      </div>
+
+      <div class="col-md-12" id="specificRodContainer" ng-repeat="specificIceRod in src.specificIceRod.list">
+<!-- container outer left-->
+        <div class="col-md-2">
+        </div>
+<!-- container middle left-->
+        <div class="col-md-5">
+          <img id="specificRodImage" ng-src="{{specificIceRod.image}}">
+        </div>
+<!-- container middle right-->
+        <div class="col-md-3" id="specificIceRodDataContainer">
+          <div class="">
+            <h4> Model: </h4> {{specificIceRod.model}}
+          </div>
+          <div class="">
+            <h4> Blank Length: </h4> {{specificIceRod.blanklength}}
+          </div>
+          <div class="">
+            <h4> Handle Material: </h4> {{specificIceRod.handlematerial}}
+          </div>
+          <div class="">
+            <h4> Handle Length: </h4> {{specificIceRod.handlelength}}
+          </div>
+          <div class="">
+            <h4> Price: </h4> {{specificIceRod.price}}
+          </div>
+        </div>
+<!-- container outer right -->
+        <div class="col-md-2">
+        </div>
+      </div><!-- specificRodContainer -->
+
   </div>

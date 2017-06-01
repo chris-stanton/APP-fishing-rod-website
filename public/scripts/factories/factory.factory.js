@@ -8,13 +8,13 @@
     var allThreads = { list: [] };
     var specificIceRod = { list: [] };
 
-
 // sources notify
     var notyf = new Notyf({
           delay:2000,
           alertIcon: 'fa fa-exclamation-circle',
           confirmIcon: 'fa fa-check-circle'
         });
+
 
 
 // adds new user to DB from address view
@@ -118,6 +118,7 @@
       getSpecificIceRod : getSpecificIceRod,
 // return of specific rod for specific_rod view
       specificIceRod : specificIceRod
+
     }
 
   }]);//end of myApp.factory

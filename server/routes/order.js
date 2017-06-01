@@ -39,7 +39,6 @@
 // gets specific rod for specific_rod view
   router.get('/getSpecificIceRod/:id', function (req, res) {
     var rods = req.params;
-    console.log(rods);
     pool.connect()
     .then(function (client) {
       client.query("SELECT * FROM iceRods WHERE id=$1", [rods.id])
