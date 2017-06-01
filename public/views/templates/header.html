@@ -16,7 +16,7 @@
           </div>
       </div>
 <!-- container shows when user IS logged in -->
-      <div ng-show="hdc.userIsLoggedIn == true">
+      <div ng-show="hdc.userIsLoggedIn == true" id="authLoggedIn">
         <img src="{{hdc.photo}}" class="authPhoto">
           <button ng-click="hdc.logout()" type="button"> Logout </button>
       </div>

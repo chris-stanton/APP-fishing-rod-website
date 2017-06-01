@@ -14,6 +14,11 @@ myApp.config(['$routeProvider', function($routeProvider) {
             controller: 'ShowroomController',
             controllerAs: 'sc'
         })
+        .when ('/specific_rod', {
+            templateUrl: '/views/specific_rod.html',
+            controller: 'Specific_rodController',
+            controllerAs: 'src'
+        })
         .when ('/order', {
             templateUrl: '/views/order.html',
             controller: 'OrderController',
