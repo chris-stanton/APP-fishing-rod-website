@@ -15,7 +15,7 @@ myApp.controller('OrderController',['FactoryFactory', '$firebaseAuth', '$locatio
   self.message = 'angular sourced "Order"';
 // all ice rod models avalible
   self.allIceRodModels = FactoryFactory.allIceRodModels;
-
+console.log(self.allIceRodModels);
 
 
 // customer rod order submission to DB
@@ -25,8 +25,12 @@ myApp.controller('OrderController',['FactoryFactory', '$firebaseAuth', '$locatio
       $location.path('/custom_order');
     } else {
       $location.path('/specific_rod/' + rods.id);
+      //blanklength handlelength, handlematerial, image, model, price
     }
   }// end specificIceRod()
 
 
 }]);// end of myApp.controller
+
+
+// + '/' + rods.image + '/' + rods.price

@@ -11,6 +11,11 @@ myApp.controller('Specific_rodController',['FactoryFactory', '$firebaseAuth', '$
   var rods = $routeParams;
 
   self.message = " Specific_rodController";
-  self.rods = rods;
+  self.id = rods.id;
+
+// send request to DB for specificIceRod
+  FactoryFactory.getSpecificIceRod(rods);
+// return for DB with specificIceRod
+  self.specificIceRod = FactoryFactory.specificIceRod;
 
 }]);//end of myApp.controller

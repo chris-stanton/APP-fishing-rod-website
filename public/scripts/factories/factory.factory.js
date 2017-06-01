@@ -1,11 +1,13 @@
 
-  myApp.factory('FactoryFactory',['$http', '$firebaseAuth', function($http, $firebaseAuth) {
+  myApp.factory('FactoryFactory',['$http', '$firebaseAuth', '$routeParams', function($http, $firebaseAuth, $routeParams) {
     console.log('FactoryFactory running');
 
 
 // object containers
     var allIceRodModels = { list: [] };
     var allThreads = { list: [] };
+    var specificIceRod = { list: [] };
+
 
 // sources notify
     var notyf = new Notyf({
@@ -73,6 +75,24 @@
         });
     };// end getAllIceRodModels()
 
+// gets specfic ice rod for specific_rod view
+    function getSpecificIceRod(rods) {
+        $http({
+          method: 'GET',
+          url: '/order/getSpecificIceRod/' + rods.id,
+          headers: {
+                    rods : rods,
+                   }
+        }).then(function(response) {
+          specificIceRod.list = response.data;
+        });
+    };// end getSpecificIceRod()
+
+
+
+
+
+
 
 
 
@@ -93,8 +113,11 @@
 // gets thread colors form DB for custom_order view
       getThread : getThread,
 // all threads form DB for custom_order view
-      allThreads : allThreads
-
+      allThreads : allThreads,
+// gets specfic ice rod from specific_rod view
+      getSpecificIceRod : getSpecificIceRod,
+// return of specific rod for specific_rod view
+      specificIceRod : specificIceRod
     }
 
   }]);//end of myApp.factory
