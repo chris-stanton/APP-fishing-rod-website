@@ -38,6 +38,7 @@
 // adds ice rod orders to DB
   router.post('/newOrder', function (req, res) {
     var newOrder = req.body;
+    console.log(req.decodedToken);
     pool.connect()
       .then(function (client) {
         client.query('INSERT INTO iceRodOrders (firebaseuserid, blankmodel, blankLength, handlematerial, handlelength, guides, threadcolormain, threadcolortrim) VALUES ($1, $2, $3, $4, $5, $6, $7, $8)',
@@ -52,6 +53,7 @@
               subject: 'Email Rod Building Website',
               text: newOrder.firebaseUserId,
               html: '<h5>' + 'firebaseUserId: ' + req.decodedToken.uid + '</h5>' +
+                    '<h5>' + 'Google Display Name: ' + req.decodedToken.name + '</h5>' +
                     '<h5>' + 'Customer Email: ' + req.decodedToken.email + '</h5>' +
                     '<h5>' + 'Blank Model: ' + newOrder.blankModel + '</h5>' +
                     '<h5>' + 'Blank Length: ' + newOrder.blankLength + '"' + '</h5>' +
