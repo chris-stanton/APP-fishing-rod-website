@@ -102,7 +102,7 @@
       <!-- area to add other custom components -->
       </div>
       <div class="col-md-4" id="imageTableContainer">
-        <table>
+        <table ng-hide="coc.order.threadColorMain === NULL && coc.order.threadColorTrim === NULL">
           <tr>
             <td>
               <td><img ng-src="{{coc.order.threadColorTrim}}" width="10" class="threadImage"></td>
