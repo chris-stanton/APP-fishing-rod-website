@@ -47,6 +47,9 @@ myApp.config(['$routeProvider', function($routeProvider) {
         .when ('/warranty', {
             templateUrl: '/views/templates/warranty.html'
         })
+        .when ('/career', {
+            templateUrl: '/views/templates/career.html'
+        })
         .otherwise ( {
             redirectTo: '/home'
         });
