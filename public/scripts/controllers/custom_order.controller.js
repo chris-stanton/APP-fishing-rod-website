@@ -33,12 +33,11 @@ myApp.controller('Custom_orderController',['FactoryFactory', '$firebaseAuth', '$
           threadColorMain : order.threadColorMain,
           threadColorTrim : order.threadColorTrim
         }
-      };// end if/else
-        console.log("new Order Submitted: ", newOrder);
-// POSTs new rod order to DB
+// POSTs / ADDs new rod order to DB
         FactoryFactory.submitNewOrder(newOrder);
-// enmpties entrys after submission
-        self.order = {};
+          $location.path('/paypal');
+            console.log("new Order Submitted: ", newOrder);
+      };// end if/else
   };// end submitNewOrder()
 
 

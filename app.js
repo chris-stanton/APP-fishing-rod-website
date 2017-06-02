@@ -9,6 +9,7 @@
 
 // sourcing routes
   var order = require('./server/routes/order.js');
+  var contact = require('./server/routes/contact.js');
   var auth = require('./server/routes/auth.js');
 
 // Serve back static files
@@ -28,6 +29,7 @@
 // Routes below the decoder.token must have token in request
   app.use(decoder.token);
 
+  app.use('/contact', contact);
   app.use('/auth', auth);
 
 

@@ -1,7 +1,5 @@
 
 To Do Next:
 
-- [ ] Build out custom order view
-- [ ] Pipe new orders to DB to be saved
-- [ ] GET request for thread Colors
-- [ ] GET request for blank MFG
+- [ ] how to paypal api
+- [ ] standard and custom orders get added into DB from thier controllers then redirects to paypal view/ both call same function at factory

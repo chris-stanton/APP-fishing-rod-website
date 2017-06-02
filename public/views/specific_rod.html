@@ -3,55 +3,63 @@
 
     <div class="col-md-12" ng-repeat="specificIceRod in src.specificIceRod.list">
       <h2 class="col-md-12 viewHeadings"> {{specificIceRod.model}} </h2>
+      <div class="col-md-12">
+        <button type="button" class="col-md-1 backArrow" ng-click="src.orderView()"> <= </button>
+      </div>
+
+        <div class="col-md-12">
 <!-- container outer left-->
-        <div class="col-md-3">
-        </div>
+          <div class="col-md-3">
+          </div>
 <!-- container middle left-->
-        <div class="col-md-5">
-          <img id="specificRodImage" ng-src="{{specificIceRod.image}}">
-        </div>
+          <div class="col-md-5">
+            <img id="specificRodImage" ng-src="{{specificIceRod.image}}">
+          </div>
 <!-- container middle right-->
-        <div class="col-md-3" id="specificIceRodDataContainer">
-          <div>
-            <h4> Model: </h4>
-              <span> {{specificIceRod.model}} </span>
+          <div class="col-md-3" id="specificIceRodDataContainer">
+            <div>
+              <h4> Model: </h4>
+                <span> {{specificIceRod.model}} </span>
+            </div>
+            <div>
+              <h4> Blank Length: </h4>
+                <span> {{specificIceRod.blanklength}}" </span>
+            </div>
+            <div>
+              <h4> Handle Material: </h4>
+                <span> {{specificIceRod.handlematerial}} </span>
+            </div>
+            <div>
+              <h4> Handle Length: </h4>
+                <span> {{specificIceRod.handlelength}}" </span>
+            </div>
+            <div>
+              <h4> Price: </h4>
+                <span> ${{specificIceRod.price}} </span>
+            </div>
+            <div>
+              <button type="button" id="buyButton" ng-click="src.buySpecificIceRod(specificIceRod)"> Buy </button>
+              <button type="button" id="customOrderButton" ng-click="src.customOrderView()"> Custom Build </button>
+            </div>
           </div>
-          <div>
-            <h4> Blank Length: </h4>
-              <span> {{specificIceRod.blanklength}}" </span>
-          </div>
-          <div>
-            <h4> Handle Material: </h4>
-              <span> {{specificIceRod.handlematerial}} </span>
-          </div>
-          <div>
-            <h4> Handle Length: </h4>
-              <span> {{specificIceRod.handlelength}}" </span>
-          </div>
-          <div>
-            <h4> Price: </h4>
-              <span> ${{specificIceRod.price}} </span>
-          </div>
-          <div>
-            <button type="button" id="buyButton" ng-click="src.buySpecificIceRod(specificIceRod)"> Buy </button>
-          </div>
-        </div>
 <!-- container outer right -->
-        <div class="col-md-1">
+          <div class="col-md-1">
+
+          </div>
         </div>
-<!-- end specificRodContainer -->
+
+        <div class="col-md-12" id="specificDescription">
+          <div class="col-md-3">
+
+          </div>
+          <div class="col-md-5">
+            <h4> Description: </h4>
+              <p> {{specificIceRod.description}} </p>
+          </div>
+          <div class="col-md-4">
+
+          </div>
+        </div>
+
     </div>
-    <div class="col-md-12" id="specificDescription">
-      <div class="col-md-3">
-
-      </div>
-      <div class="col-md-8">
-        <h4> Description: </h4>
-          <p> Specific ice rod summery goes her to describe the rod </p>
-      </div>
-      <div class="col-md-1">
-
-      </div>
-    </div>
-
   </div>
