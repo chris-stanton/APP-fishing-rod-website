@@ -145,6 +145,7 @@
 
 
 
+
 /*////////////////////////
 //        ORDER        //
 ////////////////////////*/
@@ -188,6 +189,19 @@
 
 }
 
+.backArrow {
+  text-align: center;
+  height: 30px;
+  width: 40px;
+  border-radius: 10px;
+  outline: none;
+}
+
+.backArrow:hover {
+  box-shadow: 3px 3px 3px #24ee08;
+  cursor: pointer;
+}
+
 #specificIceRodDataContainer {
 
 }
@@ -206,6 +220,7 @@
   width: 90px;
   border-radius: 10px;
   outline: none;
+  height: 35px;
 }
 
 #buyButton:hover {
@@ -213,7 +228,19 @@
   cursor: pointer;
 }
 
+#customOrderButton {
+  margin: 20px 0px 0px 0px;
+  width: 90px;
+  border-radius: 10px;
+  outline: none;
+  font-size: 12px;
+  height: 25px;
+}
 
+#customOrderButton:hover {
+  box-shadow: 3px 3px 3px #24ee08;
+  cursor: pointer;
+}
 
 
 
@@ -255,6 +282,58 @@
 
 }
 
+.socialMediaIcons {
+  height: 70px;
+  width: 70px;
+}
+
+.socialMediaIcons:hover {
+  height: 80px;
+  width: 80px;
+  cursor: pointer;
+}
+
+.contactHeaders {
+  text-align: center;
+  font-size: 40px;
+  margin: 0px 0px 30px 0px;
+}
+
+#contactInfoContainer {
+  text-align: center;
+  margin: 50px 0px 50px 0px;
+}
+
+.contactOuterLinks {
+  margin: 100px 0px 0px 0px;
+}
+
+#sendEmailContainer {
+  text-align: left;
+  display: inline-block;
+  margin: 0px 0px 100px 0px;
+}
+
+.contactInputs {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+#emailButtonDiv {
+  text-align: right;
+  margin-top: 20px;
+}
+
+#emailButton {
+  width: 90px;
+  border-radius: 10px;
+  outline: none;
+}
+
+#emailButton:hover {
+  box-shadow: 3px 3px 3px #24ee08;
+  cursor: pointer;
+}
 
 
 

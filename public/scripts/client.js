@@ -39,6 +39,11 @@ myApp.config(['$routeProvider', function($routeProvider) {
             controller: 'Custom_orderController',
             controllerAs: 'coc'
         })
+        .when ('/paypal', {
+            templateUrl: '/views/paypal.html',
+            controller: 'PaypalController',
+            controllerAs: 'pc'
+        })
         .otherwise ( {
             redirectTo: '/home'
         });

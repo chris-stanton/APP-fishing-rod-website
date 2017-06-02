@@ -8,7 +8,7 @@
   router.get('/allIceRods', function (req, res) {
   pool.connect()
     .then(function (client) {
-      client.query("SELECT * FROM iceRods")
+      client.query("SELECT * FROM iceRods ORDER BY model DESC")
         .then(function (result) {
           client.release();
           res.send(result.rows);
@@ -18,7 +18,7 @@
           res.sendStatus(500);
         });
     });//end of .then
-});//end of router.get
+  });//end of router.get
 
 // gets all thread color on init for custom_order view options
   router.get('/getThread', function (req, res) {

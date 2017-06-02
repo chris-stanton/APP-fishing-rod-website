@@ -25,18 +25,19 @@ CREATE TABLE iceRods (
 	handleMaterial VARCHAR(100),
   handleLength VARCHAR(100),
   price VARCHAR(100),
-	image VARCHAR(200)
+	image VARCHAR(200),
+  description VARCHAR(5000)
 );
 
-INSERT INTO iceRods (model, blankLength, handleMaterial, handleLength, image)
-VALUES ('Mini Bite', '21', 'Cork', '3', 'assets/images/iceRods/miniBite.jpg'),
-       ('Seven Douce', '24', 'Cork', '3', 'assets/images/iceRods/sevenDouce.jpg'),
-       ('El Dente', '28', 'Cork', '5', 'assets/images/iceRods/elDente.jpg'),
-			 ('Long Board', '32', 'Cork', '5', 'assets/images/iceRods/longBoard.jpg'),
-			 ('Gill Seeker', '28', 'Cork', '5', 'assets/images/iceRods/gillSeeker.jpg'),
-			 ('Perch Pounder', '30', 'Cork', '5', 'assets/images/iceRods/perchPounder.jpg'),
-			 ('Walleye Stinger', '32', 'Cork', '5', 'assets/images/iceRods/walleyeStinger.jpg'),
-			 ('Custom Build', '', '', '', 'assets/images/iceRods/customBuild.jpg');
+INSERT INTO iceRods (model, blankLength, handleMaterial, handleLength, image, description)
+VALUES ('Mini Bite', '21', 'Cork', '3', 'assets/images/iceRods/miniBite.jpg', 'something'),
+       ('Seven Douce', '24', 'Cork', '3', 'assets/images/iceRods/sevenDouce.jpg', 'something'),
+       ('El Dente', '28', 'Cork', '5', 'assets/images/iceRods/elDente.jpg', 'something'),
+			 ('Long Board', '32', 'Cork', '5', 'assets/images/iceRods/longBoard.jpg', 'something'),
+			 ('Gill Seeker', '28', 'Cork', '5', 'assets/images/iceRods/gillSeeker.jpg', 'something'),
+			 ('Perch Pounder', '30', 'Cork', '5', 'assets/images/iceRods/perchPounder.jpg', 'something'),
+			 ('Walleye Stinger', '32', 'Cork', '5', 'assets/images/iceRods/walleyeStinger.jpg', 'something'),
+			 ('Custom Build', '', '', '', 'assets/images/iceRods/customBuild.jpg', 'something');
 
 
 

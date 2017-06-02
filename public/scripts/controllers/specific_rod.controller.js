@@ -19,10 +19,40 @@ myApp.controller('Specific_rodController',['FactoryFactory', '$firebaseAuth', '$
 // return for DB with specificIceRod
   self.specificIceRod = FactoryFactory.specificIceRod;
 
-// buy button click for view
+
+// redirect to order view
+  self.orderView = function() {
+    $location.path('/order');
+  };
+// redirect to custom rod order view
+  self.customOrderView = function() {
+    $location.path('/custom_order');
+  };
+
+
+// buton click listener for submitting new specific order
   self.buySpecificIceRod = function(specificIceRod) {
-    console.log("buy button clicked: ", specificIceRod);
-  }
+    var firebaseUser = auth.$getAuth();
+      if (firebaseUser === null) {
+        swal("You must be logged in to place order", "Try Again!", "error");
+      } else {
+        var newOrder = {
+          blankModel : specificIceRod.model,
+          blankLength : specificIceRod.blanklength,
+          handleMaterial : specificIceRod.handlematerial,
+          handleLength : specificIceRod.handlelength,
+          guides : "Standard",
+          threadColorMain : "Standard",
+          threadColorTrim : "Standard"
+        }
+// POSTs / ADDs new rod order to DB
+        FactoryFactory.submitNewOrder(newOrder);
+          $location.path('/paypal');
+            console.log("buy button clicked: ", newOrder);
+      };// end if/else
+  };// end buySpecificIceRod()
+
+
 
 
 }]);//end of myApp.controller

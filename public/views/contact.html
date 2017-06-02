@@ -1,4 +1,46 @@
 
   <div class="rows" id="contactContainer">
-    <h2 class="col-md-12 viewHeadings"> Contact View </h2>
+
+      <div class="col-md-12" id="contactInfoContainer">
+        <div class="col-md-3 contactOuterLinks">
+          <a href="https://www.instagram.com/stanton1911/"><img src="/assets/images/icons/instagram.ico" class="socialMediaIcons"></a>
+        </div>
+        <div class="col-md-6">
+          <h2 class="contactHeaders"> Contact Information </h2>
+            <h3> Email: </h3><h5> cstanton0760@yahoo.com </h5>
+              <h3> Phone Number: </h3><h5> 952-465-6085 </h5>
+        </div>
+        <div class="col-md-3 contactOuterLinks">
+          <a href="https://www.youtube.com/channel/UCAsEE-zT5JzyucSuWmupLxQ?view_as=subscriber"><img src="/assets/images/icons/youtube.ico" class="socialMediaIcons"></a>
+        </div>
+      </div>
+
+      <div class="col-md-12" id="sendEmailContainer">
+        <div class="col-md-3">
+        </div>
+        <div class="col-md-6">
+          <h3 class="contactHeaders"> Email Us </h3>
+            <div>
+              <label> Name </label>
+                <input ng-model="cc.newMessage.name" class="contactInputs" type="text">
+            </div>
+            <div>
+              <label> Email: </label>
+                <input ng-model="cc.newMessage.customerEmail" class="contactInputs" type="text">
+            </div>
+            <div>
+              <label> Subject: </label>
+                <input ng-model="cc.newMessage.subject" class="contactInputs" type="text">
+            </div>
+            <div>
+              <label> Message: </label>
+                <textarea ng-model="cc.newMessage.message" class="contactInputs" name="name" rows="8" cols="80"></textarea>
+            </div>
+            <div id="emailButtonDiv">
+              <button type="button" id="emailButton" ng-click="cc.sendNewMessage(cc.newMessage)"> Send Email </button>
+            </div>
+        </div>
+        <div class="col-md-3">
+        </div>
+      </div>
   </div>
