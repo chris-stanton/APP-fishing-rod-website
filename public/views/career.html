@@ -1,4 +1,90 @@
 
   <div class="rows">
+
     <h2 class="col-md-12 viewHeadings"> Careers </h2>
+
+    <div class="col-md-12">
+      <div class="col-md-4">
+        <h3 class="careerAppHeaders"> Become A Prostaff Member </h3>
+          <div class="paragraph">
+            To become a CS Prostaff Member you will need to complete and submit the an application.
+            In the application discribe why would would be a good fit on our Prostaff Team.  Include
+            a short biography about youself as well as your fishing and rod build experiances/history.
+          </div>
+      </div>
+      <div class="col-md-4">
+        <h3 class="careerAppHeaders"> Employment Opportunites </h3>
+          <div class="paragraph">
+            CS is always looking for ice rod wrappers. How it works: CS Rod Wrappers work remotely from thier own workshops.
+            The wrappars come into the store and pick up ice rod blacks with handles pre-glued onto them.
+            The Wrapper is responsable for wrapping the guides and hook keepers onto each ice rod.  CS will provide all the hardware
+            and supplies neccessary to complete the job.  Supplies include: guides, hook keepers, thread, razor blades and tape.
+            Each wrapping is required to have there own wrapping jig and thread tensioners.  CS builds ice rods year round to keep
+            up with the demand.  If interested, submit an application that can be found to the right.
+          </div>
+      </div>
+      <div class="col-md-4" id="careerTableContainer">
+        <table>
+          <tr>
+            <div>
+              <h3 class="careerAppHeaders"> Job Applications </h3>
+            </div>
+          </tr>
+          <tr>
+            <div class="careerInputDivs">
+              <label for=""> First Name: </label>
+                <input type="text" ng-model="car.application.firstName" class="careerInputs" style="text-transform: capitalize">
+              </div>
+          </tr>
+          <tr>
+            <div class="careerInputDivs">
+              <label for=""> Last Name: </label>
+                <input type="text" ng-model="car.application.lastName" class="careerInputs" style="text-transform: capitalize">
+            </div>
+          </tr>
+          <tr>
+            <div class="careerInputDivs">
+              <label for=""> Phone Number: </label>
+                <input type="number" ng-model="car.application.phoneNumber" class="careerInputs">
+            </div>
+          </tr>
+          <tr>
+            <div class="careerInputDivs">
+              <label for=""> Email: </label>
+                <input type="email" ng-model="car.application.email" class="careerInputs">
+            </div>
+          </tr>
+          <tr>
+            <div class="careerInputDivs">
+              <label for=""> Birthdate: </label>
+                <input type="date" ng-model="car.application.birthday" class="careerInputs">
+            </div>
+          </tr>
+          <tr>
+            <div class="careerInputDivs">
+              <label for=""> Postion Appling For: </label>
+                <input type="text" ng-model="car.application.position" class="careerInputs">
+            </div>
+          </tr>
+          <tr>
+            <div class="careerInputDivs">
+              <label for=""> Bio: </label>
+                <textarea name="name" rows="8" cols="80" ng-model="car.application.bio" class="careerTextArea"></textarea>
+            </div>
+          </tr>
+          <tr>
+            <div class="careerInputDivs">
+              <label for=""> Additional Comments: </label>
+                <textarea name="name" rows="8" cols="80" ng-model="car.application.comments" class="careerTextArea"></textarea>
+            </div>
+          </tr>
+          <tr>
+            <div id="applicationButtonDiv">
+              <button type="button" name="button" id="applicationSubmitButton" ng-click="car.sendApplication(car.application)"> Send </button>
+            </div>
+          </tr>
+        </table>
+      </div>
+    </div>
+
   </div>

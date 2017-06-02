@@ -385,6 +385,62 @@
 
 
 
+/*////////////////////////
+//        CAREER        //
+////////////////////////*/
+
+.boarder {
+
+}
+
+.careerAppHeaders {
+  text-align: center;
+  margin: 0px 0px 50px 0px;
+}
+
+.paragraph {
+  font-size: 14px;
+}
+
+#careerTableContainer {
+  margin-bottom: 100px;
+}
+
+.careerInputDivs {
+  margin: 14px 0px 14px 0px;
+  text-align: left;
+  /*display: grid;*/
+}
+
+.careerInputs {
+  width: 100%;
+  height: 40px;
+  font-size: 20px;
+}
+
+.careerTextArea {
+  width: 100%;
+}
+
+#applicationButtonDiv {
+  text-align: right;
+}
+
+#applicationSubmitButton {
+  width: 90px;
+  border-radius: 10px;
+  outline: none;
+}
+
+#applicationSubmitButton:hover {
+  box-shadow: 3px 3px 3px #24ee08;
+  cursor: pointer;
+}
+
+
+
+
+
 
 /*////////////////////////
 //        FOOTER        //

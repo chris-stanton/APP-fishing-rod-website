@@ -10,6 +10,7 @@
 // sourcing routes
   var order = require('./server/routes/order.js');
   var contact = require('./server/routes/contact.js');
+  var career = require('./server/routes/career.js');
   var auth = require('./server/routes/auth.js');
 
 // Serve back static files
@@ -30,6 +31,7 @@
   app.use(decoder.token);
 
   app.use('/contact', contact);
+  app.use('/career', career);
   app.use('/auth', auth);
 
 
