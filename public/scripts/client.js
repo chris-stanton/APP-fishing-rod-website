@@ -44,6 +44,9 @@ myApp.config(['$routeProvider', function($routeProvider) {
             controller: 'PaypalController',
             controllerAs: 'pc'
         })
+        .when ('/warranty', {
+            templateUrl: '/views/templates/warranty.html'
+        })
         .otherwise ( {
             redirectTo: '/home'
         });
