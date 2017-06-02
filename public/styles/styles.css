@@ -154,6 +154,10 @@
 
 }
 
+.orderDataContainer {
+  margin-bottom: 50px;
+}
+
 #iceRodCards {
   height: 300px;
   width: 210px;
@@ -383,4 +387,9 @@
 .footerButtons {
   color: #24ee08;
   font-size: 12px;
+}
+
+.footerIcons {
+  height: 25px;
+  width: 25px;
 }
