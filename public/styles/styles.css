@@ -266,6 +266,20 @@
   margin-bottom: 50px;
 }
 
+#customSubmitButton {
+  margin: 20px 0px 0px 0px;
+  height: 30px;
+  width: 100px;
+  border-radius: 10px;
+  outline: none;
+  font-size: 13px;
+}
+
+#customSubmitButton:hover {
+  box-shadow: 3px 3px 3px #24ee08;
+  cursor: pointer;
+}
+
 #imageTableContainer {
   text-align: center;
 }
@@ -296,9 +310,14 @@
 }
 
 .socialMediaIcons:hover {
-  height: 80px;
-  width: 80px;
   cursor: pointer;
+  box-shadow: 3px 3px 3px #24ee08;
+  border-radius: 10px;
+}
+
+.innerIcons {
+  height: 50px;
+  width: 50px;
 }
 
 .contactHeaders {
@@ -313,7 +332,7 @@
 }
 
 .contactOuterLinks {
-  margin: 100px 0px 0px 0px;
+  margin: 20px 0px 0px 0px;
 }
 
 #sendEmailContainer {
