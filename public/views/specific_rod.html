@@ -4,7 +4,7 @@
     <div class="col-md-12" ng-repeat="specificIceRod in src.specificIceRod.list">
       <h2 class="col-md-12 viewHeadings"> {{specificIceRod.model}} </h2>
       <div class="col-md-12">
-        <button type="button" class="col-md-1 backArrow" ng-click="src.orderView()"> <= </button>
+        <div type="button" class="col-md-1" ng-click="src.orderView()"><img src="/assets/images/icons/backArrow.ico" class="backArrow"></div>
       </div>
 
         <div class="col-md-12">
@@ -12,7 +12,7 @@
           <div class="col-md-3">
           </div>
 <!-- container middle left-->
-          <div class="col-md-5">
+          <div class="col-md-5 imageBoarders">
             <img id="specificRodImage" ng-src="{{specificIceRod.image}}">
           </div>
 <!-- container middle right-->
