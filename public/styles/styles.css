@@ -343,6 +343,24 @@
 
 
 
+/*////////////////////////
+//       WARRANTY       //
+////////////////////////*/
+
+#warrantyContainer {
+  margin: 50px 0px 80px 0px;
+  text-align: center;
+}
+
+.qaDivs {
+  margin: 0px 0px 50px 0px;
+}
+
+
+
+
+
+
 
 
 /*////////////////////////
@@ -364,4 +382,5 @@
 
 .footerButtons {
   color: #24ee08;
+  font-size: 12px;
 }
