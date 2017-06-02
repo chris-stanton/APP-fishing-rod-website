@@ -12,7 +12,6 @@ myApp.controller('ContactController',['FactoryFactory', '$http', '$location', '$
       });
 
 
-
   self.message = 'angular sourced "Contact"';
 
 // button click to send email to reciever

@@ -27,6 +27,7 @@ var transporter = nodemailer.createTransport({
       subject: 'Customer Message From Website',
       text: req.decodedToken.name,
       html: '<h5>' + 'firebaseUserId: ' + req.decodedToken.uid + '</h5>' +
+            '<h5>' + 'Customer name: ' + newMessage.name + '</h5>' +
             '<h5>' + 'Customer Email: ' + newMessage.customerEmail + '</h5>' +
             '<h5>' + 'Subject: ' + newMessage.subject + '</h5>' +
             '<h5>' + 'Message: ' + newMessage.message + '</h5>'

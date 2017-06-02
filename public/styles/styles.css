@@ -282,6 +282,17 @@
 
 }
 
+.socialMediaIcons {
+  height: 70px;
+  width: 70px;
+}
+
+.socialMediaIcons:hover {
+  height: 80px;
+  width: 80px;
+  cursor: pointer;
+}
+
 .contactHeaders {
   text-align: center;
   font-size: 40px;
@@ -298,12 +309,19 @@
 }
 
 #sendEmailContainer {
+  text-align: left;
   display: inline-block;
   margin: 0px 0px 100px 0px;
 }
 
+.contactInputs {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
 #emailButtonDiv {
   text-align: right;
+  margin-top: 20px;
 }
 
 #emailButton {
