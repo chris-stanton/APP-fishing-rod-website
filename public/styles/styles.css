@@ -410,6 +410,9 @@
 
 #careerTableContainer {
   margin-bottom: 100px;
+  padding: 14px;
+  border-radius: 15px;
+  background-color: #d9bda0;
 }
 
 .careerInputDivs {
