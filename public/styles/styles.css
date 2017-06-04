@@ -8,8 +8,12 @@
   text-align: center;
   margin: 50px 0px 50px 0px;
   font-size: 40px;
+  background-color: black;
+  color: #24ee08;
+  border-radius: 30px;
+  height: 60px;
+  padding-top: 8px;
 }
-
 
 
 
@@ -326,17 +330,21 @@
 
 #contactInfoContainer {
   text-align: center;
-  margin: 50px 0px 50px 0px;
+  margin: 0px 0px 50px 0px;
 }
 
 .contactOuterLinks {
   margin: 20px 0px 0px 0px;
 }
 
+#mapDiv {
+  text-align: center;
+}
+
 #sendEmailContainer {
   text-align: left;
   display: inline-block;
-  margin: 0px 0px 100px 0px;
+  margin: 40px 0px 100px 0px;
 }
 
 .contactInputs {
