@@ -1,3 +1,16 @@
+/*////////////////////////
+//    COLOR SCHEME      //
+////////////////////////*/
+
+/* view main headings, nav bar and footer */
+    /* bachground-color: #494949; */
+    /* color: #24ee08: */
+
+
+
+
+
+
 
 /*////////////////////////
 //        GLOBAL        //
@@ -6,12 +19,14 @@
 /*all controller H2 headings*/
 .viewHeadings {
   text-align: center;
+  font-family: serif;
   font-size: 40px;
-  background-color: black;
+  background-color: #494949;
   color: #24ee08;
+  border: 3px solid #000000;
   border-radius: 20px;
   height: 60px;
-  padding: 8px 0px 0px 0px;
+  padding: 3px 0px 0px 0px;
   margin: 50px 0px 50px 0px;
 }
 
@@ -31,21 +46,24 @@
   height: 150px;
 }
 
-.headerHeader {
-  padding-top: 25px;
+#headerMainHeader {
+  font-size: 40px;
+  font-family: serif;
+  padding: 10px 0px 0px 0px;
 }
 
-#authButtons {
+.loginIcon {
+  height: 22px;
+  width: 22px;
+}
+
+.divHover {
   text-align: right;
-  display: inline-block;
+  margin: 20px 10px 0px 0px;
 }
 
-.outterDivs {
-  margin-top: 55px;
-}
-
-#authLoggedIn {
-  display: block;
+.divHover:hover {
+  cursor: pointer;
 }
 
 .authPhoto {
@@ -54,11 +72,10 @@
   border-radius: 20px;
 }
 
-#googleIcon {
-  width: 30px;
-  height: 10px;
+#displayNameDiv {
+  text-align: left;
+  margin: 20px 0px 0px 7px;
 }
-
 
 
 
@@ -71,7 +88,7 @@
 #navBarContainer {
   display: inline-block;
   text-align: center;
-  background-color: black;
+  background-color: #494949;
   height: 40px;
   padding: 10px 0px 20px 0px;
 }
@@ -418,7 +435,6 @@
 .careerInputDivs {
   margin: 14px 0px 14px 0px;
   text-align: left;
-  /*display: grid;*/
 }
 
 .careerInputs {
@@ -460,12 +476,10 @@
   bottom: 0;
   left: 0;
   right: 0;
-  /*height: 40px;*/
   color: #24ee08;
-  background-color: #000000;
-  /*box-shadow: 0px 1px 2px 2px rgba(135, 182, 245, 0.1) inset, 0px -2px 20px #24ee08, 0px 1px 5px rgba(135, 182, 245, 0.1), 0px 2px 10px rgba(135, 182, 245, 0.1);*/
+  background-color: #494949;
   text-align: center;
-  padding: 4px 0px 4px 0px;
+  padding: 5px 0px 4px 0px;
 }
 
 .footerButtons {
