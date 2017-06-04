@@ -43,8 +43,16 @@
 
 #headerContainer {
   text-align: center;
-  background-color: #e0dada;
+  /*background-image: url('/assets/images/background.png');*/
+  background-color: #c1c1c1;
+  background-size: 100%;
+  background-repeat: no-repeat;
   height: 150px;
+}
+
+#displayNameDiv {
+  text-align: left;
+  margin: 20px 0px 0px 7px;
 }
 
 #headerMainHeader {
@@ -56,6 +64,20 @@
 .loginIcon {
   height: 22px;
   width: 22px;
+}
+
+#cartDiv {
+  text-align: right;
+  margin: 40px 20px 0px 0px;
+}
+
+#itemAmount {
+  font-size: 20px;
+}
+
+#cartIcon {
+  height: 30px;
+  width: 30px;
 }
 
 .divHover {
@@ -73,10 +95,7 @@
   border-radius: 20px;
 }
 
-#displayNameDiv {
-  text-align: left;
-  margin: 20px 0px 0px 7px;
-}
+
 
 
 
@@ -353,9 +372,6 @@
   margin: 0px 0px 50px 0px;
 }
 
-.contactOuterLinks {
-  margin: 20px 0px 0px 0px;
-}
 
 #mapDiv {
   text-align: center;
