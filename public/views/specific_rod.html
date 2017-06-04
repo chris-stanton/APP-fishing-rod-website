@@ -50,6 +50,10 @@
                 <span> ${{specificIceRod.price}} </span>
             </div>
             <div>
+              <h4> Quantity: </h4>
+                <input type="number" ng-model="specificIceRod.quantity" class="quantityInputs">
+            </div>
+            <div>
               <button type="button" id="buyButton" ng-click="src.buySpecificIceRod(specificIceRod)"> Buy </button>
               <button type="button" id="customOrderButton" ng-click="src.customOrderView()"> Custom Build </button>
             </div>
