@@ -36,6 +36,7 @@
 
 
 
+
 /*////////////////////////
 //        HEADER        //
 ////////////////////////*/
@@ -96,6 +97,8 @@
 .navButtons {
   color: #24ee08;
 }
+
+
 
 
 
@@ -394,7 +397,7 @@
 ////////////////////////*/
 
 #warrantyContainer {
-  margin: 50px 0px 80px 0px;
+  margin: 0px 0px 80px 0px;
   text-align: center;
 }
 
