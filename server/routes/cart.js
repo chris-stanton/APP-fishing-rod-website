@@ -27,10 +27,9 @@ new DotEnv();
   router.post('/updateCart/:id', function(req, res){
     var cartId = req.params.id
     var cart = req.body;
-    console.log(cart.quantity);
     pool.connect()
       .then(function (client) {
-        client.query("UPDATE iceRodOrders SET quantity=$1 WHERE id=$2;", [cart.quantity, cartId])
+        client.query("UPDATE iceRodOrders SET quantity=$1 WHERE id=$2", [cart.quantity, cartId])
           .then(function (result) {
             client.release();
             res.sendStatus(200);
@@ -40,6 +39,26 @@ new DotEnv();
           });
       });// end of .then
   });// end router.put
+
+// deleted items at DB from cart view
+  router.delete('/deleteCart/:id', function(req, res) {
+    var cartId = req.params.id;
+    pool.connect()
+      .then(function (client) {
+        client.query('DELETE FROM iceRodOrders WHERE id=$1',
+          [cartId])
+          .then(function (result) {
+            client.release();
+            res.sendStatus(200);
+        })
+        .catch(function (err) {
+            console.log('error on Delete', err);
+            res.sendStatus(500);
+        });
+    });
+  });
+
+
 
 
 

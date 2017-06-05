@@ -127,8 +127,25 @@
         });// end firebase.auth()
     };// end updateCart()
 
-
-
+// deletes items at DB from cart view
+    function deleteCart(cart){
+        firebase.auth().currentUser.getIdToken().then(function(idToken) {
+          $http({
+            method: 'DELETE',
+            url: '/cart/deleteCart/' + cart.id,
+            data: cart,
+            headers: {
+                      id_token : idToken
+                     }
+          }).then(function(response){
+            notyf.confirm('Item deleted from cart');
+            getCart();
+          }).catch(function(error) {
+            swal("We could not delete item", "Try Again!", "error");
+            console.log('error deleting', error);
+          });// end of catch
+        });// end firebase.auth()
+    };// end of deleteAdmin()
 
 
 
@@ -161,7 +178,9 @@
 //return off all cart items of user at cart view
       allCartItems : allCartItems,
 // updates cart at DB from cart view
-      updateCart : updateCart
+      updateCart : updateCart,
+// deletes items at DB from cart view
+      deleteCart : deleteCart
     }
 
   }]);//end of myApp.factory

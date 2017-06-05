@@ -15,13 +15,12 @@ myApp.controller('Shopping_cartController',['FactoryFactory', '$location', funct
 
 // updates items at DB
   self.updateCart = function(cart) {
-    console.log("cart ",cart);
     FactoryFactory.updateCart(cart);
   };// end updateCart
 
 // deletes items at DB
   self.deleteCart = function(cart) {
-    console.log(cart);
+    FactoryFactory.deleteCart(cart);
   };// end deletecart
 
 
