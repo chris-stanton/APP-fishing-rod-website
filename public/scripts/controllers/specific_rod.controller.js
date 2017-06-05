@@ -48,7 +48,7 @@ myApp.controller('Specific_rodController',['FactoryFactory', '$firebaseAuth', '$
         }
 // POSTs / ADDs new rod order to DB
         FactoryFactory.submitNewOrder(newOrder);
-          $location.path('/shopping_cart');
+          $location.path('/order');
             console.log("buy button clicked: ", newOrder);
       };// end if/else
   };// end buySpecificIceRod()
