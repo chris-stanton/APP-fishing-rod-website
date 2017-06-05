@@ -57,7 +57,7 @@
                     id_token : idToken
                    }
         }).then(function(response){
-          notyf.confirm('Your order has been Submitted.  Please allow 3-4 weeks for arrival.')
+          notyf.confirm('Your order has been added to your cart')
         }).catch(function(error) {
           swal("Sorry, we couldn't process your address.", "Try Again!", "error");
           console.log('error authenticating', error);
