@@ -89,7 +89,7 @@
         });
     };// end getSpecificIceRod()
 
-// GETs all cart items for cart view on init based of firebaseUser
+// GETs all cart items for cart view on init based off firebaseUser.uid
     function getCart() {
       firebase.auth().currentUser.getIdToken().then(function(idToken) {
           $http({
@@ -107,7 +107,7 @@
       });// end of firebase.auth()
     };// end getAllIceRodModels()
 
-//updates cart at DB
+//updates cart items at DB from cart view
     function updateCart(cart) {
         firebase.auth().currentUser.getIdToken().then(function(idToken) {
           $http({

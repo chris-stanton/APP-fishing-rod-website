@@ -23,6 +23,12 @@ myApp.controller('Shopping_cartController',['FactoryFactory', '$location', funct
     FactoryFactory.deleteCart(cart);
   };// end deletecart
 
+// checkout redirect
+  self.checkout = function() {
+    console.log('checkout button clicked');
+    $location.path('/paypal')
+  }
+
 
 
 }]);//end of myApp.controller
