@@ -50,7 +50,7 @@
               }
               console.log('Message %s sent: %s', info.messageId, info.response);
             });//end of transporter
-          })
+          })// ens of .then
           .catch(function (err) {
             console.log('error on INSERT', err);
             res.sendStatus(500);
@@ -64,35 +64,36 @@
     console.log(req.decodedToken);
     pool.connect()
       .then(function (client) {
-        client.query('INSERT INTO iceRodOrders (firebaseuserid, blankmodel, blankLength, handlematerial, handlelength, guides, threadcolormain, threadcolortrim) VALUES ($1, $2, $3, $4, $5, $6, $7, $8)',
-          [req.decodedToken.uid, newOrder.blankModel, newOrder.blankLength, newOrder.handleMaterial, newOrder.handleLength, newOrder.guides, newOrder.threadColorMain, newOrder.threadColorTrim])
+        client.query('INSERT INTO iceRodOrders (firebaseuserid, blankmodel, blankLength, handlematerial, handlelength, guides, threadcolormain, threadcolortrim, quantity) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)',
+          [req.decodedToken.uid, newOrder.blankModel, newOrder.blankLength, newOrder.handleMaterial, newOrder.handleLength, newOrder.guides, newOrder.threadColorMain, newOrder.threadColorTrim, newOrder.quantity])
           .then(function (result) {
             client.release();
             res.sendStatus(201);
 // building email to be sent
-            var mailOptions = {
-              from: 'Personal Website ' + process.env.ACCOUNT_NAME,
-              to: process.env.ACCOUNT_RECIEVER_EMAIL,
-              subject: 'Ice Rod Order From Website',
-              text: req.decodedToken.name,
-              html: '<h5>' + 'firebaseUserId: ' + req.decodedToken.uid + '</h5>' +
-                    '<h5>' + 'Google Display Name: ' + req.decodedToken.name + '</h5>' +
-                    '<h5>' + 'Customer Email: ' + req.decodedToken.email + '</h5>' +
-                    '<h5>' + 'Blank Model: ' + newOrder.blankModel + '</h5>' +
-                    '<h5>' + 'Blank Length: ' + newOrder.blankLength + '"' + '</h5>' +
-                    '<h5>' + 'Handle Material: ' + newOrder.handleMaterial + '<h5>' +
-                    '<h5>' + 'Handle Length: ' + newOrder.handleLength + '"' + '<h5>' +
-                    '<h5>' + 'Guides: ' + newOrder.guides + '<h5>' +
-                    '<h5>' + 'Thread Color Main: ' + newOrder.threadColorMain + '<h5>' +
-                    '<h5>' + 'Thread Color Trim: ' + newOrder.threadColorTrim + '<h5>'
-            };// end var mailOptions
+            // var mailOptions = {
+            //   from: 'Personal Website ' + process.env.ACCOUNT_NAME,
+            //   to: process.env.ACCOUNT_RECIEVER_EMAIL,
+            //   subject: 'Ice Rod Order From Website',
+            //   text: req.decodedToken.name,
+            //   html: '<h5>' + 'firebaseUserId: ' + req.decodedToken.uid + '</h5>' +
+            //         '<h5>' + 'Google Display Name: ' + req.decodedToken.name + '</h5>' +
+            //         '<h5>' + 'Customer Email: ' + req.decodedToken.email + '</h5>' +
+            //         '<h5>' + 'Blank Model: ' + newOrder.blankModel + '</h5>' +
+            //         '<h5>' + 'Blank Length: ' + newOrder.blankLength + '"' + '</h5>' +
+            //         '<h5>' + 'Handle Material: ' + newOrder.handleMaterial + '<h5>' +
+            //         '<h5>' + 'Handle Length: ' + newOrder.handleLength + '"' + '<h5>' +
+            //         '<h5>' + 'Guides: ' + newOrder.guides + '<h5>' +
+            //         '<h5>' + 'Thread Color Main: ' + newOrder.threadColorMain + '<h5>' +
+            //         '<h5>' + 'Thread Color Trim: ' + newOrder.threadColorTrim + '<h5>' +
+            //         '<h5>' + 'Quantity: ' + newOrder.quantity + '<h5>'
+            // };// end var mailOptions
 // sents email to reciever
-            transporter.sendMail(mailOptions, function(error, info){
-              if (error) {
-                return console.log(error);
-              }
-              console.log('Message %s sent: %s', info.messageId, info.response);
-            });//end of transporter
+            // transporter.sendMail(mailOptions, function(error, info){
+            //   if (error) {
+            //     return console.log(error);
+            //   }
+            //   console.log('Message %s sent: %s', info.messageId, info.response);
+            // });//end of transporter
           })// end .then
           .catch(function (err) {
             console.log('error on INSERT', err);

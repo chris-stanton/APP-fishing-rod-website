@@ -43,11 +43,12 @@ myApp.controller('Specific_rodController',['FactoryFactory', '$firebaseAuth', '$
           handleLength : specificIceRod.handlelength,
           guides : "Standard",
           threadColorMain : "Standard",
-          threadColorTrim : "Standard"
+          threadColorTrim : "Standard",
+          quantity : specificIceRod.quantity
         }
 // POSTs / ADDs new rod order to DB
         FactoryFactory.submitNewOrder(newOrder);
-          $location.path('/paypal');
+          $location.path('/order');
             console.log("buy button clicked: ", newOrder);
       };// end if/else
   };// end buySpecificIceRod()

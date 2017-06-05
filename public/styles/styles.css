@@ -1,3 +1,16 @@
+/*////////////////////////
+//    COLOR SCHEME      //
+////////////////////////*/
+
+/* view main headings, nav bar and footer */
+    /* bachground-color: #494949; */
+    /* color: #24ee08: */
+
+
+
+
+
+
 
 /*////////////////////////
 //        GLOBAL        //
@@ -6,10 +19,20 @@
 /*all controller H2 headings*/
 .viewHeadings {
   text-align: center;
-  margin: 50px 0px 50px 0px;
+  font-family: serif;
   font-size: 40px;
+  background-color: #494949;
+  color: #24ee08;
+  border: 3px solid #000000;
+  border-radius: 20px;
+  height: 60px;
+  padding: 3px 0px 0px 0px;
+  margin: 50px 0px 50px 0px;
 }
 
+.quantityInputs {
+  width: 40px;
+}
 
 
 
@@ -23,25 +46,55 @@
 
 #headerContainer {
   text-align: center;
-  background-color: #e0dada;
+  /*background-image: url('/assets/images/background.png');*/
+  background-color: #c1c1c1;
+  background-size: 100%;
+  background-repeat: no-repeat;
   height: 150px;
 }
 
-.headerHeader {
-  padding-top: 25px;
+#displayNameDiv {
+  text-align: left;
+  margin: 20px 0px 0px 7px;
 }
 
-#authButtons {
+#headerMainHeader {
+  font-size: 40px;
+  font-family: serif;
+  padding: 10px 0px 0px 0px;
+}
+
+.loginIcon {
+  height: 22px;
+  width: 22px;
+}
+
+#cartDiv {
   text-align: right;
-  display: inline-block;
+  margin: 40px 20px 0px 0px;
 }
 
-.outterDivs {
-  margin-top: 55px;
+#itemAmount {
+  font-size: 20px;
 }
 
-#authLoggedIn {
-  display: block;
+#cartIcon {
+  height: 30px;
+  width: 30px;
+}
+
+#cartIcon:hover {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.divHover {
+  text-align: right;
+  margin: 20px 10px 0px 0px;
+}
+
+.divHover:hover {
+  cursor: pointer;
 }
 
 .authPhoto {
@@ -50,10 +103,6 @@
   border-radius: 20px;
 }
 
-#googleIcon {
-  width: 30px;
-  height: 10px;
-}
 
 
 
@@ -67,16 +116,16 @@
 #navBarContainer {
   display: inline-block;
   text-align: center;
-  background-color: black;
+  background-color: #494949;
   height: 40px;
   padding: 10px 0px 20px 0px;
-  /*box-shadow: 0px 1px 2px 2px rgba(135, 182, 245, 0.1) inset, 0px -2px 20px #24ee08, 0px 1px 5px rgba(135, 182, 245, 0.1), 0px 2px 10px rgba(135, 182, 245, 0.1);*/
-  /*box-shadow: 0px 0px 15px 0px #24ee08;*/
 }
 
 .navButtons {
   color: #24ee08;
 }
+
+
 
 
 
@@ -122,7 +171,7 @@
 }
 
 #addAddressContainer {
-  margin: 50px 0px 100px 0px;
+  margin: 0px 0px 100px 0px;
 }
 
 .inputLabels {
@@ -152,6 +201,10 @@
 
 #orderContainer {
 
+}
+
+.orderDataContainer {
+  margin-bottom: 50px;
 }
 
 #iceRodCards {
@@ -206,6 +259,10 @@
 
 }
 
+.imageBoarders {
+  /*border: 1px solid black;*/
+}
+
 #specificRodImage {
   height: 200px;
   width: 300px;
@@ -258,6 +315,20 @@
   margin-bottom: 50px;
 }
 
+#customSubmitButton {
+  margin: 20px 0px 0px 0px;
+  height: 30px;
+  width: 100px;
+  border-radius: 10px;
+  outline: none;
+  font-size: 13px;
+}
+
+#customSubmitButton:hover {
+  box-shadow: 3px 3px 3px #24ee08;
+  cursor: pointer;
+}
+
 #imageTableContainer {
   text-align: center;
 }
@@ -288,9 +359,14 @@
 }
 
 .socialMediaIcons:hover {
-  height: 80px;
-  width: 80px;
   cursor: pointer;
+  box-shadow: 3px 3px 3px #24ee08;
+  border-radius: 10px;
+}
+
+.innerIcons {
+  height: 50px;
+  width: 50px;
 }
 
 .contactHeaders {
@@ -301,17 +377,18 @@
 
 #contactInfoContainer {
   text-align: center;
-  margin: 50px 0px 50px 0px;
+  margin: 0px 0px 50px 0px;
 }
 
-.contactOuterLinks {
-  margin: 100px 0px 0px 0px;
+
+#mapDiv {
+  text-align: center;
 }
 
 #sendEmailContainer {
   text-align: left;
   display: inline-block;
-  margin: 0px 0px 100px 0px;
+  margin: 40px 0px 100px 0px;
 }
 
 .contactInputs {
@@ -339,6 +416,111 @@
 
 
 
+/*////////////////////////
+//       WARRANTY       //
+////////////////////////*/
+
+#warrantyContainer {
+  margin: 0px 0px 80px 0px;
+  text-align: center;
+}
+
+.qaDivs {
+  margin: 0px 0px 50px 0px;
+}
+
+
+
+
+
+
+
+/*////////////////////////
+//        CAREER        //
+////////////////////////*/
+
+.boarder {
+
+}
+
+.careerAppHeaders {
+  text-align: center;
+  margin: 0px 0px 50px 0px;
+}
+
+.paragraph {
+  font-size: 14px;
+}
+
+#careerTableContainer {
+  margin-bottom: 100px;
+  padding: 14px;
+  border-radius: 15px;
+  background-color: #d9bda0;
+}
+
+.careerInputDivs {
+  margin: 14px 0px 14px 0px;
+  text-align: left;
+}
+
+.careerInputs {
+  width: 100%;
+  height: 40px;
+  font-size: 20px;
+}
+
+.careerTextArea {
+  width: 100%;
+}
+
+#applicationButtonDiv {
+  text-align: right;
+}
+
+#applicationSubmitButton {
+  width: 90px;
+  border-radius: 10px;
+  outline: none;
+}
+
+#applicationSubmitButton:hover {
+  box-shadow: 3px 3px 3px #24ee08;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+/*////////////////////////
+//     SHOPPING KART    //
+////////////////////////*/
+
+#cartContainer {
+
+}
+
+.cartItems {
+  margin: 0px 0px 100px 0px;
+}
+
+.cartBorder {
+  border: 1px solid black;
+  margin: 5px 0px 5px 0px;
+}
+
+#cartImage {
+  height: 80px;
+  width: 110px;
+}
+
+.cartTd {
+  margin: 5px 15px 5px 15px;
+  text-align: center;
+}
 
 
 /*////////////////////////
@@ -350,10 +532,18 @@
   bottom: 0;
   left: 0;
   right: 0;
-  /*height: 40px;*/
   color: #24ee08;
-  background-color: #000000;
-  /*box-shadow: 0px 1px 2px 2px rgba(135, 182, 245, 0.1) inset, 0px -2px 20px #24ee08, 0px 1px 5px rgba(135, 182, 245, 0.1), 0px 2px 10px rgba(135, 182, 245, 0.1);*/
+  background-color: #494949;
   text-align: center;
-  padding: 4px 0px 4px 0px;
+  padding: 5px 0px 4px 0px;
+}
+
+.footerButtons {
+  color: #24ee08;
+  font-size: 12px;
+}
+
+.footerIcons {
+  height: 25px;
+  width: 25px;
 }

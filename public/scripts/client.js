@@ -44,6 +44,19 @@ myApp.config(['$routeProvider', function($routeProvider) {
             controller: 'PaypalController',
             controllerAs: 'pc'
         })
+        .when ('/career', {
+            templateUrl: '/views/career.html',
+            controller: 'CareerController',
+            controllerAs: 'car'
+        })
+        .when ('/shopping_cart', {
+            templateUrl: '/views/shopping_cart.html',
+            controller: 'Shopping_cartController',
+            controllerAs: 'scc'
+        })
+        .when ('/warranty', {
+            templateUrl: '/views/templates/warranty.html'
+        })
         .otherwise ( {
             redirectTo: '/home'
         });

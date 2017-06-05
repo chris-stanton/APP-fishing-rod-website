@@ -1,7 +1,18 @@
 
 <!-- footer content container -->
   <div class="rows" id="customOrderContainer">
-    <h2 class="col-md-12 viewHeadings"> Custom Order </h2>
+<!-- header container -->
+    <div class="col-md-12">
+      <div class="col-md-2">
+<!-- empty div for spacing -->
+      </div>
+      <div class="col-md-8">
+        <h2 class="viewHeadings"> Custom Order </h2>
+      </div>
+      <div class="col-md-2">
+<!-- empty div for spacing -->
+      </div>
+    </div>
 <!-- rod order input container -->
     <div class="col-md-12 customInputs">
       <table>
@@ -89,7 +100,13 @@
           </td>
           <td>
             <div>
-              <button type="button" ng-click="coc.submitNewOrder(coc.order)"> Submit Order </button>
+              <label> Quantity </label>
+                <input type="number" ng-model="coc.order.quantity" class="quantityInputs">
+            </div>
+          </td>
+          <td>
+            <div>
+              <button type="button" ng-click="coc.submitNewOrder(coc.order)" id="customSubmitButton"> Submit Order </button>
             </div>
           </td>
         </tr>
@@ -102,7 +119,7 @@
       <!-- area to add other custom components -->
       </div>
       <div class="col-md-4" id="imageTableContainer">
-        <table>
+        <table ng-hide="coc.order.threadColorMain === NULL && coc.order.threadColorTrim === NULL">
           <tr>
             <td>
               <td><img ng-src="{{coc.order.threadColorTrim}}" width="10" class="threadImage"></td>
