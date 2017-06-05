@@ -3,6 +3,8 @@
     console.log('FactoryFactory running');
 
 
+    var auth = $firebaseAuth();
+    var firebaseUser = auth.$getAuth();
 // object containers
     var allIceRodModels = { list: [] };
     var allThreads = { list: [] };
@@ -91,6 +93,8 @@
 
 // GETs all cart items for cart view on init based off firebaseUser.uid
     function getCart() {
+      var auth = $firebaseAuth();
+      var firebaseUser = auth.$getAuth();
       firebase.auth().currentUser.getIdToken().then(function(idToken) {
           $http({
             method: 'GET',

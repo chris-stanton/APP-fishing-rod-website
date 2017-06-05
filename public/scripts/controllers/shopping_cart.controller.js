@@ -1,9 +1,11 @@
 
-myApp.controller('Shopping_cartController',['FactoryFactory', '$location', function(FactoryFactory, $location) {
+myApp.controller('Shopping_cartController',['FactoryFactory', '$location', '$firebaseAuth', function(FactoryFactory, $location, $firebaseAuth) {
 
   console.log('Shopping_cartController running');
 
   var self = this;
+  var auth = $firebaseAuth();
+  var firebaseUser = auth.$getAuth();
 
 // gets all cart items on init
   FactoryFactory.getCart();
