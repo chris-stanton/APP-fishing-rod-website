@@ -7,6 +7,7 @@
     var allIceRodModels = { list: [] };
     var allThreads = { list: [] };
     var specificIceRod = { list: [] };
+    var allCartItems = { list: [] };
 
 // sources notify
     var notyf = new Notyf({
@@ -88,6 +89,43 @@
         });
     };// end getSpecificIceRod()
 
+// GETs all cart items for cart view on init based of firebaseUser
+    function getCart() {
+      firebase.auth().currentUser.getIdToken().then(function(idToken) {
+          $http({
+            method: 'GET',
+            url: '/cart/getCart',
+            headers: {
+                      id_token : idToken
+                     }
+          }).then(function(response) {
+            allCartItems.list = response.data;
+          }).catch(function(error) {
+            swal("Sorry, you must be logged in to see your cart", "Try Again!", "error");
+            console.log('error authenticating', error);
+          });
+      });// end of firebase.auth()
+    };// end getAllIceRodModels()
+
+//updates cart at DB
+    function updateCart(cart) {
+        firebase.auth().currentUser.getIdToken().then(function(idToken) {
+          $http({
+            method: 'POST',
+            url: '/cart/updateCart/' + cart.id,
+            data: cart,
+            headers: {
+                      id_token : idToken
+                      }
+          }).then(function(response){
+            notyf.confirm('Order has been updated');
+            getCart();
+          }).catch(function(error) {
+            swal("We were not able to update cart", "Try Again!", "error");
+            console.log('error updating', error);
+          });//end of catch
+        });// end firebase.auth()
+    };// end updateCart()
 
 
 
@@ -117,8 +155,13 @@
 // gets specfic ice rod from specific_rod view
       getSpecificIceRod : getSpecificIceRod,
 // return of specific rod for specific_rod view
-      specificIceRod : specificIceRod
-
+      specificIceRod : specificIceRod,
+// GETs all cart items for cart view on init based of firebaseUser
+      getCart : getCart,
+//return off all cart items of user at cart view
+      allCartItems : allCartItems,
+// updates cart at DB from cart view
+      updateCart : updateCart
     }
 
   }]);//end of myApp.factory

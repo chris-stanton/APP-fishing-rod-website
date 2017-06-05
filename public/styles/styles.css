@@ -83,6 +83,11 @@
   width: 30px;
 }
 
+#cartIcon:hover {
+  cursor: pointer;
+  text-decoration: none;
+}
+
 .divHover {
   text-align: right;
   margin: 20px 10px 0px 0px;
@@ -495,11 +500,27 @@
 ////////////////////////*/
 
 #cartContainer {
-  
+
 }
 
+.cartItems {
+  margin: 0px 0px 100px 0px;
+}
 
+.cartBorder {
+  border: 1px solid black;
+  margin: 5px 0px 5px 0px;
+}
 
+#cartImage {
+  height: 80px;
+  width: 110px;
+}
+
+.cartTd {
+  margin: 5px 15px 5px 15px;
+  text-align: center;
+}
 
 
 /*////////////////////////

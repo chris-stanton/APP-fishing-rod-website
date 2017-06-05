@@ -1,16 +1,67 @@
 
-<div class="rows" id="cartContainer">
+  <div class="rows" id="cartContainer">
 <!-- header container -->
-  <div class="col-md-12">
-    <div class="col-md-2">
-      {{scc.message}}
+    <div class="col-md-12">
+      <div class="col-md-2">
 <!-- empty div for spacing -->
-    </div>
-    <div class="col-md-8">
-      <h2 class="viewHeadings"> Shopping Cart </h2>
-    </div>
-    <div class="col-md-2">
+      </div>
+      <div class="col-md-8">
+        <h2 class="viewHeadings"> Shopping Cart </h2>
+      </div>
+      <div class="col-md-2">
 <!-- empty div for spacing -->
+      </div>
+    </div>
+<!-- table for ice rods in cart -->
+    <div class="col-md-12 cartItems">
+      <div ng-repeat="cart in scc.allCartItems.list" class="">
+        <table class="col-md-12 cartBorder">
+          <tr>
+            <td>
+              <div class="cartTd">
+                <img ng-src="{{cart.image}}" id="cartImage">
+              </div>
+            </td>
+            <td>
+              <div class="cartTd">
+                {{cart.model}}
+              </div>
+            </td>
+            <td>
+              <div class="cartTd">
+                {{cart.blanklength}}"
+              </div>
+            </td>
+            <td>
+              <div class="cartTd">
+                {{cart.description}}
+              </div>
+            </td>
+            <td>
+              <div class="cartTd">
+                ${{cart.price}}
+              </div>
+            </td>
+            <td>
+              <div class="cartTd">
+                <input type="number" ng-model="cart.quantity" ng-value="{{cart.quantity}}" class="quantityInputs"> 
+              </div>
+            </td>
+            <td>
+              <div class="cartTd">
+                <button type="button" ng-click="scc.updateCart(cart)"> Update </button>
+              </div>
+            </td>
+            <td>
+              <div class="cartTd">
+                <button type="button" ng-click="scc.deleteCart(cart)"> Delete </button>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="">
+        <button type="button" name="button"> Checkout </button>
+      </div>
     </div>
   </div>
-</div>

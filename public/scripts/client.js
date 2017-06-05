@@ -51,7 +51,7 @@ myApp.config(['$routeProvider', function($routeProvider) {
         })
         .when ('/shopping_cart', {
             templateUrl: '/views/shopping_cart.html',
-            controller: 'shopping_cartController',
+            controller: 'Shopping_cartController',
             controllerAs: 'scc'
         })
         .when ('/warranty', {
