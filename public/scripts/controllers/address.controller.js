@@ -1,4 +1,4 @@
-myApp.controller('AddressController',['FactoryFactory', '$firebaseAuth', function(FactoryFactory, $firebaseAuth) {
+myApp.controller('AddressController',['FactoryFactory', '$location', '$firebaseAuth', function(FactoryFactory, $location, $firebaseAuth) {
 
   console.log('AddressController running');
 
@@ -22,6 +22,7 @@ myApp.controller('AddressController',['FactoryFactory', '$firebaseAuth', functio
       FactoryFactory.addNewUser(newUserAddress);
 // empties inputs after button click
       self.newUser = {};
+      $location.path('/home');
   };// end addNewUser()
 
 

@@ -1,8 +1,19 @@
 
   <div class="rows" id="specificRodContainer">
+<!-- header container -->
+    <div class="col-md-12">
+      <div class="col-md-2">
+<!-- empty div for spacing -->
+      </div>
+      <div class="col-md-8" ng-repeat="specificIceRod in src.specificIceRod.list">
+        <h2 class="viewHeadings"> {{specificIceRod.model}} </h2>
+      </div>
+      <div class="col-md-2">
+<!-- empty div for spacing -->
+      </div>
+    </div>
 
     <div class="col-md-12" ng-repeat="specificIceRod in src.specificIceRod.list">
-      <h2 class="col-md-12 viewHeadings"> {{specificIceRod.model}} </h2>
       <div class="col-md-12">
         <div type="button" class="col-md-1" ng-click="src.orderView()"><img src="/assets/images/icons/backArrow.ico" class="backArrow"></div>
       </div>
@@ -38,26 +49,30 @@
                 <span> ${{specificIceRod.price}} </span>
             </div>
             <div>
+              <h4> Quantity: </h4>
+                <input type="number" ng-model="specificIceRod.quantity" class="quantityInputs">
+            </div>
+            <div>
               <button type="button" id="buyButton" ng-click="src.buySpecificIceRod(specificIceRod)"> Buy </button>
               <button type="button" id="customOrderButton" ng-click="src.customOrderView()"> Custom Build </button>
             </div>
           </div>
 <!-- container outer right -->
           <div class="col-md-1">
-
+<!-- empty div for spacing -->
           </div>
         </div>
 
         <div class="col-md-12" id="specificDescription">
           <div class="col-md-3">
-
+<!-- empty div for spacing -->
           </div>
           <div class="col-md-5">
             <h4> Description: </h4>
               <p> {{specificIceRod.description}} </p>
           </div>
           <div class="col-md-4">
-
+<!-- empty div for spacing -->
           </div>
         </div>
 

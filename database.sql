@@ -52,6 +52,8 @@ CREATE TABLE iceRodOrders (
 	guides VARCHAR(100),
 	threadColorMain VARCHAR(100),
 	threadColorTrim VARCHAR(100),
+  quantity VARCHAR(50),
+  paid boolean DEFAULT false,
 	active boolean DEFAULT true
 );
 
