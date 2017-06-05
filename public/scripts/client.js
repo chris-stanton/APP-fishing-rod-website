@@ -49,6 +49,11 @@ myApp.config(['$routeProvider', function($routeProvider) {
             controller: 'CareerController',
             controllerAs: 'car'
         })
+        .when ('/shopping_cart', {
+            templateUrl: '/views/shopping_cart.html',
+            controller: 'shopping_cartController',
+            controllerAs: 'scc'
+        })
         .when ('/warranty', {
             templateUrl: '/views/templates/warranty.html'
         })
