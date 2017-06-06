@@ -54,10 +54,10 @@ myApp.config(['$routeProvider', function($routeProvider) {
             controller: 'Shopping_cartController',
             controllerAs: 'scc'
         })
-        .when ('/admin', {
-            templateUrl: '/views/admin/admin.html',
-            controller: 'AdminController',
-            controllerAs: 'adm'
+        .when ('/admin_order', {
+            templateUrl: '/views/admin/admin_order.html',
+            controller: 'Admin_orderController',
+            controllerAs: 'ado'
         })
         .when ('/warranty', {
             templateUrl: '/views/templates/warranty.html'

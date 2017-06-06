@@ -58,7 +58,7 @@ myApp.controller('HeaderController', ['FactoryFactory', '$firebaseAuth', '$http'
 
 // admin redirect
   self.adminButton = function() {
-    $location.path('/admin');
+    $location.path('/admin_order');
   };
 
 // checks admin rights on server side
