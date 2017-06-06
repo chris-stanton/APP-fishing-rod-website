@@ -144,3 +144,13 @@ CREATE TABLE customers (
 	zipCode VARCHAR(100),
   firebaseUserId VARCHAR(800)
 );
+
+
+CREATE TABLE admin (
+  id SERIAL PRIMARY KEY,
+  firebaseUserId VARCHAR(1000),
+  photo VARCHAR(100),
+  firstName VARCHAR(100),
+  lastName VARCHAR(100),
+  email VARCHAR(100)
+);

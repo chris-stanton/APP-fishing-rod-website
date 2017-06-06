@@ -22,6 +22,7 @@ myApp.controller('HeaderController', ['FactoryFactory', '$firebaseAuth', '$http'
     auth.$signInWithPopup("google").then(function(firebaseUser) {
       notyf.confirm(firebaseUser.user.displayName + ' is logged in and authenticated');
         console.log("Firebase Authenticated " + firebaseUser.user.displayName + " and is now logged in");
+          checkAdminRights();
     }).catch(function(error) {
       console.log("Authentication failed: ", error);
     });
@@ -58,6 +59,28 @@ myApp.controller('HeaderController', ['FactoryFactory', '$firebaseAuth', '$http'
   self.admin = function() {
     $location.path('/admin');
   };
+
+// checks admin rights on server side
+  function checkAdminRights() {
+    var auth = $firebaseAuth();
+    var firebaseUser = auth.$getAuth();
+        firebase.auth().currentUser.getIdToken().then(function(idToken) {
+            $http({
+              method: 'GET',
+              url: '/admin/checkAdminRights',
+              headers: {
+                        id_token : idToken
+                       }
+            }).then(function(response) {
+              var recieve = response.data;
+              console.log("return ", recieve);
+            }).catch(function(error) {
+              swal("We could not check Admin ights", "Try Again!", "error");
+              console.log('error authenticating', error);
+            });
+        });// end of firebase.auth()
+  };
+
 
 
 
