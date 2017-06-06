@@ -1,5 +1,5 @@
 
-myApp.controller('HeaderController', ['FactoryFactory', '$firebaseAuth', '$http', function(FactoryFactory, $firebaseAuth, $http) {
+myApp.controller('HeaderController', ['FactoryFactory', '$firebaseAuth', '$http', '$location', function(FactoryFactory, $firebaseAuth, $http, $location) {
 
   console.log('HeaderController running');
 
@@ -53,5 +53,12 @@ myApp.controller('HeaderController', ['FactoryFactory', '$firebaseAuth', '$http'
         console.log('User has logged out');
     });
   }// end of logout()
+
+// admin redirect
+  self.admin = function() {
+    $location.path('/admin');
+  };
+
+
 
 }]);// end controller code block
