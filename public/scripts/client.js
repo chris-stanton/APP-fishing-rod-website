@@ -54,6 +54,16 @@ myApp.config(['$routeProvider', function($routeProvider) {
             controller: 'Shopping_cartController',
             controllerAs: 'scc'
         })
+        .when ('/admin_customer', {
+            templateUrl: '/views/admin/admin_customer.html',
+            controller: 'Admin_customerController',
+            controllerAs: 'adc'
+        })
+        .when ('/admin_inventory', {
+            templateUrl: '/views/admin/admin_inventory.html',
+            controller: 'Admin_inventoryController',
+            controllerAs: 'adi'
+        })
         .when ('/admin_order', {
             templateUrl: '/views/admin/admin_order.html',
             controller: 'Admin_orderController',
