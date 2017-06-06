@@ -78,7 +78,7 @@ myApp.controller('HeaderController', ['FactoryFactory', '$firebaseAuth', '$http'
                 if (self.admin == true) {
                   notyf.confirm(firebaseUser.displayName + ' has Admin rights');
                 } else {
-                  // return
+                  return
                 }
             }).catch(function(error) {
               swal("We could not check Admin rights", "Try Again!", "error");
@@ -105,7 +105,7 @@ myApp.controller('HeaderController', ['FactoryFactory', '$firebaseAuth', '$http'
                   notyf.confirm(firebaseUser.displayName + ', You are a new User');
                     $location.path('/address');
                 } else {
-                  // $location.path('/home');
+                  return
                 }
             }).catch(function(error) {
               swal("We could not check Admin rights", "Try Again!", "error");

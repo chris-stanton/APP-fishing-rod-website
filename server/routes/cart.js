@@ -12,7 +12,7 @@ new DotEnv();
   router.get('/getCart', function (req, res) {
   pool.connect()
     .then(function (client) {
-      client.query("SELECT * FROM iceRods FULL OUTER JOIN iceRodOrders ON iceRodOrders.blankModel=iceRods.model WHERE paid=false AND firebaseUserId=$1", [req.decodedToken.uid])
+      client.query("SELECT * FROM iceRods FULL OUTER JOIN iceRodOrders ON iceRodOrders.model=iceRods.model WHERE paid=false AND firebaseUserId=$1", [req.decodedToken.uid])
         .then(function (result) {
           client.release();
           res.send(result.rows);
