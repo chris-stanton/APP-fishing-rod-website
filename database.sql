@@ -120,6 +120,7 @@ VALUES ('Mini Bite', '21', 'Cork', '3', 'assets/images/iceRods/miniBite.jpg', 's
 CREATE TABLE iceRodOrders (
   id SERIAL PRIMARY KEY,
 	firebaseUserId VARCHAR(8000),
+  model VARCHAR(100),
 	blankModel VARCHAR(100),
 	blankLength VARCHAR(100),
 	handleMaterial VARCHAR(100),
