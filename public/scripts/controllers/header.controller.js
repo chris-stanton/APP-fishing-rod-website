@@ -22,7 +22,6 @@ myApp.controller('HeaderController', ['FactoryFactory', '$firebaseAuth', '$http'
     auth.$signInWithPopup("google").then(function(firebaseUser) {
       notyf.confirm(firebaseUser.user.displayName + ' is logged in and authenticated');
         console.log("Firebase Authenticated " + firebaseUser.user.displayName + " and is now logged in");
-          checkAdminRights();
     }).catch(function(error) {
       console.log("Authentication failed: ", error);
     });
@@ -36,6 +35,7 @@ myApp.controller('HeaderController', ['FactoryFactory', '$firebaseAuth', '$http'
   auth.$onAuthStateChanged(function(firebaseUser){
 // firebaseUser will be null if not logged in
       if(firebaseUser) {
+        checkAdminRights();
         self.userIsLoggedIn = true;
         self.displayName = firebaseUser.displayName;
         self.photo = firebaseUser.photoURL;
@@ -56,7 +56,7 @@ myApp.controller('HeaderController', ['FactoryFactory', '$firebaseAuth', '$http'
   }// end of logout()
 
 // admin redirect
-  self.admin = function() {
+  self.adminButton = function() {
     $location.path('/admin');
   };
 
@@ -72,14 +72,19 @@ myApp.controller('HeaderController', ['FactoryFactory', '$firebaseAuth', '$http'
                         id_token : idToken
                        }
             }).then(function(response) {
-              var recieve = response.data;
-              console.log("return ", recieve);
+              self.admin = response.data;
+              console.log(self.admin);
+                if (self.admin == true) {
+                  notyf.confirm(firebaseUser.displayName + ' has Admin rights');
+                } else {
+                  // return
+                }
             }).catch(function(error) {
-              swal("We could not check Admin ights", "Try Again!", "error");
-              console.log('error authenticating', error);
+              swal("We could not check Admin rights", "Try Again!", "error");
+              console.log('error checking Admin rights', error);
             });
         });// end of firebase.auth()
-  };
+  };// end checkAdminRights()
 
 
 
