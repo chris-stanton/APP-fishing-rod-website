@@ -39,11 +39,9 @@ myApp.controller('HeaderController', ['FactoryFactory', '$firebaseAuth', '$http'
         self.displayName = firebaseUser.displayName;
         self.photo = firebaseUser.photoURL;
         self.email = firebaseUser.email;
-          // notyf.confirm(firebaseUser.displayName + ' is logged in and authenticated');
       } else {
         self.userIsLoggedIn = false;
-          // notyf.alert('You are not logged in or authorized');
-            console.log('You are not logged in or authorized');
+          console.log('You are not logged in or authorized');
       }
   });// end of auth.$onAuthStateChanged()
 
