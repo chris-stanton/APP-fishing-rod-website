@@ -37,13 +37,13 @@ myApp.controller('HeaderController', ['FactoryFactory', '$firebaseAuth', '$http'
       if(firebaseUser) {
         checkNewUser();
         checkAdminRights();
-        self.userIsLoggedIn = true;
-        self.displayName = firebaseUser.displayName;
-        self.photo = firebaseUser.photoURL;
-        self.email = firebaseUser.email;
+          self.userIsLoggedIn = true;
+          self.displayName = firebaseUser.displayName;
+          self.photo = firebaseUser.photoURL;
+          self.email = firebaseUser.email;
       } else {
-        self.userIsLoggedIn = false;
-          console.log('You are not logged in or authorized');
+        console.log('You are not logged in or authorized');
+          self.userIsLoggedIn = false;
       }
   });// end of auth.$onAuthStateChanged()
 
@@ -105,7 +105,7 @@ myApp.controller('HeaderController', ['FactoryFactory', '$firebaseAuth', '$http'
                   notyf.confirm(firebaseUser.displayName + ', You are a new User');
                     $location.path('/address');
                 } else {
-                  $location.path('/home');
+                  // $location.path('/home');
                 }
             }).catch(function(error) {
               swal("We could not check Admin rights", "Try Again!", "error");
