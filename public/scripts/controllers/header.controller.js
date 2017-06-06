@@ -35,6 +35,7 @@ myApp.controller('HeaderController', ['FactoryFactory', '$firebaseAuth', '$http'
   auth.$onAuthStateChanged(function(firebaseUser){
 // firebaseUser will be null if not logged in
       if(firebaseUser) {
+        checkNewUser();
         checkAdminRights();
         self.userIsLoggedIn = true;
         self.displayName = firebaseUser.displayName;
@@ -78,6 +79,33 @@ myApp.controller('HeaderController', ['FactoryFactory', '$firebaseAuth', '$http'
                   notyf.confirm(firebaseUser.displayName + ' has Admin rights');
                 } else {
                   // return
+                }
+            }).catch(function(error) {
+              swal("We could not check Admin rights", "Try Again!", "error");
+              console.log('error checking Admin rights', error);
+            });
+        });// end of firebase.auth()
+  };// end checkAdminRights()
+
+// checks for new user on server side
+  function checkNewUser() {
+    var auth = $firebaseAuth();
+    var firebaseUser = auth.$getAuth();
+        firebase.auth().currentUser.getIdToken().then(function(idToken) {
+            $http({
+              method: 'GET',
+              url: '/admin/checkNewUser',
+              headers: {
+                        id_token : idToken
+                       }
+            }).then(function(response) {
+              self.newUser = response.data;
+              console.log(self.admin);
+                if (self.newUser == true) {
+                  notyf.confirm(firebaseUser.displayName + ', You are a new User');
+                    $location.path('/address');
+                } else {
+                  $location.path('/home');
                 }
             }).catch(function(error) {
               swal("We could not check Admin rights", "Try Again!", "error");

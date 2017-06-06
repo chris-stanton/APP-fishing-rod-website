@@ -45,9 +45,9 @@
               var newUserId = result[i].firebaseuserid;
             }
             if (newUserId == req.decodedToken.uid) {
-              res.send(true);
-            } else {
               res.send(false);
+            } else {
+              res.send(true);
             }
           }).catch(function (err) {
             console.log('error on SELECT', err);
