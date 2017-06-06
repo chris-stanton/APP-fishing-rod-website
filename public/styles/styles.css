@@ -541,6 +541,10 @@
 }
 
 
+
+
+
+
 /*////////////////////////
 //        FOOTER        //
 ////////////////////////*/
@@ -569,8 +573,65 @@
 
 
 
+
+
+
+/*////////////////////////
+//    ADMIN NAV BAR     //
+////////////////////////*/
+
+#adminNavBarContainer {
+  display: inline-block;
+  text-align: center;
+  background-color: #a4a4a4;
+  height: 30px;
+  padding: 5px 0px 0px 0px;
+}
+
+.adminNavButtons {
+  color: #000000;
+}
+
+
+
+
+
+
+
+/*////////////////////////
+//   ADMIN_CUSTOMERS    //
+////////////////////////*/
+
+#adminCustomerContainer {
+
+}
+
+
+
+
+
+
+
+
+
+/*////////////////////////
+//   ADMIN_INVENTORY    //
+////////////////////////*/
+
+#adminInventoryContainer {
+
+}
+
+
+
+
+
+
+
 /*////////////////////////
 //     ADMIN_ORDER      //
 ////////////////////////*/
 
-#adminOrderContainer
+#adminOrderContainer {
+
+}

@@ -100,7 +100,6 @@ myApp.controller('HeaderController', ['FactoryFactory', '$firebaseAuth', '$http'
                        }
             }).then(function(response) {
               self.newUser = response.data;
-              console.log(self.admin);
                 if (self.newUser == true) {
                   notyf.confirm(firebaseUser.displayName + ', You are a new User');
                     $location.path('/address');
