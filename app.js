@@ -13,6 +13,7 @@
   var contact = require('./server/routes/contact.js');
   var career = require('./server/routes/career.js');
   var auth = require('./server/routes/auth.js');
+  var admin = require('./server/routes/admin.js');
 
 // Serve back static files
   app.use(express.static(path.join(__dirname, './public')));
@@ -35,6 +36,7 @@
   app.use('/career', career);
   app.use('/auth', auth);
   app.use('/cart', cart);
+  app.use('/admin', admin);
 
 
 
