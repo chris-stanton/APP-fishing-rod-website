@@ -24,7 +24,7 @@
   router.get('/getThread', function (req, res) {
     pool.connect()
     .then(function (client) {
-      client.query("SELECT * FROM threads")
+      client.query("SELECT * FROM threads ORDER BY colorId ASC")
         .then(function (result) {
           client.release();
           res.send(result.rows);
