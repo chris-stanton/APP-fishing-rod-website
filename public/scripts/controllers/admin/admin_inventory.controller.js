@@ -15,7 +15,6 @@ myApp.controller('Admin_inventoryController', ['AdminFactory', '$location', func
   self.selectOptions = AdminFactory.selectOptions;
 // all inventory items from DB on init and filters
   self.allInventory = AdminFactory.allInventory;
-  console.log(self.allInventory);
 
 
 

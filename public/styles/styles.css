@@ -619,9 +619,27 @@
 ////////////////////////*/
 
 #adminInventoryContainer {
-  margin: 0px 0px 90px 0px;
+
 }
 
+#modelFilter {
+  text-align: right;
+}
+
+#inventoryItemTable {
+  margin: 20px 0px 90px 0px;
+}
+
+#inventoryItemTableBorder {
+  border: 2px solid black;
+  border-radius: 20px;
+  margin: 10px 0px 10px 0px;
+}
+
+#inventoryImage {
+  height: 170px;
+  width: 220px;
+}
 
 
 

@@ -18,28 +18,57 @@
       </div>
     </div>
 
-    <div>
-      <div>
+    <div class="col-md-12">
+      <div class="col-md-11" id="modelFilter">
         <select ng-model="adi.inventoryFilter.model"> Model
           <option ng-repeat="item in adi.selectOptions.list"> {{item.model}} </option>
         </select>
       </div>
-      <div>
+      <div class="col-md-1">
         <button type="button" ng-click="adi.getFilteredInventory(adi.inventoryFilter)"> Filter </button>
       </div>
     </div>
 
-    <div class="col-md-12">
+    <div class="col-md-12" id="inventoryItemTable">
+      <div ng-repeat="inventoryItem in adi.allInventory.list" id="inventoryItemTableBorder">
       <table>
-        <tr ng-repeat="inventoryItem in adi.allInventory.list">
-          <td>
-            {{inventoryItem.model}}
+        <tr>
+          <td class="col-md-1">
+            <div>
+              <img ng-src="{{inventoryItem.image}}" id="inventoryImage">
+            </div>
           </td>
-          <td>
-            {{inventoryItem.price}}
+          <td class="col-md-5">
+            <div>
+              <label> Model: </label>
+              <input type="text" value="{{inventoryItem.model}}"></br>
+            </div>
+            <div>
+              <label> Blank Length: </label>
+              <input type="text" value="{{inventoryItem.blanklength}}"></br>
+            </div>
+            <div>
+              <label> Handle Material: </label>
+              <input type="text" value="{{inventoryItem.handlematerial}}"></br>
+            </div>
+            <div>
+              <label> Handle Length: </label>
+              <input type="text" value="{{inventoryItem.handlelength}}"></br>
+            </div>
+            <div>
+              <label> Price: $ </label>
+              <input type="text" value="{{inventoryItem.price}}"></br>
+            </div>
+          </td>
+          <td class="col-md-5">
+            <textarea rows="6" cols="70"> {{inventoryItem.description}} </textarea>
+          </td>
+          <td class="col-md-1">
+            <button type="button" name="button"> Update </button>
           </td>
         </tr>
       </table>
+    </div>
     </div>
 
   </div>

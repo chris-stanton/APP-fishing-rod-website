@@ -13,7 +13,6 @@
 // inventory items or admin_inventory view
   router.get('/getFilteredInventory', function (req, res) {
   var inventoryFilter = req.headers;
-  console.log(inventoryFilter.inventoryfilter);
   pool.connect()
     .then(function (client) {
       client.query("SELECT * FROM iceRods WHERE model=$1", [inventoryFilter.inventoryfilter])
