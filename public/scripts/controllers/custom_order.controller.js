@@ -25,6 +25,7 @@ myApp.controller('Custom_orderController',['FactoryFactory', '$firebaseAuth', '$
         swal("You must be logged in to place order", "Try Again!", "error");
       } else {
         var newOrder = {
+          model : 'Custom Build',
           blankModel : order.blankModel,
           blankLength : order.blankLength,
           handleMaterial : order.handleMaterial,

@@ -64,8 +64,8 @@
     console.log(req.decodedToken);
     pool.connect()
       .then(function (client) {
-        client.query('INSERT INTO iceRodOrders (firebaseuserid, blankmodel, blankLength, handlematerial, handlelength, guides, threadcolormain, threadcolortrim, quantity) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)',
-          [req.decodedToken.uid, newOrder.blankModel, newOrder.blankLength, newOrder.handleMaterial, newOrder.handleLength, newOrder.guides, newOrder.threadColorMain, newOrder.threadColorTrim, newOrder.quantity])
+        client.query('INSERT INTO iceRodOrders (firebaseuserid, model, blankmodel, blankLength, handlematerial, handlelength, guides, threadcolormain, threadcolortrim, quantity) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)',
+          [req.decodedToken.uid, newOrder.model, newOrder.blankModel, newOrder.blankLength, newOrder.handleMaterial, newOrder.handleLength, newOrder.guides, newOrder.threadColorMain, newOrder.threadColorTrim, newOrder.quantity])
           .then(function (result) {
             client.release();
             res.sendStatus(201);

@@ -20,12 +20,12 @@
 .viewHeadings {
   text-align: center;
   font-family: serif;
-  font-size: 40px;
+  font-size: 35px;
   background-color: #494949;
   color: #24ee08;
   border: 3px solid #000000;
   border-radius: 20px;
-  height: 60px;
+  height: 50px;
   padding: 3px 0px 0px 0px;
   margin: 50px 0px 50px 0px;
 }
@@ -33,6 +33,7 @@
 .quantityInputs {
   width: 40px;
 }
+
 
 
 
@@ -62,6 +63,20 @@
   font-size: 40px;
   font-family: serif;
   padding: 10px 0px 0px 0px;
+}
+
+#adminIconContainer {
+  text-align: left;
+  margin: 30px 0px 0px 7px;
+}
+
+#adminIcon {
+  height: 30px;
+  width: 30px;
+}
+
+#adminIcon:hover {
+  cursor: pointer;
 }
 
 .loginIcon {
@@ -511,8 +526,9 @@
 }
 
 .cartBorder {
-  border: 1px solid black;
-  margin: 5px 0px 5px 0px;
+  border: 2px solid black;
+  margin: 10px 0px 10px 0px;
+  border-radius: 20px;
 }
 
 #cartImage {
@@ -521,9 +537,53 @@
 }
 
 .cartTd {
-  margin: 5px 15px 5px 15px;
+  padding: 15px 0px 15px 0px;
   text-align: center;
 }
+
+#cartUpdateButton {
+  width: 100%;
+  border-radius: 10px;
+  outline: none;
+}
+
+#cartUpdateButton:hover {
+  box-shadow: 3px 3px 3px #24ee08;
+  cursor: pointer;
+}
+
+#cartDeleteButton {
+  width: 100%;
+  border-radius: 10px;
+  outline: none;
+}
+
+#cartDeleteButton:hover {
+  box-shadow: 3px 3px 3px #ff0000;
+  cursor: pointer;
+}
+
+#cartCheckoutButtonDiv {
+  margin: 35px 0px 0px 0px;
+}
+
+#cartCheckoutButton {
+  border-radius: 10px;
+  outline: none;
+  width: 100px;
+  margin: 0px 0px 0px 30px;
+}
+
+#cartCheckoutButton:hover {
+  box-shadow: 3px 3px 3px #24ee08;
+  cursor: pointer;
+}
+
+
+
+
+
+
 
 
 /*////////////////////////
@@ -549,4 +609,123 @@
 .footerIcons {
   height: 25px;
   width: 25px;
+}
+
+
+
+
+
+
+
+/*////////////////////////
+//    ADMIN NAV BAR     //
+////////////////////////*/
+
+#adminNavBarContainer {
+  display: inline-block;
+  text-align: center;
+  background-color: #a4a4a4;
+  height: 30px;
+  padding: 5px 0px 0px 0px;
+}
+
+.adminNavButtons {
+  color: #000000;
+}
+
+
+
+
+
+
+
+/*////////////////////////
+//   ADMIN_CUSTOMERS    //
+////////////////////////*/
+
+#adminCustomerContainer {
+
+}
+
+
+
+
+
+
+
+
+
+/*////////////////////////
+//   ADMIN_INVENTORY    //
+////////////////////////*/
+
+#adminInventoryContainer {
+
+}
+
+#modelFilter {
+  text-align: right;
+}
+
+#inventoryItemTable {
+  margin: 20px 0px 90px 0px;
+}
+
+#inventoryItemTableBorder {
+  border: 2px solid black;
+  border-radius: 20px;
+  margin: 15px 0px 15px 0px;
+}
+
+#inventoryImage {
+  height: 170px;
+  width: 220px;
+}
+
+.inventoryButtonsDiv {
+  margin: 30px 0px 30px 0px;
+}
+
+#inventoryFilterButton {
+  width: 100%;
+  border-radius: 10px;
+  outline: none;
+}
+
+#inventoryFilterButton:hover {
+  box-shadow: 3px 3px 3px #24ee08;
+  cursor: pointer;
+}
+
+#inventoryUpdateButton {
+  width: 100%;
+  border-radius: 10px;
+  outline: none;
+}
+
+#inventoryUpdateButton:hover {
+  box-shadow: 3px 3px 3px #24ee08;
+  cursor: pointer;
+}
+
+#inventoryDeleteButton {
+  width: 100%;
+  border-radius: 10px;
+  outline: none;
+}
+
+#inventoryDeleteButton:hover {
+  box-shadow: 3px 3px 3px #ff0000;
+  cursor: pointer;
+}
+
+
+
+
+/*////////////////////////
+//     ADMIN_ORDER      //
+////////////////////////*/
+
+#adminOrderContainer {
+
 }

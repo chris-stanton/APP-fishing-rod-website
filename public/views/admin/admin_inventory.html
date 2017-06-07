@@ -1,0 +1,85 @@
+
+<div>
+  <nav ng-include="'/views/templates/adminNav.html'"></nav>
+</div>
+
+  <div class="rows" id="adminInventoryContainer">
+
+<!-- header container -->
+    <div class="col-md-12">
+      <div class="col-md-2">
+<!-- empty container for spacing -->
+      </div>
+      <div class="col-md-8">
+        <h2 class="viewHeadings"> Manage Inventory Items </h2>
+      </div>
+      <div class="col-md-2">
+<!-- empty container for spacing -->
+      </div>
+    </div>
+
+<!-- filter container -->
+    <div class="col-md-12">
+      <div class="col-md-9">
+<!-- empty container for spacing -->
+      </div>
+      <div class="col-md-2" id="modelFilter">
+        <select ng-model="adi.inventoryFilter.model">
+          <option value="all"> All Models </option>
+          <option ng-repeat="item in adi.selectOptions.list"> {{item.model}} </option>
+        </select>
+      </div>
+      <div class="col-md-1">
+        <button type="button" ng-click="adi.getFilteredInventory(adi.inventoryFilter)" id="inventoryFilterButton"> Filter </button>
+      </div>
+    </div>
+
+<!-- inventory results container -->
+    <div class="col-md-12" id="inventoryItemTable">
+      <div ng-repeat="inventoryItem in adi.allInventory.list" id="inventoryItemTableBorder">
+        <table>
+          <tr>
+            <td class="col-md-1">
+              <div>
+                <img ng-src="{{inventoryItem.image}}" id="inventoryImage">
+              </div>
+            </td>
+            <td class="col-md-5">
+              <div>
+                <label> Model: </label>
+                  <input type="text" ng-model="inventoryItem.model" ng-value="{{inventoryItem.model}}"></br>
+              </div>
+              <div>
+                <label> Blank Length: </label>
+                  <input type="text" ng-model="inventoryItem.blankLength" ng-value="{{inventoryItem.blanklength}}"></br>
+              </div>
+              <div>
+                <label> Handle Material: </label>
+                  <input type="text" ng-model="inventoryItem.handleMaterial" ng-value="{{inventoryItem.handlematerial}}"></br>
+              </div>
+              <div>
+                <label> Handle Length: </label>
+                  <input type="text" ng-model="inventoryItem.handleLength" ng-value="{{inventoryItem.handlelength}}"></br>
+              </div>
+              <div>
+                <label> Price: $ </label>
+                  <input type="text" ng-model="inventoryItem.price" ng-value="{{inventoryItem.price}}"></br>
+              </div>
+            </td>
+            <td class="col-md-5">
+              <textarea ng-model="inventoryItem.description" rows="6" cols="70"> {{inventoryItem.description}} </textarea>
+            </td>
+            <td class="col-md-1">
+              <div class="inventoryButtonsDiv">
+                <button type="button" ng-click="adi.updateInventory(inventoryItem)" id="inventoryUpdateButton"> Update </button>
+              </div>
+              <div class="inventoryButtonsDiv">
+                <button type="button" ng-click="adi.deleteInventory(inventoryItem)" id="inventoryDeleteButton"> Delete </button>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+  </div>

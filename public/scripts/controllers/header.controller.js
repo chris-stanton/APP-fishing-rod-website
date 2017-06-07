@@ -1,5 +1,5 @@
 
-myApp.controller('HeaderController', ['FactoryFactory', '$firebaseAuth', '$http', function(FactoryFactory, $firebaseAuth, $http) {
+myApp.controller('HeaderController', ['FactoryFactory', '$firebaseAuth', '$http', '$location', function(FactoryFactory, $firebaseAuth, $http, $location) {
 
   console.log('HeaderController running');
 
@@ -35,13 +35,15 @@ myApp.controller('HeaderController', ['FactoryFactory', '$firebaseAuth', '$http'
   auth.$onAuthStateChanged(function(firebaseUser){
 // firebaseUser will be null if not logged in
       if(firebaseUser) {
-        self.userIsLoggedIn = true;
-        self.displayName = firebaseUser.displayName;
-        self.photo = firebaseUser.photoURL;
-        self.email = firebaseUser.email;
+        checkNewUser();
+        checkAdminRights();
+          self.userIsLoggedIn = true;
+          self.displayName = firebaseUser.displayName;
+          self.photo = firebaseUser.photoURL;
+          self.email = firebaseUser.email;
       } else {
-        self.userIsLoggedIn = false;
-          console.log('You are not logged in or authorized');
+        console.log('You are not logged in or authorized');
+          self.userIsLoggedIn = false;
       }
   });// end of auth.$onAuthStateChanged()
 
@@ -53,5 +55,64 @@ myApp.controller('HeaderController', ['FactoryFactory', '$firebaseAuth', '$http'
         console.log('User has logged out');
     });
   }// end of logout()
+
+// admin redirect
+  self.adminButton = function() {
+    $location.path('/admin_order');
+  };
+
+// checks admin rights on server side
+  function checkAdminRights() {
+    var auth = $firebaseAuth();
+    var firebaseUser = auth.$getAuth();
+        firebase.auth().currentUser.getIdToken().then(function(idToken) {
+            $http({
+              method: 'GET',
+              url: '/admin/checkAdminRights',
+              headers: {
+                        id_token : idToken
+                       }
+            }).then(function(response) {
+              self.admin = response.data;
+                if (self.admin == true) {
+                  notyf.confirm(firebaseUser.displayName + ' has Admin rights');
+                } else {
+                  return
+                }
+            }).catch(function(error) {
+              swal("We could not check Admin rights", "Try Again!", "error");
+              console.log('error checking Admin rights', error);
+            });
+        });// end of firebase.auth()
+  };// end checkAdminRights()
+
+// checks for new user on server side
+  function checkNewUser() {
+    var auth = $firebaseAuth();
+    var firebaseUser = auth.$getAuth();
+        firebase.auth().currentUser.getIdToken().then(function(idToken) {
+            $http({
+              method: 'GET',
+              url: '/admin/checkNewUser',
+              headers: {
+                        id_token : idToken
+                       }
+            }).then(function(response) {
+              self.newUser = response.data;
+                if (self.newUser == true) {
+                  notyf.confirm(firebaseUser.displayName + ', You are a new User');
+                    $location.path('/address');
+                } else {
+                  return
+                }
+            }).catch(function(error) {
+              swal("We could not check Admin rights", "Try Again!", "error");
+              console.log('error checking Admin rights', error);
+            });
+        });// end of firebase.auth()
+  };// end checkAdminRights()
+
+
+
 
 }]);// end controller code block
