@@ -27,7 +27,7 @@
     }).then(function(response) {
       selectOptions.list = response.data;
     }).catch(function(error) {
-      swal("Sorry, could not process select option request", "Try Again!", "error");
+      swal("Sorry, could not send select option request", "Try Again!", "error");
       console.log('error authenticating', error);
     });
   };// end getSelectOptions()
@@ -40,7 +40,7 @@
     }).then(function(response) {
       allInventory.list = response.data;
     }).catch(function(error) {
-      swal("Sorry, could not process inventory request", "Try Again!", "error");
+      swal("Sorry, could not send inventory request on init", "Try Again!", "error");
       console.log('error authenticating', error);
     });
   };// end getAllInventory()
@@ -60,7 +60,7 @@
         }).then(function(response) {
           allInventory.list = response.data;
         }).catch(function(error) {
-          swal("Sorry, could not process inventory request", "Try Again!", "error");
+          swal("Sorry, could not send filtered inventory request to DB", "Try Again!", "error");
           console.log('error authenticating', error);
         });
     });// end of firebase.auth()
@@ -74,10 +74,10 @@
     }).then(function(response) {
       customers.list = response.data;
     }).catch(function(error) {
-      swal("Sorry, could not process customer request", "Try Again!", "error");
+      swal("Sorry, could not send customer request to DB", "Try Again!", "error");
       console.log('error authenticating', error);
     });
-  };// end getAllInventory()
+  }// end getAllCustomers()
 
 
 
@@ -100,7 +100,7 @@
       getFilteredInventory : getFilteredInventory,
 // gets all customers on init for admin customer view
       getAllCustomers : getAllCustomers,
-// return from DB to admin customer view for customers on init and filtered  
+// return from DB to admin customer view for customers on init and filtered
       customers : customers
 
 

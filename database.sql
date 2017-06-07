@@ -143,8 +143,10 @@ CREATE TABLE customers (
   city VARCHAR(100),
   state VARCHAR(100),
 	zipCode VARCHAR(100),
+  email VARCHAR(100),
   firebaseUserId VARCHAR(800),
-  image VARCHAR(800)
+  image VARCHAR(800),
+  notes VARCHAR(2000)
 );
 
 

@@ -4,6 +4,8 @@ myApp.controller('Admin_customerController', ['AdminFactory', '$location', funct
 
   var self = this;
 
+  self.message = 'angular sourced "Admin_customer"';
+
 
 // gets all customers on init
   AdminFactory.getAllCustomers();
@@ -11,7 +13,16 @@ myApp.controller('Admin_customerController', ['AdminFactory', '$location', funct
   self.customers = AdminFactory.customers;
 
 
-  self.message = 'angular sourced "Admin_customer"';
+
+// button click to update customer info
+  self.updateCustomer = function(customer){
+    console.log(customer);
+  };
+
+// button click to delete customer info
+  self.deleteCustomer = function(customer){
+    console.log(customer);
+  };
 
 
 
