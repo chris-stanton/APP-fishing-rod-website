@@ -662,6 +662,7 @@
   height: 125px;
   width: 125px;
   border-radius: 60px;
+  margin: 0px 0px 0px 23px;
 }
 
 #firebaseInfo {
@@ -680,6 +681,7 @@
 
 .customerInputs {
   width: 100%;
+  font-size: 20px;
 }
 
 .customerButtonsDiv {

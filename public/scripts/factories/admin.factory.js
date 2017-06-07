@@ -79,6 +79,47 @@
     });
   }// end getAllCustomers()
 
+// updates customer at DB
+  function updateCustomer(customer) {
+      firebase.auth().currentUser.getIdToken().then(function(idToken) {
+        $http({
+          method: 'POST',
+          url: '/admin_customer/updateCustomer/' + customer.id,
+          data: customer,
+          headers: {
+                    id_token : idToken
+                    }
+        }).then(function(response){
+          notyf.confirm('Customer has been updated');
+        }).catch(function(error) {
+          swal("We were not able to update customer info", "Try Again!", "error");
+          console.log('error updating customer info', error);
+        });//end of catch
+      });// end firebase.auth()
+  };// end updateCustomer
+
+// deletes customer from DB
+  function deleteCustomer(customer){
+      firebase.auth().currentUser.getIdToken().then(function(idToken) {
+        $http({
+          method: 'DELETE',
+          url: '/admin_customer/deleteCustomer/' + customer.id,
+          data: customer,
+          headers: {
+                    id_token : idToken
+                   }
+        }).then(function(response){
+          notyf.confirm('Customer deleted from DB');
+        }).catch(function(error) {
+          swal("We could not delete customer", "Try Again!", "error");
+          console.log('error deleting customer', error);
+        });// end of catch
+      });// end firebase.auth()
+  };// end of deleteAdmin()
+
+
+
+
 
 
 
@@ -101,8 +142,11 @@
 // gets all customers on init for admin customer view
       getAllCustomers : getAllCustomers,
 // return from DB to admin customer view for customers on init and filtered
-      customers : customers
-
+      customers : customers,
+// updates customer at DB
+      updateCustomer : updateCustomer,
+// deletes customer from DB
+      deleteCustomer : deleteCustomer
 
     }
 

@@ -17,11 +17,13 @@ myApp.controller('Admin_customerController', ['AdminFactory', '$location', funct
 // button click to update customer info
   self.updateCustomer = function(customer){
     console.log(customer);
+    AdminFactory.updateCustomer(customer);
   };
 
 // button click to delete customer info
   self.deleteCustomer = function(customer){
     console.log(customer);
+    AdminFactory.deleteCustomer(customer);
   };
 
 
