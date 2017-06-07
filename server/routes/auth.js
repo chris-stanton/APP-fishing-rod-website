@@ -30,9 +30,9 @@
             client.release();
             res.sendStatus(201);
             var mailOptions = {
-              from: 'Personal Website ' + process.env.ACCOUNT_NAME,
+              from: 'Rod Building Website ' + process.env.ACCOUNT_NAME,
               to: process.env.ACCOUNT_RECIEVER_EMAIL,
-              subject: 'New Customer From Website',
+              subject: 'New Customer',
               text: req.decodedToken.name,
               html: '<h5>' + 'firebaseUserId: ' + req.decodedToken.uid + '</h5>' +
                     '<h5>' + 'Google Display Name: ' + req.decodedToken.name + '</h5>' +
@@ -72,9 +72,9 @@
             res.sendStatus(201);
 // building email to be sent
             // var mailOptions = {
-            //   from: 'Personal Website ' + process.env.ACCOUNT_NAME,
+            //   from: 'Rod Building Website ' + process.env.ACCOUNT_NAME,
             //   to: process.env.ACCOUNT_RECIEVER_EMAIL,
-            //   subject: 'Ice Rod Order From Website',
+            //   subject: 'Ice Rod Order',
             //   text: req.decodedToken.name,
             //   html: '<h5>' + 'firebaseUserId: ' + req.decodedToken.uid + '</h5>' +
             //         '<h5>' + 'Google Display Name: ' + req.decodedToken.name + '</h5>' +
