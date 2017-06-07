@@ -41,29 +41,29 @@
           <tr>
             <td class="col-md-1">
               <div>
-                <img ng-src="{{inventoryItem.image}}" id="inventoryImage">
+                <img ng-model="inventoryItem.image" ng-src="{{inventoryItem.image}}" id="inventoryImage">
               </div>
             </td>
             <td class="col-md-5">
               <div>
                 <label> Model: </label>
-                  <input type="text" ng-model="inventoryItem.model" value="{{inventoryItem.model}}"></br>
+                  <input type="text" ng-model="inventoryItem.model" >
               </div>
               <div>
                 <label> Blank Length: </label>
-                  <input type="text" ng-model="inventoryItem.blankLength" ng-value="{{inventoryItem.blanklength}}"></br>
+                  <input type="text" ng-model="inventoryItem.blanklength" >
               </div>
               <div>
                 <label> Handle Material: </label>
-                  <input type="text" ng-model="inventoryItem.handleMaterial" ng-value="{{inventoryItem.handlematerial}}"></br>
+                  <input type="text" ng-model="inventoryItem.handlematerial" >
               </div>
               <div>
                 <label> Handle Length: </label>
-                  <input type="text" ng-model="inventoryItem.handleLength" ng-value="{{inventoryItem.handlelength}}"></br>
+                  <input type="text" ng-model="inventoryItem.handlelength" >
               </div>
               <div>
                 <label> Price: $ </label>
-                  <input type="text" ng-model="inventoryItem.price" ng-value="{{inventoryItem.price}}"></br>
+                  <input type="text" ng-model="inventoryItem.price" >
               </div>
             </td>
             <td class="col-md-5">
