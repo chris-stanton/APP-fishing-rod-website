@@ -11,13 +11,35 @@
 <!-- empty div for spacing -->
       </div>
       <div class="col-md-8">
-        <h2 class="viewHeadings"> Manage Inventory </h2>
+        <h2 class="viewHeadings"> Manage Inventory Items </h2>
       </div>
       <div class="col-md-2">
 <!-- empty div for spacing -->
       </div>
     </div>
 
+    <div>
+      <div>
+        <select ng-model="adi.inventoryFilter.model"> Model
+          <option ng-repeat="item in adi.selectOptions.list"> {{item.model}} </option>
+        </select>
+      </div>
+      <div>
+        <button type="button" ng-click="adi.getFilteredInventory(adi.inventoryFilter)"> Filter </button>
+      </div>
+    </div>
 
+    <div class="col-md-12">
+      <table>
+        <tr ng-repeat="inventoryItem in adi.allInventory.list">
+          <td>
+            {{inventoryItem.model}}
+          </td>
+          <td>
+            {{inventoryItem.price}}
+          </td>
+        </tr>
+      </table>
+    </div>
 
   </div>

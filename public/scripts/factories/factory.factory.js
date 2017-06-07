@@ -109,7 +109,7 @@
             console.log('error authenticating', error);
           });
       });// end of firebase.auth()
-    };// end getAllIceRodModels()
+    };// end getcart()
 
 //updates cart items at DB from cart view
     function updateCart(cart) {
