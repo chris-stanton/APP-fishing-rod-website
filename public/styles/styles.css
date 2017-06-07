@@ -526,8 +526,9 @@
 }
 
 .cartBorder {
-  border: 1px solid black;
-  margin: 5px 0px 5px 0px;
+  border: 2px solid black;
+  margin: 10px 0px 10px 0px;
+  border-radius: 20px;
 }
 
 #cartImage {
@@ -536,9 +537,49 @@
 }
 
 .cartTd {
-  margin: 5px 15px 5px 15px;
+  padding: 15px 0px 15px 0px;
   text-align: center;
 }
+
+#cartUpdateButton {
+  width: 100%;
+  border-radius: 10px;
+  outline: none;
+}
+
+#cartUpdateButton:hover {
+  box-shadow: 3px 3px 3px #24ee08;
+  cursor: pointer;
+}
+
+#cartDeleteButton {
+  width: 100%;
+  border-radius: 10px;
+  outline: none;
+}
+
+#cartDeleteButton:hover {
+  box-shadow: 3px 3px 3px #ff0000;
+  cursor: pointer;
+}
+
+#cartCheckoutButtonDiv {
+  margin: 35px 0px 0px 0px;
+}
+
+#cartCheckoutButton {
+  border-radius: 10px;
+  outline: none;
+  width: 100px;
+  margin: 0px 0px 0px 30px;
+}
+
+#cartCheckoutButton:hover {
+  box-shadow: 3px 3px 3px #24ee08;
+  cursor: pointer;
+}
+
+
 
 
 
@@ -633,7 +674,7 @@
 #inventoryItemTableBorder {
   border: 2px solid black;
   border-radius: 20px;
-  margin: 10px 0px 10px 0px;
+  margin: 15px 0px 15px 0px;
 }
 
 #inventoryImage {
@@ -641,7 +682,42 @@
   width: 220px;
 }
 
+.inventoryButtonsDiv {
+  margin: 30px 0px 30px 0px;
+}
 
+#inventoryFilterButton {
+  width: 100%;
+  border-radius: 10px;
+  outline: none;
+}
+
+#inventoryFilterButton:hover {
+  box-shadow: 3px 3px 3px #24ee08;
+  cursor: pointer;
+}
+
+#inventoryUpdateButton {
+  width: 100%;
+  border-radius: 10px;
+  outline: none;
+}
+
+#inventoryUpdateButton:hover {
+  box-shadow: 3px 3px 3px #24ee08;
+  cursor: pointer;
+}
+
+#inventoryDeleteButton {
+  width: 100%;
+  border-radius: 10px;
+  outline: none;
+}
+
+#inventoryDeleteButton:hover {
+  box-shadow: 3px 3px 3px #ff0000;
+  cursor: pointer;
+}
 
 
 

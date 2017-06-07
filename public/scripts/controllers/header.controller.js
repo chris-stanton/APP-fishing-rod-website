@@ -74,7 +74,6 @@ myApp.controller('HeaderController', ['FactoryFactory', '$firebaseAuth', '$http'
                        }
             }).then(function(response) {
               self.admin = response.data;
-              console.log(self.admin);
                 if (self.admin == true) {
                   notyf.confirm(firebaseUser.displayName + ' has Admin rights');
                 } else {
