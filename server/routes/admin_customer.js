@@ -35,25 +35,25 @@ new DotEnv();
             client.release();
             res.sendStatus(200);
           }).catch(function (err) {
-            console.log('error updating database:', err);
+            console.log('error on updating cutsomer database:', err);
               res.sendStatus(500);
           });
       });// end of .then
   });// end router.put
 
 // deleted items at DB from cart view
-  router.delete('/deleteCart/:id', function(req, res) {
-    var cartId = req.params.id;
+  router.delete('/deleteCustomer/:id', function(req, res) {
+    var customerId = req.params.id;
     pool.connect()
       .then(function (client) {
-        client.query('DELETE FROM iceRodOrders WHERE id=$1',
-          [cartId])
+        client.query('DELETE FROM customers WHERE id=$1',
+          [customerId])
           .then(function (result) {
             client.release();
             res.sendStatus(200);
         })
         .catch(function (err) {
-            console.log('error on Delete', err);
+            console.log('error on Deleting customer from DB:', err);
             res.sendStatus(500);
         });
     });

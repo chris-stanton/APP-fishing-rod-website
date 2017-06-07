@@ -110,6 +110,7 @@
                    }
         }).then(function(response){
           notyf.confirm('Customer deleted from DB');
+            getAllCustomers();
         }).catch(function(error) {
           swal("We could not delete customer", "Try Again!", "error");
           console.log('error deleting customer', error);
