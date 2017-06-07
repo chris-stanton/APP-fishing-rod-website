@@ -20,8 +20,13 @@ myApp.controller('Admin_inventoryController', ['AdminFactory', '$location', func
 
 // button click to DB for filtered inventory items
   self.getFilteredInventory = function(inventoryFilter) {
-    AdminFactory.getFilteredInventory(inventoryFilter);
-  }
+    console.log("inventoryFilter ", inventoryFilter.model);
+    if (inventoryFilter.model === 'all') {
+      AdminFactory.getAllInventory();
+    } else {
+      AdminFactory.getFilteredInventory(inventoryFilter);
+    }
+  };// end getFilteredInventory
 
 
 
