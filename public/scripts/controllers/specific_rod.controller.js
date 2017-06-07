@@ -37,6 +37,7 @@ myApp.controller('Specific_rodController',['FactoryFactory', '$firebaseAuth', '$
         swal("You must be logged in to place order", "Try Again!", "error");
       } else {
         var newOrder = {
+          model : specificIceRod.model,
           blankModel : specificIceRod.model,
           blankLength : specificIceRod.blanklength,
           handleMaterial : specificIceRod.handlematerial,
