@@ -101,7 +101,8 @@ CREATE TABLE iceRods (
   handleLength VARCHAR(100),
   price VARCHAR(100),
 	image VARCHAR(200),
-  description VARCHAR(5000)
+  description VARCHAR(5000),
+  active boolean DEFAULT true
 );
 
 INSERT INTO iceRods (model, blankLength, handleMaterial, handleLength, image, description)
@@ -146,7 +147,8 @@ CREATE TABLE customers (
   email VARCHAR(100),
   firebaseUserId VARCHAR(800),
   image VARCHAR(800),
-  notes VARCHAR(2000)
+  notes VARCHAR(2000),
+  active boolean DEFAULT true
 );
 
 

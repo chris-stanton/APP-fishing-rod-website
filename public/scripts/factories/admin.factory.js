@@ -45,6 +45,26 @@
     });
   };// end getAllInventory()
 
+// updates inventory item at DB
+  function updateInventory(inventoryItem) {
+      firebase.auth().currentUser.getIdToken().then(function(idToken) {
+        $http({
+          method: 'POST',
+          url: '/admin_inventory/updateInventory/' + inventoryItem.id,
+          data: inventoryItem,
+          headers: {
+                    id_token : idToken
+                    }
+        }).then(function(response){
+          notyf.confirm('Inventory item has been updated');
+        }).catch(function(error) {
+          swal("We were not able to update inventory item info", "Try Again!", "error");
+          console.log('error updating inventory info', error);
+        });//end of catch
+      });// end firebase.auth()
+  };// end updateInventory
+
+
 // admin inventory filter query
   function getFilteredInventory(inventoryFilter) {
     var auth = $firebaseAuth();
@@ -128,6 +148,8 @@
       customers : customers,
 // updates customer at DB
       updateCustomer : updateCustomer,
+// updates inventory item at DB
+      updateInventory : updateInventory
 
     }
 

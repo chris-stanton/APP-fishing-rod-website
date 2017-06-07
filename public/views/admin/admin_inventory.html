@@ -71,10 +71,12 @@
             </td>
             <td class="col-md-1">
               <div class="inventoryButtonsDiv">
-                <button type="button" ng-click="adi.updateInventory(inventoryItem)" id="inventoryUpdateButton"> Update </button>
+                <label ng-show="inventoryItem.active === true"> Disable Item </label>
+                <label ng-show="inventoryItem.active === false"> Activate Item </label>
+                <input type="checkbox" ng-model="inventoryItem.active"> </button>
               </div>
               <div class="inventoryButtonsDiv">
-                <button type="button" ng-click="adi.deleteInventory(inventoryItem)" id="inventoryDeleteButton"> Delete </button>
+                <button type="button" ng-click="adi.updateInventory(inventoryItem)" id="inventoryUpdateButton"> Update </button>
               </div>
             </td>
           </tr>

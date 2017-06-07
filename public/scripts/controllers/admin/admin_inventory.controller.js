@@ -29,13 +29,10 @@ myApp.controller('Admin_inventoryController', ['AdminFactory', '$location', func
 
 // button click to update inventory
   self.updateInventory = function(inventoryItem) {
-    console.log("update: ", inventoryItem);
+    AdminFactory.updateInventory(inventoryItem);
   };
 
-// button click to update inventory
-  self.deleteInventory = function(inventoryItem) {
-    console.log("delete: ",  inventoryItem);
-  };
+
 
 
 }]); // end controller code block
