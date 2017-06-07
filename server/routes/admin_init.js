@@ -44,7 +44,7 @@ new DotEnv();
   router.get('/getAllCustomers', function (req, res) {
   pool.connect()
     .then(function (client) {
-      client.query("SELECT * FROM customers ORDER BY lastName DESC")
+      client.query("SELECT * FROM customers WHERE active=true ORDER BY lastName DESC")
         .then(function (result) {
           client.release();
           res.send(result.rows)

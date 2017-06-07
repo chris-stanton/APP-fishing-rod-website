@@ -73,10 +73,10 @@
             </td>
             <td class="col-md-1">
               <div class="customerButtonsDiv">
-                <button type="button" ng-click="adc.updateCustomer(customer)" id="customerUpdateButton"> Update </button>
+                <input type="checkbox" ng-model="customer.active">
               </div>
               <div class="customerButtonsDiv">
-                <button type="button" ng-click="adc.deleteCustomer(customer)" id="customerDeleteButton"> Delete </button>
+                <button type="button" ng-click="adc.updateCustomer(customer)" id="customerUpdateButton"> Update </button>
               </div>
             </td>
           </tr>
