@@ -40,7 +40,21 @@ new DotEnv();
     });// end of .then
   });//end of router.get
 
-
+// gets customers for admin customer view
+  router.get('/getAllCustomers', function (req, res) {
+  pool.connect()
+    .then(function (client) {
+      client.query("SELECT * FROM customers ORDER BY lastName DESC")
+        .then(function (result) {
+          client.release();
+          res.send(result.rows)
+        })
+        .catch(function (err) {
+          console.log('error on SELECT', err);
+          res.sendStatus(500);
+        });
+    });// end of .then
+  });//end of router.get
 
 
 

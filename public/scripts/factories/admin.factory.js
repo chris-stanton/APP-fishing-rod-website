@@ -7,6 +7,7 @@
 // object containers
     var selectOptions = { list: [] };
     var allInventory = { list:[] };
+    var customers = { list:[] };
 
 
 
@@ -26,7 +27,7 @@
     }).then(function(response) {
       selectOptions.list = response.data;
     }).catch(function(error) {
-      swal("Sorry, you must be logged in to see your cart", "Try Again!", "error");
+      swal("Sorry, could not process select option request", "Try Again!", "error");
       console.log('error authenticating', error);
     });
   };// end getSelectOptions()
@@ -39,10 +40,10 @@
     }).then(function(response) {
       allInventory.list = response.data;
     }).catch(function(error) {
-      swal("Sorry, you must be logged in to see your cart", "Try Again!", "error");
+      swal("Sorry, could not process inventory request", "Try Again!", "error");
       console.log('error authenticating', error);
     });
-  };// end getSelectOptions()
+  };// end getAllInventory()
 
 // admin inventory filter query
   function getFilteredInventory(inventoryFilter) {
@@ -59,15 +60,24 @@
         }).then(function(response) {
           allInventory.list = response.data;
         }).catch(function(error) {
-          swal("Sorry, you must be logged in to see your cart", "Try Again!", "error");
+          swal("Sorry, could not process inventory request", "Try Again!", "error");
           console.log('error authenticating', error);
         });
     });// end of firebase.auth()
   };// end getInventory()
 
-
-
-
+// gets customers for admin customer view
+  function getAllCustomers() {
+    $http({
+      method: 'GET',
+      url: '/admin_init/getAllCustomers'
+    }).then(function(response) {
+      customers.list = response.data;
+    }).catch(function(error) {
+      swal("Sorry, could not process customer request", "Try Again!", "error");
+      console.log('error authenticating', error);
+    });
+  };// end getAllInventory()
 
 
 
@@ -77,21 +87,24 @@
 
 
 // public API
-      return {
+  return {
 // inventory items in init and filtered items for admin_inventory view
-          selectOptions : selectOptions,
+      selectOptions : selectOptions,
 // call to DB on init to populate select options
-          getSelectOptions : getSelectOptions,
+      getSelectOptions : getSelectOptions,
 // gets all inventory on init for admin inventory view
-          getAllInventory : getAllInventory,
+      getAllInventory : getAllInventory,
 // return og all items for admin inventory view from DB
-          allInventory : allInventory,
+      allInventory : allInventory,
 // calls DB for filtered inventory for admin_inventory view on init
-          getFilteredInventory : getFilteredInventory,
+      getFilteredInventory : getFilteredInventory,
+// gets all customers on init for admin customer view
+      getAllCustomers : getAllCustomers,
+// return from DB to admin customer view for customers on init and filtered  
+      customers : customers
 
 
-
-        }
+    }
 
 
 

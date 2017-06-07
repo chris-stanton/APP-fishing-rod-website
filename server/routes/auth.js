@@ -21,10 +21,11 @@
 // adds user's address to DB
   router.post('/newUserAddress', function (req, res) {
     var newUserAddress = req.body;
+    console.log(req.decodedToken);
     pool.connect()
       .then(function (client) {
-        client.query('INSERT INTO customers (firstname, lastname, streetaddress, city, state, zipcode, firebaseuserid) VALUES ($1, $2, $3, $4, $5, $6, $7)',
-          [newUserAddress.firstName, newUserAddress.lastName, newUserAddress.streetAddress, newUserAddress.city, newUserAddress.state, newUserAddress.zipCode, req.decodedToken.uid])
+        client.query('INSERT INTO customers (firstname, lastname, streetaddress, city, state, zipcode, firebaseuserid, image) VALUES ($1, $2, $3, $4, $5, $6, $7, $8)',
+          [newUserAddress.firstName, newUserAddress.lastName, newUserAddress.streetAddress, newUserAddress.city, newUserAddress.state, newUserAddress.zipCode, req.decodedToken.uid, req.decodedToken.picture])
           .then(function (result) {
             client.release();
             res.sendStatus(201);
