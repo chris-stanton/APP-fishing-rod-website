@@ -659,8 +659,8 @@
 }
 
 #customerImage {
-  height: 90px;
-  width: 90px;
+  height: 125px;
+  width: 125px;
   border-radius: 60px;
 }
 
@@ -669,6 +669,13 @@
   border-radius: 10px;
   padding: 5px;
   margin: 0px 0px 5px 0px;
+  background-color: #ffe186;
+}
+
+#customerInputContainer {
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
 }
 
 .customerInputs {
