@@ -699,17 +699,6 @@
   cursor: pointer;
 }
 
-#customerDeleteButton {
-  width: 100%;
-  border-radius: 10px;
-  outline: none;
-}
-
-#customerDeleteButton:hover {
-  box-shadow: 3px 3px 3px #ff0000;
-  cursor: pointer;
-}
-
 
 
 

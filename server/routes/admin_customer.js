@@ -8,20 +8,6 @@ DotEnv = require('dotenv-node');
 new DotEnv();
 
 
-// gets all ice rod models and specs on init for order view
-  // router.get('/getCart', function (req, res) {
-  // pool.connect()
-  //   .then(function (client) {
-  //     client.query("SELECT * FROM iceRods FULL OUTER JOIN iceRodOrders ON iceRodOrders.model=iceRods.model WHERE paid=false AND firebaseUserId=$1", [req.decodedToken.uid])
-  //       .then(function (result) {
-  //         client.release();
-  //         res.send(result.rows);
-  //       }).catch(function (err) {
-  //         console.log('error on SELECT', err);
-  //         res.sendStatus(500);
-  //       });
-  //   });// end of .then
-  // });//end of router.get
 
 // upadtes cart at DB from cart view
   router.post('/updateCustomer/:id', function(req, res){
@@ -41,23 +27,6 @@ new DotEnv();
       });// end of .then
   });// end router.put
 
-// // deleted items at DB from cart view
-//   router.delete('/deleteCustomer/:id', function(req, res) {
-//     var customerId = req.params.id;
-//     pool.connect()
-//       .then(function (client) {
-//         client.query('DELETE FROM customers WHERE id=$1',
-//           [customerId])
-//           .then(function (result) {
-//             client.release();
-//             res.sendStatus(200);
-//         })
-//         .catch(function (err) {
-//             console.log('error on Deleting customer from DB:', err);
-//             res.sendStatus(500);
-//         });
-//     });
-//   });
 
 
 

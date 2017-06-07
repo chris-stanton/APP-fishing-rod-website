@@ -20,11 +20,6 @@ myApp.controller('Admin_customerController', ['AdminFactory', '$location', funct
     AdminFactory.updateCustomer(customer);
   };
 
-// button click to delete customer info
-  self.deleteCustomer = function(customer){
-    console.log(customer);
-    AdminFactory.deleteCustomer(customer);
-  };
 
 
 

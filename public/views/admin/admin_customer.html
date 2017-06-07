@@ -73,6 +73,8 @@
             </td>
             <td class="col-md-1">
               <div class="customerButtonsDiv">
+                <label ng-show="customer.active === true"> Disable User </label>
+                <label ng-show="customer.active === false"> Activate User </label>
                 <input type="checkbox" ng-model="customer.active">
               </div>
               <div class="customerButtonsDiv">

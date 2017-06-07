@@ -98,25 +98,7 @@
       });// end firebase.auth()
   };// end updateCustomer
 
-// deletes customer from DB
-  function deleteCustomer(customer){
-      firebase.auth().currentUser.getIdToken().then(function(idToken) {
-        $http({
-          method: 'DELETE',
-          url: '/admin_customer/deleteCustomer/' + customer.id,
-          data: customer,
-          headers: {
-                    id_token : idToken
-                   }
-        }).then(function(response){
-          notyf.confirm('Customer deleted from DB');
-            getAllCustomers();
-        }).catch(function(error) {
-          swal("We could not delete customer", "Try Again!", "error");
-          console.log('error deleting customer', error);
-        });// end of catch
-      });// end firebase.auth()
-  };// end of deleteAdmin()
+
 
 
 
@@ -146,8 +128,6 @@
       customers : customers,
 // updates customer at DB
       updateCustomer : updateCustomer,
-// deletes customer from DB
-      deleteCustomer : deleteCustomer
 
     }
 
