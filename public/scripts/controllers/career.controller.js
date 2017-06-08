@@ -7,7 +7,7 @@ myApp.controller('CareerController',['FactoryFactory', '$http', '$location', '$f
   var auth = $firebaseAuth();
   var firebaseUser = auth.$getAuth();
   var notyf = new Notyf({
-        delay: 2000,
+        delay: 3000,
         alertIcon: 'fa fa-exclamation-circle',
         confirmIcon: 'fa fa-check-circle'
       });

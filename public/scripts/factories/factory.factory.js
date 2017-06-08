@@ -13,7 +13,7 @@
 
 // sources notify
     var notyf = new Notyf({
-          delay: 2000,
+          delay: 3000,
           alertIcon: 'fa fa-exclamation-circle',
           confirmIcon: 'fa fa-check-circle'
         });
@@ -31,15 +31,15 @@
                     id_token : idToken
                    }
         }).then(function(response){
-          notyf.confirm('You are now a registered user!')
+          notyf.confirm('YOU ARE A REGISTERED USER')
         }).catch(function(error) {
           swal("Sorry, we couldn't process your address.", "Try Again!", "error");
-          console.log('error authenticating', error);
+          console.log('error adding address to DB', error);
         });
       });//end of firebase.auth()
     };// end addNewUser()
 
-// gets all ice rod models for order view
+// gets all active ice rod models for order view
     function getAllIceRodModels() {
         $http({
           method: 'GET',
@@ -60,13 +60,13 @@
                     id_token : idToken
                    }
         }).then(function(response){
-          notyf.confirm('Your order has been added to your cart')
+          notyf.confirm('ORDER WAS ADDED TO SHOPPING CART')
         }).catch(function(error) {
-          swal("Sorry, we couldn't process your address.", "Try Again!", "error");
-          console.log('error authenticating', error);
+          swal("Sorry, we couldn't process your order.", "Try Again!", "error");
+          console.log('error adding order to DB', error);
         });
       });//end of firebase.auth()
-    };// end addNewUser()
+    };// end submitNewOrder()
 
 // gets thread colors form DB for custom_order view
     function getThread() {
@@ -106,7 +106,7 @@
             allCartItems.list = response.data;
           }).catch(function(error) {
             swal("Sorry, you must be logged in to see your cart", "Try Again!", "error");
-            console.log('error authenticating', error);
+            console.log('error getting cart items', error);
           });
       });// end of firebase.auth()
     };// end getcart()
@@ -122,11 +122,11 @@
                       id_token : idToken
                       }
           }).then(function(response){
-            notyf.confirm('Order has been updated');
+            notyf.confirm('ORDER HAS BEEN UPDATED');
             getCart();
           }).catch(function(error) {
             swal("We were not able to update cart", "Try Again!", "error");
-            console.log('error updating', error);
+            console.log('error updating cart', error);
           });//end of catch
         });// end firebase.auth()
     };// end updateCart()
@@ -142,11 +142,11 @@
                       id_token : idToken
                      }
           }).then(function(response){
-            notyf.confirm('Item deleted from cart');
+            notyf.confirm('ITEM DELETED FROM CART');
             getCart();
           }).catch(function(error) {
-            swal("We could not delete item", "Try Again!", "error");
-            console.log('error deleting', error);
+            swal("We could not delete item from cart", "Try Again!", "error");
+            console.log('error deleting item from cart', error);
           });// end of catch
         });// end firebase.auth()
     };// end of deleteAdmin()

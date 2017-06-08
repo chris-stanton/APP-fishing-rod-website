@@ -13,7 +13,7 @@
 
 // sources notify
     var notyf = new Notyf({
-          delay: 2000,
+          delay: 3000,
           alertIcon: 'fa fa-exclamation-circle',
           confirmIcon: 'fa fa-check-circle'
         });
@@ -27,12 +27,12 @@
     }).then(function(response) {
       selectOptions.list = response.data;
     }).catch(function(error) {
-      swal("Sorry, could not send select option request", "Try Again!", "error");
-      console.log('error authenticating', error);
+      swal("Sorry, could not get select option data request", "Try Again!", "error");
+      console.log('select option data request', error);
     });
   };// end getSelectOptions()
 
-// admin select option data on init
+// gets all active inventory on init
   function getAllInventory() {
     $http({
       method: 'GET',
@@ -40,8 +40,8 @@
     }).then(function(response) {
       allInventory.list = response.data;
     }).catch(function(error) {
-      swal("Sorry, could not send inventory request on init", "Try Again!", "error");
-      console.log('error authenticating', error);
+      swal("Sorry, could not send inventory request", "Try Again!", "error");
+      console.log('select option data request on init', error);
     });
   };// end getAllInventory()
 
@@ -56,7 +56,7 @@
                     id_token : idToken
                     }
         }).then(function(response){
-          notyf.confirm('Inventory item has been updated');
+          notyf.confirm('INVENTORY ITEM IS UPDATED');
         }).catch(function(error) {
           swal("We were not able to update inventory item info", "Try Again!", "error");
           console.log('error updating inventory info', error);
@@ -80,13 +80,13 @@
         }).then(function(response) {
           allInventory.list = response.data;
         }).catch(function(error) {
-          swal("Sorry, could not send filtered inventory request to DB", "Try Again!", "error");
-          console.log('error authenticating', error);
+          swal("Sorry, could not send filtered inventory request", "Try Again!", "error");
+          console.log('filtered inventory request error', error);
         });
     });// end of firebase.auth()
-  };// end getInventory()
+  };// end getFilteredInventory()
 
-// gets customers for admin customer view
+// gets all active customers for admin customer view
   function getAllCustomers() {
     $http({
       method: 'GET',
@@ -94,8 +94,8 @@
     }).then(function(response) {
       customers.list = response.data;
     }).catch(function(error) {
-      swal("Sorry, could not send customer request to DB", "Try Again!", "error");
-      console.log('error authenticating', error);
+      swal("Sorry, could not send customer request", "Try Again!", "error");
+      console.log('customer request error ', error);
     });
   }// end getAllCustomers()
 
@@ -110,7 +110,7 @@
                     id_token : idToken
                     }
         }).then(function(response){
-          notyf.confirm('Customer has been updated');
+          notyf.confirm('CUSTOMER INFO HAS BEEN UPDATED');
         }).catch(function(error) {
           swal("We were not able to update customer info", "Try Again!", "error");
           console.log('error updating customer info', error);

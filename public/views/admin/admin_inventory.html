@@ -67,13 +67,14 @@
               </div>
             </td>
             <td class="col-md-5">
-              <textarea ng-model="inventoryItem.description" rows="6" cols="70"> {{inventoryItem.description}} </textarea>
+              <h5 class=""> Discription: </h5>
+                <textarea ng-model="inventoryItem.description" rows="6" cols="70"> {{inventoryItem.description}} </textarea>
             </td>
             <td class="col-md-1">
               <div class="inventoryButtonsDiv">
-                <label ng-show="inventoryItem.active === true"> Disable Item </label>
-                <label ng-show="inventoryItem.active === false"> Activate Item </label>
-                <input type="checkbox" ng-model="inventoryItem.active"> </button>
+                <label ng-show="inventoryItem.active === true"> Active </label>
+                <label ng-show="inventoryItem.active === false"> Disabled </label>
+                  <input type="checkbox" ng-model="inventoryItem.active" class="checkbox"> 
               </div>
               <div class="inventoryButtonsDiv">
                 <button type="button" ng-click="adi.updateInventory(inventoryItem)" id="inventoryUpdateButton"> Update </button>

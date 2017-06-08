@@ -8,7 +8,7 @@ myApp.controller('HeaderController', ['FactoryFactory', '$firebaseAuth', '$http'
   var firebaseUser = auth.$getAuth();
 
   var notyf = new Notyf({
-        delay:2000,
+        delay: 3000,
         alertIcon: 'fa fa-exclamation-circle',
         confirmIcon: 'fa fa-check-circle'
       });
@@ -20,8 +20,8 @@ myApp.controller('HeaderController', ['FactoryFactory', '$firebaseAuth', '$http'
 // auth login
   self.login = function() {
     auth.$signInWithPopup("google").then(function(firebaseUser) {
-      notyf.confirm(firebaseUser.user.displayName + ' is logged in and authenticated');
-        console.log("Firebase Authenticated " + firebaseUser.user.displayName + " and is now logged in");
+      notyf.confirm(firebaseUser.user.displayName + ' is logged in');
+        console.log("Firebase Authenticated " + firebaseUser.user.displayName + " and is logged in");
     }).catch(function(error) {
       console.log("Authentication failed: ", error);
     });
@@ -42,8 +42,8 @@ myApp.controller('HeaderController', ['FactoryFactory', '$firebaseAuth', '$http'
           self.photo = firebaseUser.photoURL;
           self.email = firebaseUser.email;
       } else {
-        console.log('You are not logged in or authorized');
           self.userIsLoggedIn = false;
+            console.log('user is logged out');
       }
   });// end of auth.$onAuthStateChanged()
 
@@ -51,7 +51,7 @@ myApp.controller('HeaderController', ['FactoryFactory', '$firebaseAuth', '$http'
 // auth logout
   self.logout = function() {
     auth.$signOut().then(function(){
-      notyf.alert('You are not logged in or authorized');
+      notyf.alert('YOU ARE LOGGED OUT');
         console.log('User has logged out');
     });
   }// end of logout()
@@ -80,7 +80,7 @@ myApp.controller('HeaderController', ['FactoryFactory', '$firebaseAuth', '$http'
                   return
                 }
             }).catch(function(error) {
-              swal("We could not check Admin rights", "Try Again!", "error");
+              swal("could not check for Admin rights", "Try Again!", "error");
               console.log('error checking Admin rights', error);
             });
         });// end of firebase.auth()
@@ -100,7 +100,9 @@ myApp.controller('HeaderController', ['FactoryFactory', '$firebaseAuth', '$http'
             }).then(function(response) {
               self.newUser = response.data;
                 if (self.newUser == true) {
-                  notyf.confirm(firebaseUser.displayName + ', You are a new User');
+                  swal('Welcome ' + firebaseUser.displayName + '! You are a new Customer. ' +
+                        'Please complete the address form to continue.', 'Your address will not be shared with anyone. ' +
+                        'It is used for your convienace and shipping estimates.');
                     $location.path('/address');
                 } else {
                   return
