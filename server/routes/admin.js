@@ -21,11 +21,11 @@
           for (var i = 0; i < result.length; i++) {
             var adminId = result[i].firebaseuserid;
           }
-          if (adminId == req.decodedToken.uid) {
-            res.send(true);
-          } else {
-            res.send(false);
-          }
+            if (adminId == req.decodedToken.uid) {
+              res.send(true);
+            } else {
+              res.send(false);
+            };
         }).catch(function (err) {
           console.log('error on SELECT', err);
           res.sendStatus(500);
@@ -37,18 +37,18 @@
   router.get('/checkNewUser', function (req, res) {
   pool.connect()
     .then(function (client) {
-      client.query("SELECT firebaseUserId, active FROM customers WHERE firebaseUserId=$1", [req.decodedToken.uid])
+      client.query("SELECT firebaseUserId FROM customers WHERE firebaseUserId=$1", [req.decodedToken.uid])
         .then(function (result) {
           client.release();
             var result = result.rows;
             for (var i = 0; i < result.length; i++) {
               var newUserId = result[i].firebaseuserid;
-            }
-              if (newUserId == req.decodedToken.uid) {
-                res.send(false);
-              } else {
-                res.send(true);
-            };
+              }
+                if (newUserId == req.decodedToken.uid) {
+                  res.send(false);
+                } else {
+                  res.send(true);
+                };
           }).catch(function (err) {
             console.log('error on SELECT', err);
             res.sendStatus(500);

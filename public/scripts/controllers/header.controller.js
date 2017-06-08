@@ -106,7 +106,7 @@ myApp.controller('HeaderController', ['FactoryFactory', '$firebaseAuth', '$http'
                     $location.path('/address');
                 } else {
                   return
-                }
+                };
             }).catch(function(error) {
               swal("We could not check Admin rights", "Try Again!", "error");
               console.log('error checking Admin rights', error);
