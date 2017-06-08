@@ -8,7 +8,7 @@
   router.get('/allIceRods', function (req, res) {
   pool.connect()
     .then(function (client) {
-      client.query("SELECT * FROM iceRods ORDER BY model DESC")
+      client.query("SELECT * FROM iceRods WHERE active=true ORDER BY model DESC")
         .then(function (result) {
           client.release();
           res.send(result.rows);

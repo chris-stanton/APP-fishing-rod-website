@@ -28,7 +28,7 @@ new DotEnv();
   router.get('/getAllInventory', function (req, res) {
   pool.connect()
     .then(function (client) {
-      client.query("SELECT * FROM iceRods")
+      client.query("SELECT * FROM iceRods WHERE active=true")
         .then(function (result) {
           client.release();
           res.send(result.rows)
