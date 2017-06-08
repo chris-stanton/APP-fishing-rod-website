@@ -665,7 +665,7 @@
 }
 
 #customerFilterButton:hover {
-  box-shadow: 3px 3px 3px #24ee08;
+  box-shadow: 3px 3px 3px #ffc001;
   cursor: pointer;
 }
 
@@ -771,7 +771,7 @@
 }
 
 #inventoryFilterButton:hover {
-  box-shadow: 3px 3px 3px #24ee08;
+  box-shadow: 3px 3px 3px #ffc001;
   cursor: pointer;
 }
 
