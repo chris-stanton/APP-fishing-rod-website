@@ -24,11 +24,11 @@ new DotEnv();
     });// end of .then
   });//end of router.get
 
-// all inventory items for admin inventory view
+// all inventory items for admin inventory view where active is true
   router.get('/getAllInventory', function (req, res) {
   pool.connect()
     .then(function (client) {
-      client.query("SELECT * FROM iceRods WHERE active=true ORDER BY model ASC")
+      client.query("SELECT * FROM iceRods ORDER BY model ASC")
         .then(function (result) {
           client.release();
           res.send(result.rows)

@@ -74,7 +74,7 @@
           method: 'GET',
           url: '/admin_inventory/getFilteredInventory',
           headers: {
-                    inventoryFilter : inventoryFilter.model,
+                    inventoryFilter : inventoryFilter.active,
                     id_token : idToken
                    }
         }).then(function(response) {

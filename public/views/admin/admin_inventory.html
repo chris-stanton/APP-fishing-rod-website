@@ -24,9 +24,10 @@
 <!-- empty container for spacing -->
       </div>
       <div class="col-md-2" id="modelFilter">
-        <select ng-model="adi.inventoryFilter.model">
-          <option value="all"> All Models </option>
-          <option ng-repeat="item in adi.selectOptions.list"> {{item.model}} </option>
+        <select ng-model="adi.inventoryFilter.active">
+          <option value="all"> All </option>
+          <option value="true"> Active </option>
+          <option value="false"> Disabled </option>
         </select>
       </div>
       <div class="col-md-1">
@@ -74,7 +75,7 @@
               <div class="inventoryButtonsDiv">
                 <label ng-show="inventoryItem.active === true"> Active </label>
                 <label ng-show="inventoryItem.active === false"> Disabled </label>
-                  <input type="checkbox" ng-model="inventoryItem.active" class="checkbox"> 
+                  <input type="checkbox" ng-model="inventoryItem.active" class="checkbox">
               </div>
               <div class="inventoryButtonsDiv">
                 <button type="button" ng-click="adi.updateInventory(inventoryItem)" id="inventoryUpdateButton"> Update </button>
