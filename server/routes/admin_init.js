@@ -28,7 +28,7 @@ new DotEnv();
   router.get('/getAllInventory', function (req, res) {
   pool.connect()
     .then(function (client) {
-      client.query("SELECT * FROM iceRods WHERE active=true")
+      client.query("SELECT * FROM iceRods WHERE active=true ORDER BY model ASC")
         .then(function (result) {
           client.release();
           res.send(result.rows)
@@ -44,7 +44,7 @@ new DotEnv();
   router.get('/getAllCustomers', function (req, res) {
   pool.connect()
     .then(function (client) {
-      client.query("SELECT * FROM customers WHERE active=true ORDER BY lastName DESC")
+      client.query("SELECT * FROM customers WHERE active=true ORDER BY lastName ASC")
         .then(function (result) {
           client.release();
           res.send(result.rows)
