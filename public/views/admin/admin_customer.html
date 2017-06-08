@@ -24,10 +24,11 @@
 <!-- empty container for spacing -->
       </div>
       <div class="col-md-2" id="filterDiv">
-        <select ng-model="adc.customerFilter.lastName">
-          <option value="all"> All Users </option>
-          <option ng-repeat="lastname in adc.customerLastNamesOptions.list"> {{lastname.lastname}} </option>
-        </select>
+        <label> Last Name </label>
+          <select ng-model="adc.customerFilter.lastName">
+            <option value="all"> All Users </option>
+            <option ng-repeat="lastname in adc.customerLastNamesOptions.list"> {{lastname.lastname}} </option>
+          </select>
       </div>
       <div class="col-md-1">
         <button type="button" ng-click="adc.getFilteredCustomer(adc.customerFilter)" id="customerFilterButton"> Filter </button>

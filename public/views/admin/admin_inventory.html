@@ -24,11 +24,12 @@
 <!-- empty container for spacing -->
       </div>
       <div class="col-md-2" id="modelFilter">
-        <select ng-model="adi.inventoryFilter.active">
-          <option value="all"> All </option>
-          <option value="true"> Active </option>
-          <option value="false"> Disabled </option>
-        </select>
+        <label> Status</label>
+          <select ng-model="adi.inventoryFilter.active">
+            <option value="all"> All </option>
+            <option value="true"> Active </option>
+            <option value="false"> Disabled </option>
+          </select>
       </div>
       <div class="col-md-1">
         <button type="button" ng-click="adi.getFilteredInventory(adi.inventoryFilter)" id="inventoryFilterButton"> Filter </button>

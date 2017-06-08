@@ -18,6 +18,22 @@
       </div>
     </div>
 
+<!-- filter container -->
+    <div class="col-md-12">
+      <div class="col-md-9">
+<!-- empty container for spacing -->
+      </div>
+      <div class="col-md-2" id="orderFilterDiv">
+        <label> Last Name </label>
+          <select ng-model="ado.orderFilter.active">
+            <option value="all"> All </option>
+            <option value="true">  </option>
+          </select>
+      </div>
+      <div class="col-md-1">
+        <button type="button" ng-click="ado.getFilteredOrder(ado.orderFilter)" id="orderFilterButton"> Filter </button>
+      </div>
+    </div>
 
 
   </div>
