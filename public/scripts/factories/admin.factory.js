@@ -5,9 +5,10 @@
     var auth = $firebaseAuth();
     var firebaseUser = auth.$getAuth();
 // object containers
-    var selectOptions = { list: [] };
+    var selectOptions = { list:[] };
     var allInventory = { list:[] };
     var customers = { list:[] };
+    var customerLastNamesOptions = { list:[] };
 
 
 
@@ -118,8 +119,39 @@
       });// end firebase.auth()
   };// end updateCustomer
 
+// admin customer filter
+  function getFilteredCustomer(customerFilter) {
+    var auth = $firebaseAuth();
+    var firebaseUser = auth.$getAuth();
+    firebase.auth().currentUser.getIdToken().then(function(idToken) {
+        $http({
+          method: 'GET',
+          url: '/admin_customer/getFilteredCustomer',
+          headers: {
+                    customerFilter : customerFilter.lastName,
+                    id_token : idToken
+                   }
+        }).then(function(response) {
+          customers.list = response.data;
+        }).catch(function(error) {
+          swal("Sorry, could not send filtered customer request", "Try Again!", "error");
+          console.log('filtered customer request error', error);
+        });
+    });// end of firebase.auth()
+  };// end getFilteredCustomer()
 
-
+// gets all customer last names for select options on admin cystomer view
+  function getCustomersSelect() {
+    $http({
+      method: 'GET',
+      url: '/admin_init/getCustomersSelect'
+    }).then(function(response) {
+      customerLastNamesOptions.list = response.data;
+    }).catch(function(error) {
+      swal("Sorry, could not send customer request", "Try Again!", "error");
+      console.log('customer request error ', error);
+    });
+  }// endgetCustomersSelect()
 
 
 
@@ -144,12 +176,18 @@
       getFilteredInventory : getFilteredInventory,
 // gets all customers on init for admin customer view
       getAllCustomers : getAllCustomers,
+// filter from admin customer view request to DB
+      getFilteredCustomer : getFilteredCustomer,
 // return from DB to admin customer view for customers on init and filtered
       customers : customers,
 // updates customer at DB
       updateCustomer : updateCustomer,
 // updates inventory item at DB
-      updateInventory : updateInventory
+      updateInventory : updateInventory,
+// gets last names for admin customer select option on init
+      getCustomersSelect : getCustomersSelect,
+// return form DB of all customer last names for admin customer view
+      customerLastNamesOptions : customerLastNamesOptions
 
     }
 

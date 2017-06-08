@@ -44,7 +44,23 @@ new DotEnv();
   router.get('/getAllCustomers', function (req, res) {
   pool.connect()
     .then(function (client) {
-      client.query("SELECT * FROM customers WHERE active=true ORDER BY lastName ASC")
+      client.query("SELECT * FROM customers ORDER BY lastName ASC")
+        .then(function (result) {
+          client.release();
+          res.send(result.rows)
+        })
+        .catch(function (err) {
+          console.log('error on SELECT', err);
+          res.sendStatus(500);
+        });
+    });// end of .then
+  });//end of router.get
+
+// gets all lastnames for admin customer select options
+  router.get('/getCustomersSelect', function (req, res) {
+  pool.connect()
+    .then(function (client) {
+      client.query("SELECT firstName, lastName FROM customers ORDER BY lastName ASC")
         .then(function (result) {
           client.release();
           res.send(result.rows)

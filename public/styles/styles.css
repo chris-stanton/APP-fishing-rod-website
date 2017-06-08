@@ -653,6 +653,22 @@
 
 }
 
+#filterDiv {
+  text-align: right;
+  margin: 0px 0px 20px 0px;
+}
+
+#customerFilterButton {
+  width: 100%;
+  border-radius: 10px;
+  outline: none;
+}
+
+#customerFilterButton:hover {
+  box-shadow: 3px 3px 3px #24ee08;
+  cursor: pointer;
+}
+
 #customerTable {
   margin: 0px 0px 90px 0px;
 }
@@ -780,6 +796,9 @@
   box-shadow: 3px 3px 3px #ff0000;
   cursor: pointer;
 }
+
+
+
 
 
 

@@ -18,6 +18,22 @@
       </div>
     </div>
 
+<!-- filter container -->
+    <div class="col-md-12">
+      <div class="col-md-9">
+<!-- empty container for spacing -->
+      </div>
+      <div class="col-md-2" id="filterDiv">
+        <select ng-model="adc.customerFilter.lastName">
+          <option value="all"> All Users </option>
+          <option ng-repeat="lastname in adc.customerLastNamesOptions.list"> {{lastname.lastname}} </option>
+        </select>
+      </div>
+      <div class="col-md-1">
+        <button type="button" ng-click="adc.getFilteredCustomer(adc.customerFilter)" id="customerFilterButton"> Filter </button>
+      </div>
+    </div>
+
     <div class="col-md-12" id="customerTable">
       <div ng-repeat="customer in adc.customers.list" id="customerContainers">
         <table>
@@ -73,9 +89,9 @@
             </td>
             <td class="col-md-1">
               <div class="customerButtonsDiv">
-                <label ng-show="customer.active === true"> Disable User </label>
-                <label ng-show="customer.active === false"> Activate User </label>
-                <input type="checkbox" ng-model="customer.active">
+                <label ng-show="customer.active === true"> Active </label>
+                <label ng-show="customer.active === false"> Disabled </label>
+                  <input type="checkbox" ng-model="customer.active">
               </div>
               <div class="customerButtonsDiv">
                 <button type="button" ng-click="adc.updateCustomer(customer)" id="customerUpdateButton"> Update </button>

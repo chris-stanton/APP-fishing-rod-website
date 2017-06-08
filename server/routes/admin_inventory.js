@@ -37,7 +37,7 @@
   var inventoryFilter = req.headers;
   pool.connect()
     .then(function (client) {
-      client.query("SELECT * FROM iceRods WHERE active=$1", [inventoryFilter.inventoryfilter])
+      client.query("SELECT * FROM iceRods WHERE active=$1 ORDER BY model ASC", [inventoryFilter.inventoryfilter])
         .then(function (result) {
           client.release();
           res.send(result.rows);

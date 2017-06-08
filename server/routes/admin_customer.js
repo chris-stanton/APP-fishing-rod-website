@@ -27,7 +27,22 @@ new DotEnv();
       });// end of .then
   });// end router.put
 
-
+// admin customer filter
+  router.get('/getFilteredCustomer', function (req, res) {
+  var customerFilter = req.headers;
+  pool.connect()
+    .then(function (client) {
+      client.query("SELECT * FROM customers WHERE lastName=$1", [customerFilter.customerfilter])
+        .then(function (result) {
+          client.release();
+          res.send(result.rows);
+        })
+        .catch(function (err) {
+          console.log('error on SELECT', err);
+          res.sendStatus(500);
+        });
+    });// end of .then
+  });//end of router.get
 
 
 
