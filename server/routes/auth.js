@@ -21,7 +21,6 @@
 // adds user's address to DB
   router.post('/newUserAddress', function (req, res) {
     var newUserAddress = req.body;
-    console.log(req.decodedToken);
     pool.connect()
       .then(function (client) {
         client.query('INSERT INTO customers (firstname, lastname, streetaddress, city, state, zipcode, firebaseuserid, image, email) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)',
@@ -62,7 +61,6 @@
 // adds ice rod orders to DB
   router.post('/newOrder', function (req, res) {
     var newOrder = req.body;
-    console.log(req.decodedToken);
     pool.connect()
       .then(function (client) {
         client.query('INSERT INTO iceRodOrders (firebaseuserid, model, blankmodel, blankLength, handlematerial, handlelength, guides, threadcolormain, threadcolortrim, quantity) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)',
