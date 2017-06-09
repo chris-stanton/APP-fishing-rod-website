@@ -20,7 +20,8 @@ myApp.controller('Admin_inventoryController', ['AdminFactory', '$location', func
 
 // button click to DB for filtered inventory items
   self.getFilteredInventory = function(inventoryFilter) {
-    if (inventoryFilter.model === 'all') {
+    console.log(inventoryFilter);
+    if (inventoryFilter.active === 'all') {
       AdminFactory.getAllInventory();
     } else {
       AdminFactory.getFilteredInventory(inventoryFilter);
@@ -29,13 +30,10 @@ myApp.controller('Admin_inventoryController', ['AdminFactory', '$location', func
 
 // button click to update inventory
   self.updateInventory = function(inventoryItem) {
-    console.log("update: ", inventoryItem);
+    AdminFactory.updateInventory(inventoryItem);
   };
 
-// button click to update inventory
-  self.deleteInventory = function(inventoryItem) {
-    console.log("delete: ",  inventoryItem);
-  };
+
 
 
 }]); // end controller code block
