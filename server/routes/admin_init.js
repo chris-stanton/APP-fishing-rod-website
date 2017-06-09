@@ -24,11 +24,11 @@ new DotEnv();
     });// end of .then
   });//end of router.get
 
-// all inventory items for admin inventory view
+// all inventory items for admin inventory view where active is true
   router.get('/getAllInventory', function (req, res) {
   pool.connect()
     .then(function (client) {
-      client.query("SELECT * FROM iceRods")
+      client.query("SELECT * FROM iceRods ORDER BY model ASC")
         .then(function (result) {
           client.release();
           res.send(result.rows)
@@ -40,7 +40,37 @@ new DotEnv();
     });// end of .then
   });//end of router.get
 
+// gets customers for admin customer view
+  router.get('/getAllCustomers', function (req, res) {
+  pool.connect()
+    .then(function (client) {
+      client.query("SELECT * FROM customers ORDER BY lastName ASC")
+        .then(function (result) {
+          client.release();
+          res.send(result.rows)
+        })
+        .catch(function (err) {
+          console.log('error on SELECT', err);
+          res.sendStatus(500);
+        });
+    });// end of .then
+  });//end of router.get
 
+// gets all lastnames for admin customer select options
+  router.get('/getCustomersSelect', function (req, res) {
+  pool.connect()
+    .then(function (client) {
+      client.query("SELECT firstName, lastName FROM customers ORDER BY lastName ASC")
+        .then(function (result) {
+          client.release();
+          res.send(result.rows)
+        })
+        .catch(function (err) {
+          console.log('error on SELECT', err);
+          res.sendStatus(500);
+        });
+    });// end of .then
+  });//end of router.get
 
 
 

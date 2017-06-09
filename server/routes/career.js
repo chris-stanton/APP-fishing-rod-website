@@ -22,9 +22,9 @@ var transporter = nodemailer.createTransport({
   router.post('/application', function (req, res) {
     var application = req.body;
     var mailOptions = {
-      from: 'Personal Website ' + process.env.ACCOUNT_NAME,
+      from: 'Rod Building Website ' + process.env.ACCOUNT_NAME,
       to: process.env.ACCOUNT_RECIEVER_EMAIL,
-      subject: 'Job Application From Website',
+      subject: 'Job Application',
       text: req.decodedToken.name,
       html: '<h5>' + 'firebaseUserId: ' + req.decodedToken.uid + '</h5>' +
             '<h5>' + 'Applicant First Name: ' + application.firstName + '</h5>' +

@@ -17,6 +17,7 @@
 
   var admin_init = require('./server/routes/admin_init.js');
   var admin_inventory = require('./server/routes/admin_inventory.js');
+  var admin_customer = require('./server/routes/admin_customer.js');
 
 // Serve back static files
   app.use(express.static(path.join(__dirname, './public')));
@@ -44,6 +45,7 @@
   app.use('/admin', admin);
   // server side routes
   app.use('/admin_inventory', admin_inventory);
+  app.use('/admin_customer', admin_customer);
 
 
 

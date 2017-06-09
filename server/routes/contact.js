@@ -22,9 +22,9 @@ var transporter = nodemailer.createTransport({
   router.post('/newMessage', function (req, res) {
     var newMessage = req.body;
     var mailOptions = {
-      from: 'Personal Website ' + process.env.ACCOUNT_NAME,
+      from: 'Rod Building Website ' + process.env.ACCOUNT_NAME,
       to: process.env.ACCOUNT_RECIEVER_EMAIL,
-      subject: 'Customer Message From Website',
+      subject: 'Customer Message',
       text: req.decodedToken.name,
       html: '<h5>' + 'firebaseUserId: ' + req.decodedToken.uid + '</h5>' +
             '<h5>' + 'Customer name: ' + newMessage.name + '</h5>' +

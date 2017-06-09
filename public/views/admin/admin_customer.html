@@ -18,5 +18,89 @@
       </div>
     </div>
 
+<!-- filter container -->
+    <div class="col-md-12">
+      <div class="col-md-9">
+<!-- empty container for spacing -->
+      </div>
+      <div class="col-md-2" id="filterDiv">
+        <label> Last Name </label>
+          <select ng-model="adc.customerFilter.lastName">
+            <option value="all"> All Users </option>
+            <option ng-repeat="lastname in adc.customerLastNamesOptions.list"> {{lastname.lastname}} </option>
+          </select>
+      </div>
+      <div class="col-md-1">
+        <button type="button" ng-click="adc.getFilteredCustomer(adc.customerFilter)" id="customerFilterButton"> Filter </button>
+      </div>
+    </div>
+
+    <div class="col-md-12" id="customerTable">
+      <div ng-repeat="customer in adc.customers.list" id="customerContainers">
+        <table>
+          <tr>
+            <td class="col-md-2">
+              <div>
+                <img ng-model="customer.image" ng-src="{{customer.image}}" id="customerImage">
+              </div>
+            </td>
+            <td class="col-md-6">
+              <div id="firebaseInfo">
+                <div>
+                  <label> Email: </label>
+                    <span ng-model="customer.email"> {{customer.email}} </span>
+                </div>
+                <div>
+                  <label> Firebase User ID: </label>
+                    <span ng-model="customer.firebaseuserid"> {{customer.firebaseuserid}} </span>
+                </div>
+              </div>
+              <div id="customerInputContainer">
+                <div>
+                  <label> First Name: </label>
+                    <input type="text" ng-model="customer.firstname" class="customerInputs" style="text-transform: capitalize">
+                </div>
+                <div>
+                  <label> Last Name: </label>
+                    <input type="text" ng-model="customer.lastname" class="customerInputs" style="text-transform: capitalize">
+                </div>
+                <div>
+                  <label> Street Address: </label>
+                    <input type="text" ng-model="customer.streetaddress" class="customerInputs" style="text-transform: capitalize">
+                </div>
+                <div>
+                  <label> City: </label>
+                    <input type="text" ng-model="customer.city" class="customerInputs" style="text-transform: capitalize">
+                </div>
+                <div>
+                  <label> State: </label>
+                    <input type="text" ng-model="customer.state" class="customerInputs" style="text-transform: uppercase">
+                </div>
+                <div>
+                  <label> Zip Code: </label>
+                    <input type="text" ng-model="customer.zipcode" class="customerInputs">
+                </div>
+              </div>
+            </td>
+            <td class="col-md-3">
+              <div>
+                <h4> Notes... </h4>
+                  <textarea ng-model="customer.notes" rows="15" cols="70"> {{customer.notes}} </textarea>
+              </div>
+            </td>
+            <td class="col-md-1">
+              <div class="customerButtonsDiv">
+                <label ng-show="customer.active === true"> Active </label>
+                <label ng-show="customer.active === false"> Disabled </label>
+                  <input type="checkbox" ng-model="customer.active">
+              </div>
+              <div class="customerButtonsDiv">
+                <button type="button" ng-click="adc.updateCustomer(customer)" id="customerUpdateButton"> Update </button>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
 
   </div>
