@@ -748,11 +748,29 @@
   margin: 20px 0px 90px 0px;
 }
 
+
+
+
+
+
 #inventoryItemTableBorder {
-  border: 2px solid black;
+  border: 1px solid grey;
   border-radius: 20px;
   margin: 15px 0px 15px 0px;
+  box-shadow: 3px 3px 3px grey;
 }
+
+#inventoryItemTableBorder:hover {
+  border: 3px solid grey;
+  box-shadow: 3px 3px 3px #24ee08;
+
+}
+
+
+
+
+
+
 
 #inventoryImage {
   height: 170px;
