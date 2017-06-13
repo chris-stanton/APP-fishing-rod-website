@@ -233,12 +233,13 @@
   width: 210px;
   padding: 10px;
   margin-bottom: 45px;
-  border: 1px solid black;
+  border: 1px solid grey;
   border-radius: 10px;
   box-shadow: 3px 3px 3px grey;
 }
 
 #iceRodCards:hover {
+  border: 3px solid grey;
   box-shadow: 3px 3px 3px #24ee08;
   cursor: pointer;
 }
@@ -264,14 +265,18 @@
 }
 
 .backArrow {
-  text-align: center;
+  text-align: right;
   height: 30px;
   width: 40px;
-  border-radius: 10px;
+  border-radius: 15px;
   outline: none;
+  margin: 60px 0px 0px 0px;
 }
 
 .backArrow:hover {
+  height: 32px;
+  width: 42px;
+  border-radius: 15px;
   box-shadow: 3px 3px 3px #24ee08;
   cursor: pointer;
 }
@@ -405,6 +410,10 @@
 
 #mapDiv {
   text-align: center;
+}
+
+#googleMap {
+  box-shadow: 10px 10px 10px grey;
 }
 
 #sendEmailContainer {
@@ -623,6 +632,13 @@
 
 
 
+
+
+
+
+
+
+
 /*////////////////////////
 //    ADMIN NAV BAR     //
 ////////////////////////*/
@@ -749,9 +765,15 @@
 }
 
 #inventoryItemTableBorder {
-  border: 2px solid black;
+  border: 1px solid grey;
   border-radius: 20px;
   margin: 15px 0px 15px 0px;
+  box-shadow: 3px 3px 3px grey;
+}
+
+#inventoryItemTableBorder:hover {
+  border: 3px solid grey;
+  box-shadow: 3px 3px 3px #24ee08;
 }
 
 #inventoryImage {
