@@ -30,7 +30,7 @@ myApp.controller('CareerController',['FactoryFactory', '$http', '$location', '$f
                       id_token : idToken
                       }
           }).then(function(response){
-            notyf.confirm('Application Sent');
+            notyf.confirm('APPLICATION SENT');
               $location.path('/home');
           }).catch(function(error) {
             swal("Sorry, we could not send your application.", "Try Again!", "error");

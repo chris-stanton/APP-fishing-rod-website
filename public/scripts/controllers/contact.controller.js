@@ -29,7 +29,7 @@ myApp.controller('ContactController',['FactoryFactory', '$http', '$location', '$
                       id_token : idToken
                       }
           }).then(function(response){
-            notyf.confirm('Email Sent');
+            notyf.confirm('EMAIL SENT');
               $location.path('/home');
           }).catch(function(error) {
             swal("Sorry, we could not send your email.", "Try Again!", "error");
