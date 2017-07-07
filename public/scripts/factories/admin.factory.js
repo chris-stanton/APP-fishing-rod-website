@@ -117,7 +117,7 @@
           console.log('error updating customer info', error);
         }); //end of catch
       }); // end firebase.auth()
-  };  // end updateCustomer
+  };  // end updateCustomer()
 
 // admin customer filter
   function getFilteredCustomer(customerFilter) {
