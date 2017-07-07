@@ -31,7 +31,7 @@
       swal("Sorry, could not get select option data request", "Try Again!", "error");
       console.log('select option data request', error);
     });
-  };// end getSelectOptions()
+  };  // end getSelectOptions()
 
 // gets all active inventory on init
   function getAllInventory() {
@@ -44,7 +44,7 @@
       swal("Sorry, could not send inventory request", "Try Again!", "error");
       console.log('select option data request on init', error);
     });
-  };// end getAllInventory()
+  };  // end getAllInventory()
 
 // updates inventory item at DB
   function updateInventory(inventoryItem) {
@@ -61,9 +61,9 @@
         }).catch(function(error) {
           swal("We were not able to update inventory item info", "Try Again!", "error");
           console.log('error updating inventory info', error);
-        });//end of catch
-      });// end firebase.auth()
-  };// end updateInventory
+        }); //end of catch
+      }); // end firebase.auth()
+  };  // end updateInventory
 
 
 // admin inventory filter query
@@ -84,8 +84,8 @@
           swal("Sorry, could not send filtered inventory request", "Try Again!", "error");
           console.log('filtered inventory request error', error);
         });
-    });// end of firebase.auth()
-  };// end getFilteredInventory()
+    }); // end of firebase.auth()
+  };  // end getFilteredInventory()
 
 // gets all active customers for admin customer view
   function getAllCustomers() {
@@ -98,7 +98,7 @@
       swal("Sorry, could not send customer request", "Try Again!", "error");
       console.log('customer request error ', error);
     });
-  }// end getAllCustomers()
+  }; // end getAllCustomers()
 
 // updates customer at DB
   function updateCustomer(customer) {
@@ -115,9 +115,9 @@
         }).catch(function(error) {
           swal("We were not able to update customer info", "Try Again!", "error");
           console.log('error updating customer info', error);
-        });//end of catch
-      });// end firebase.auth()
-  };// end updateCustomer
+        }); //end of catch
+      }); // end firebase.auth()
+  };  // end updateCustomer
 
 // admin customer filter
   function getFilteredCustomer(customerFilter) {
@@ -137,8 +137,8 @@
           swal("Sorry, could not send filtered customer request", "Try Again!", "error");
           console.log('filtered customer request error', error);
         });
-    });// end of firebase.auth()
-  };// end getFilteredCustomer()
+    }); // end of firebase.auth()
+  };  // end getFilteredCustomer()
 
 // gets all customer last names for select options on admin cystomer view
   function getCustomersSelect() {
@@ -151,7 +151,7 @@
       swal("Sorry, could not send customer request", "Try Again!", "error");
       console.log('customer request error ', error);
     });
-  }// endgetCustomersSelect()
+  }; // endgetCustomersSelect()
 
 
 
