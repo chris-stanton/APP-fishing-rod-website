@@ -647,8 +647,10 @@
   height: 30px;
   padding: 5px 0px 0px 0px;
   box-shadow: 3px 3px 3px #24ee08;
-  /*position: relative;*/
-  z-index: 100;
+  position: absolute;
+  top: 10;
+  overflow: hidden;
+  z-index: 10;
 }
 
 .adminNavButtons {
