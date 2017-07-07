@@ -136,13 +136,6 @@
 //        NAV BAR       //
 ////////////////////////*/
 
-/*nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 100;
-}*/
-
 #navBarContainer {
   display: inline-block;
   text-align: center;
@@ -166,9 +159,6 @@
 
 
 
-
-
-
 /*////////////////////////
 //         HOME         //
 ////////////////////////*/
@@ -176,8 +166,6 @@
 #homeContainer {
 
 }
-
-
 
 
 
