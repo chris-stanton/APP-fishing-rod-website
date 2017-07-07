@@ -14,7 +14,7 @@
 
 // sources notify
     var notyf = new Notyf({
-          delay: 3000,
+          delay: 4000,
           alertIcon: 'fa fa-exclamation-circle',
           confirmIcon: 'fa fa-check-circle'
         });
