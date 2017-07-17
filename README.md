@@ -1,3 +1,44 @@
+
+# Fishing Rod E-Commerce Web App
+
+## Description:
+#### Description here
+
+
+###### Home View:
+<img src="./public/assets/images/screenshots/home.png" width="50%">
+
+###### Showroom:
+<img src="./public/assets/images/screenshots/showroom.png" width="50%">
+
+###### Buy/Order:
+<img src="./public/assets/images/screenshots/order.png" width="50%">
+
+###### Specific Order:
+<img src="./public/assets/images/screenshots/specificOrder.png" width="50%">
+
+###### Custom Order:
+<img src="./public/assets/images/screenshots/customOrder.png" width="50%">
+
+###### Shopping Cart:
+<img src="./public/assets/images/screenshots/cart.png" width="50%">
+
+###### Contact:
+<img src="./public/assets/images/screenshots/contact.png" width="50%">
+
+###### Admin Manage Customers:
+<img src="./public/assets/images/screenshots/adminCustomer.png" width="50%">
+
+###### Admin Manage Inventory:
+<img src="./public/assets/images/screenshots/adminInventory.png" width="50%">
+
+###### Admin Manage Orders:
+<img src="./public/assets/images/screenshots/adminOrder.png" width="50%">
+
+
+
+---
+
 ## Technologies Used
   1. Express.js - version ``` v4.15.2 ```
   2. Angular.js - version ``` v1.6.3 ```
@@ -8,6 +49,7 @@
   7. GIT / GitHub
   8. Bootstrap - version ``` v3.3.7 ```
 
+---
 
 
 ## Install App
